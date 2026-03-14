@@ -168,7 +168,7 @@ export default function PortfolioDetailClient({ project, lang }: PortfolioDetail
             <section className="section-padding pt-0">
                 <div className="section-container">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
-                        <div className="lg:col-span-2 space-y-12">
+                        <div className="lg:col-span-3 space-y-12">
                             <SectionReveal>
                                 <h3 className="text-2xl font-display font-bold text-white mb-6">
                                     {(dict.portfolio?.detail as any)?.challengeSolution || 'The Challenge & Solution'}
@@ -188,23 +188,6 @@ export default function PortfolioDetailClient({ project, lang }: PortfolioDetail
                                     </div>
                                 </SectionReveal>
                             )}
-                        </div>
-
-                        <div>
-                            <SectionReveal direction="left">
-                                <div className="glass-card p-8 sticky top-32">
-                                    <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-widest border-b border-white/10 pb-4">
-                                        {(dict.portfolio?.detail as any)?.techStack || 'Tech Stack'}
-                                    </h3>
-                                    <div className="flex flex-wrap gap-2">
-                                        {technologies.map((tech: string) => (
-                                            <span key={tech} className="px-3 py-1.5 text-xs font-mono bg-white/5 border border-white/10 rounded text-brand-accent">
-                                                {tech}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
-                            </SectionReveal>
                         </div>
                     </div>
                 </div>
