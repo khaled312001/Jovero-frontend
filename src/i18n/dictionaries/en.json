@@ -41,6 +41,7 @@
         "services": "Services",
         "chatWhatsapp": "Chat on WhatsApp",
         "followFacebook": "Follow on Facebook",
+        "followInstagram": "Follow on Instagram",
         "links": {
             "web": "Web Development & Design",
             "mobile": "Mobile Application Development",
@@ -448,6 +449,7 @@
         "switchLanguage": "Switch to Arabic (\u0627\u0644\u0639\u0631\u0628\u064a\u0629)",
         "switchShort": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
         "callUs": "Call Us",
-        "followUs": "Follow Us"
+        "followUs": "Follow Us",
+        "visitInstagram": "Visit Instagram"
     }
 }

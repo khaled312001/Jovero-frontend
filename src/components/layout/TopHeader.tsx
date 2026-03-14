@@ -4,8 +4,8 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { Phone, Facebook, Globe } from 'lucide-react';
-import { cn, WHATSAPP_NUMBER, WHATSAPP_URL, FACEBOOK_URL } from '@/lib/utils';
+import { Phone, Facebook, Instagram, Globe } from 'lucide-react';
+import { cn, WHATSAPP_NUMBER, WHATSAPP_URL, FACEBOOK_URL, INSTAGRAM_URL } from '@/lib/utils';
 
 export function TopHeader({ lang, dict, scrolled }: { lang: string, dict: any, scrolled: boolean }) {
     const pathname = usePathname();
@@ -49,6 +49,14 @@ export function TopHeader({ lang, dict, scrolled }: { lang: string, dict: any, s
                             className="p-1.5 rounded-lg bg-white/5 text-brand-muted hover:text-brand-accent hover:bg-brand-accent/10 transition-all duration-300"
                         >
                             <Facebook size={14} />
+                        </Link>
+
+                        <Link
+                            href={INSTAGRAM_URL}
+                            target="_blank"
+                            className="p-1.5 rounded-lg bg-white/5 text-brand-muted hover:text-brand-accent hover:bg-brand-accent/10 transition-all duration-300"
+                        >
+                            <Instagram size={14} />
                         </Link>
 
                         {/* WhatsApp icon as requested */}

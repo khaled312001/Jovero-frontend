@@ -7,10 +7,10 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { navbarVariants } from '@/lib/animations';
 import { cn } from '@/lib/utils';
-import { Menu, X, Globe, Home, Users, Cpu, Briefcase, Monitor, FileText, MessageCircle, Phone, Facebook } from 'lucide-react';
+import { Menu, X, Globe, Home, Users, Cpu, Briefcase, Monitor, FileText, MessageCircle, Phone, Facebook, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { useUIStore } from '@/store';
-import { WHATSAPP_URL, WHATSAPP_NUMBER, FACEBOOK_URL } from '@/lib/utils';
+import { WHATSAPP_URL, WHATSAPP_NUMBER, FACEBOOK_URL, INSTAGRAM_URL } from '@/lib/utils';
 import { TopHeader } from './TopHeader';
 
 export function Navbar({ dict, lang, getStartedText }: { dict: any, lang: string, getStartedText?: string }) {
@@ -252,6 +252,14 @@ export function Navbar({ dict, lang, getStartedText }: { dict: any, lang: string
                                             className="p-4 rounded-2xl bg-white/5 text-brand-muted hover:text-brand-accent hover:bg-brand-accent/10 transition-all duration-300"
                                         >
                                             <Facebook size={22} />
+                                        </Link>
+
+                                        <Link
+                                            href={INSTAGRAM_URL}
+                                            target="_blank"
+                                            className="p-4 rounded-2xl bg-white/5 text-brand-muted hover:text-brand-accent hover:bg-brand-accent/10 transition-all duration-300"
+                                        >
+                                            <Instagram size={22} />
                                         </Link>
 
                                         <Link
