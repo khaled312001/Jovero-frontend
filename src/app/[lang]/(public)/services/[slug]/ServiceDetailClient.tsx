@@ -13,6 +13,7 @@ import { staggerContainer, heroTextReveal } from '@/lib/animations';
 import { WHATSAPP_URL } from '@/lib/utils';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useDictionary } from '@/lib/contexts/DictionaryContext';
 
 // Helper to render icon dynamically
 const DynamicIcon = ({ name, size = 48, className = "" }: { name: string; size?: number; className?: string }) => {
@@ -26,6 +27,7 @@ interface ServiceDetailClientProps {
 }
 
 export default function ServiceDetailClient({ service, lang }: ServiceDetailClientProps) {
+    const dict = useDictionary();
     if (!service) {
         // ... (no changes to error state for now, but lang could be used for "Back to Services" text if dict is used)
         return (

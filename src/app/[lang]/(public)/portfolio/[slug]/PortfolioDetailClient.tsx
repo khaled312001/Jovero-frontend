@@ -33,10 +33,13 @@ export default function PortfolioDetailClient({ project, lang }: PortfolioDetail
         return (
             <div className="min-h-screen flex items-center justify-center bg-brand-primary text-center px-6">
                 <div className="max-w-md">
-                    <h2 className="text-4xl font-display font-bold text-white mb-6">
+                    <h2 className="text-4xl font-display font-bold text-white mb-4">
                         {(dict.portfolio?.detail as any)?.notFound || 'Project Not Found'}
                     </h2>
-                    <Link href="/portfolio">
+                    <p className="text-brand-muted mb-8 italic">
+                        {(dict.portfolio?.detail as any)?.notFoundDesc || 'This project could not be found.'}
+                    </p>
+                    <Link href={`/${lang}/portfolio`}>
                         <Button variant="primary" icon={<ArrowLeft size={20} />}>
                             {(dict.portfolio?.detail as any)?.backToPortfolio || 'Back to Portfolio'}
                         </Button>

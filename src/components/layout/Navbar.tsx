@@ -62,7 +62,7 @@ export function Navbar({ dict, lang, getStartedText }: { dict: any, lang: string
                 <div className="section-container !py-0">
                     <div className="flex items-center justify-between h-24">
                         {/* Logo */}
-                        <Link href="/" className="flex flex-col items-start leading-none group no-underline">
+                        <Link href={`/${lang}`} className="flex flex-col items-start leading-none group no-underline">
                             <span className="font-serif text-3xl md:text-4xl text-white tracking-widest group-hover:text-brand-accent transition-colors duration-500">
                                 JOVERO
                             </span>
@@ -151,7 +151,7 @@ export function Navbar({ dict, lang, getStartedText }: { dict: any, lang: string
                             className="fixed top-0 right-0 bottom-0 w-[300px] z-[120] bg-brand-dark/95 backdrop-blur-2xl border-l border-brand-glass-border p-6 lg:hidden flex flex-col overflow-y-auto custom-scrollbar"
                         >
                             <div className="flex items-center justify-between mb-12 shrink-0">
-                                <Link href="/" className="flex flex-col items-start leading-none" onClick={() => setMobileMenu(false)}>
+                                <Link href={`/${lang}`} className="flex flex-col items-start leading-none" onClick={() => setMobileMenu(false)}>
                                     <span className="font-serif text-2xl text-white tracking-widest">
                                         JOVERO
                                     </span>

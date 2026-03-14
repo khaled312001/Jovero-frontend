@@ -272,7 +272,7 @@ export default function BlogDetailClient({ post, lang }: BlogDetailClientProps) 
                 {/* Back to Blog */}
                 <div className="mt-12 text-center">
                     <Link
-                        href="/blog"
+                        href={`/${lang}/blog`}
                         className="inline-flex items-center gap-2 text-brand-muted hover:text-brand-accent transition-colors group text-sm font-mono uppercase tracking-wider"
                     >
                         <ArrowLeft size={16} className="rtl:rotate-180 group-hover:-translate-x-1 rtl:group-hover:translate-x-1 transition-transform" />
@@ -280,6 +280,6 @@ export default function BlogDetailClient({ post, lang }: BlogDetailClientProps) 
                     </Link>
                 </div>
             </article>
-        </main >
+        </main>
     );
 }

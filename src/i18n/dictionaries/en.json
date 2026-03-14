@@ -316,6 +316,8 @@
             "viewAll": "View All Projects"
         },
         "detail": {
+            "notFound": "Project Not Found",
+            "notFoundDesc": "The project you are looking for doesn't exist or has been removed.",
             "backToPortfolio": "Back to Portfolio",
             "category": "Category",
             "client": "Client",
