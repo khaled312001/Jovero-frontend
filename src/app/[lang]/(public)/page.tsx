@@ -15,6 +15,7 @@ import { MouseFollower } from '@/components/ui/MouseFollower';
 import { useParams } from 'next/navigation';
 import { publicApi } from '@/lib/api';
 import { useDictionary } from '@/lib/contexts/DictionaryContext';
+import { PortfolioGallery } from '@/components/sections/PortfolioGallery';
 
 // ============ HERO SECTION ============
 function HeroSection({ data }: { data?: any }) {
@@ -663,6 +664,7 @@ export default function HomePage() {
         <>
             <HeroSection data={data.hero} />
             <ServicesSection />
+            <PortfolioGallery />
             <WhyChooseSection data={data.features} />
             <CountersSection data={data.stats} />
             <TestimonialsSection />

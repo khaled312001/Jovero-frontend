@@ -9,6 +9,7 @@ import { SectionReveal } from '@/components/ui/SectionReveal';
 import { staggerContainer, staggerItem, heroTextReveal } from '@/lib/animations';
 import { publicApi } from '@/lib/api';
 import { useDictionary } from '@/lib/contexts/DictionaryContext';
+import { getImageUrl } from '@/lib/utils';
 
 interface Project {
     id: string;
@@ -48,7 +49,7 @@ export default function PortfolioPage({ params: { lang } }: { params: { lang: st
                 // Map localized fields
                 const localizedData: Project[] = data.map((p: any) => ({
                     ...p,
-                    image: p.image || '/images/project-placeholder.jpg',
+                    image: getImageUrl(p.image),
                     technologies: p.technologies || [],
                     displayTitle: lang === 'en' && p.titleEn ? p.titleEn : p.title,
                     displayDescription: lang === 'en' && p.descriptionEn ? p.descriptionEn : p.description,

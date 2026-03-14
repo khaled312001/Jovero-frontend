@@ -33,6 +33,17 @@ export const LINKEDIN_URL = 'https://www.linkedin.com/company/jovero';
 export const COMPANY_ADDRESS = 'Cairo, Egypt';
 export const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL || '').replace(/\/$/, '');
 
+export function getImageUrl(path: string | null | undefined): string {
+    if (!path) return '/images/project-placeholder.jpg';
+    if (path.startsWith('http')) return path;
+
+    // Remove leading slash if present to avoid double slashes
+    const cleanPath = path.startsWith('/') ? path.substring(1) : path;
+    const baseUrl = API_BASE_URL.replace(/\/api$/, '');
+
+    return `${baseUrl}/${cleanPath}`;
+}
+
 export function formatBytes(bytes: number, decimals: number = 2): string {
     if (bytes === 0) return '0 Bytes';
     const k = 1024;

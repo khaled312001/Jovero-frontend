@@ -14,6 +14,7 @@ import { WHATSAPP_URL } from '@/lib/utils';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useDictionary } from '@/lib/contexts/DictionaryContext';
+import { getImageUrl } from '@/lib/utils';
 
 // Helper to render icon dynamically
 const DynamicIcon = ({ name, size = 48, className = "" }: { name: string; size?: number; className?: string }) => {
@@ -134,7 +135,7 @@ export default function ServiceDetailClient({ service, lang }: ServiceDetailClie
                                 {service.image ? (
                                     <div className="relative w-full h-full">
                                         <Image
-                                            src={service.image}
+                                            src={getImageUrl(service.image)}
                                             alt={title}
                                             fill
                                             className="object-cover rounded-[2rem]"

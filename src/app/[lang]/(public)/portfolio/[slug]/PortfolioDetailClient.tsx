@@ -9,6 +9,7 @@ import { staggerContainer, heroTextReveal } from '@/lib/animations';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useDictionary } from '@/lib/contexts/DictionaryContext';
+import { getImageUrl } from '@/lib/utils';
 
 interface PortfolioDetailClientProps {
     project: any;
@@ -146,7 +147,7 @@ export default function PortfolioDetailClient({ project, lang }: PortfolioDetail
                                         className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 group cursor-pointer shadow-lg shadow-black/20"
                                     >
                                         <Image
-                                            src={img.url}
+                                            src={getImageUrl(img.url)}
                                             alt={img.alt || `${title} - Exhibit ${index + 1}`}
                                             fill
                                             className="object-cover transition-transform duration-700 group-hover:scale-110"

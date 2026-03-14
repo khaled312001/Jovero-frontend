@@ -132,12 +132,6 @@ export function Footer({ dict, lang }: FooterProps) {
                         © {new Date().getFullYear()} JOVERO. {dict?.footer?.rights || ''}
                     </p>
                     <div className="flex items-center gap-6 text-sm text-brand-muted">
-                        <Link href={`/${lang}/privacy`} className="hover:text-brand-accent transition-colors">
-                            {dict?.footer?.privacyPolicy || 'Privacy'}
-                        </Link>
-                        <Link href={`/${lang}/terms`} className="hover:text-brand-accent transition-colors">
-                            {dict?.footer?.termsOfService || 'Terms'}
-                        </Link>
                     </div>
                 </div>
             </div>
