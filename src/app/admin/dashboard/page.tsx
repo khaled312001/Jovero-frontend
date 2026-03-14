@@ -37,11 +37,11 @@ export default function AdminDashboard() {
     }, []);
 
     const cards = stats ? [
-        { label: 'Total Leads', value: stats.totalLeads, icon: Mail, color: 'from-blue-500 to-cyan-500', change: `${stats.newLeads} new` },
+        { label: 'Total Leads', value: stats.totalLeads, icon: Mail, color: 'from-brand-secondary to-brand-accent', change: `${stats.newLeads} new` },
         { label: 'Projects', value: stats.totalProjects, icon: Briefcase, color: 'from-purple-500 to-pink-500', change: 'Portfolio items' },
         { label: 'Blog Posts', value: stats.totalPosts, icon: FileText, color: 'from-orange-500 to-red-500', change: 'Published articles' },
         { label: 'Testimonials', value: stats.totalTestimonials, icon: MessageSquare, color: 'from-green-500 to-emerald-500', change: 'Client reviews' },
-        { label: 'Subscribers', value: stats.totalSubscribers, icon: Users, color: 'from-cyan-500 to-blue-500', change: 'Newsletter' },
+        { label: 'Subscribers', value: stats.totalSubscribers, icon: Users, color: 'from-brand-accent to-brand-secondary', change: 'Newsletter' },
     ] : [];
 
     return (

@@ -65,7 +65,7 @@ function AboutHero() {
 
                     <motion.h1 variants={heroTextReveal} className="text-4xl sm:text-6xl lg:text-8xl font-display font-black text-white mb-8 leading-[1.1] tracking-tight">
                         {dict.about.hero.titleLine1} <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-white to-brand-secondary filter drop-shadow-[0_0_20px_rgba(0,212,255,0.3)]">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-white to-brand-secondary filter drop-shadow-[0_0_20px_rgba(139,92,246,0.3)]">
                             {dict.about.hero.titleHighlight}
                         </span>
                     </motion.h1>
@@ -252,10 +252,10 @@ function ValuesSection({ data }: { data?: any[] }) {
                 >
                     {displayValues.map((value, i) => (
                         <motion.div key={i} variants={staggerItem}>
-                            <div className={`glass-card p-8 group border-white/5 hover:border-brand-${value.color || 'cyan'}/30 h-full relative overflow-hidden`}>
-                                <div className={`absolute -top-10 -right-10 w-24 h-24 bg-brand-${value.color || 'cyan'}/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700`} />
+                            <div className={`glass-card p-8 group border-white/5 hover:border-brand-${value.color || 'accent'}/30 h-full relative overflow-hidden`}>
+                                <div className={`absolute -top-10 -right-10 w-24 h-24 bg-brand-${value.color || 'accent'}/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700`} />
 
-                                <div className={`p-4 rounded-2xl bg-brand-${value.color || 'cyan'}/10 text-brand-${value.color || 'cyan'} w-fit mb-6 border border-brand-${value.color || 'cyan'}/20 group-hover:shadow-neon-${value.color || 'cyan'} transition-all duration-500`}>
+                                <div className={`p-4 rounded-2xl bg-brand-${value.color || 'accent'}/10 text-brand-${value.color || 'accent'} w-fit mb-6 border border-brand-${value.color || 'accent'}/20 group-hover:shadow-neon-${value.color || 'accent'} transition-all duration-500`}>
                                     {value.icon}
                                 </div>
                                 <h3 className="text-xl font-display font-bold text-white mb-3 tracking-tight group-hover:text-brand-accent transition-colors">{value.title}</h3>
