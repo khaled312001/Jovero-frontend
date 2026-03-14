@@ -57,7 +57,7 @@ export function LoginForm({ onSuccess }: LoginFormProps) {
                     <div className="text-center mb-10">
                         <motion.div
                             whileHover={{ scale: 1.05, rotate: 5 }}
-                            className="w-20 h-20 rounded-2xl bg-gradient-to-br from-brand-accent to-brand-secondary flex items-center justify-center font-display font-bold text-white text-3xl mx-auto mb-6 shadow-neon-cyan relative group"
+                            className="w-20 h-20 rounded-2xl bg-gradient-to-br from-brand-accent to-brand-secondary flex items-center justify-center font-display font-bold text-white text-3xl mx-auto mb-6 shadow-neon-purple relative group"
                         >
                             <div className="absolute inset-0 bg-white/20 blur-xl group-hover:blur-2xl transition-all rounded-full opacity-50" />
                             <span className="relative z-10">B</span>

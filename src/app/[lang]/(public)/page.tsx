@@ -80,7 +80,7 @@ function HeroSection({ data }: { data?: any }) {
                         opacity: [0.4, 0.8, 0.4]
                     }}
                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute top-[25%] left-[10%] p-5 glass-card neon-glow-cyan border-brand-accent/30"
+                    className="absolute top-[25%] left-[10%] p-5 glass-card neon-glow-blue border-brand-accent/30"
                     style={{ willChange: 'transform' }}
                 >
                     <Terminal className="text-brand-accent" size={38} />
@@ -123,7 +123,7 @@ function HeroSection({ data }: { data?: any }) {
                 >
                     {/* Badge */}
                     <motion.div variants={heroTextReveal} className="mb-10">
-                        <span className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-brand-glass border border-brand-accent/30 text-brand-accent text-xs font-mono tracking-[0.2em] shadow-neon-cyan backdrop-blur-md">
+                        <span className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-brand-glass border border-brand-accent/30 text-brand-accent text-xs font-mono tracking-[0.2em] shadow-neon-purple backdrop-blur-md">
                             <Shield size={16} className="animate-pulse" />
                             <span className="uppercase">{badgeText}</span>
                         </span>
@@ -135,7 +135,7 @@ function HeroSection({ data }: { data?: any }) {
                         className="font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white mb-8 leading-[1.1] tracking-tight drop-shadow-2xl px-4"
                     >
                         <span className="block mb-4 sm:mb-2 opacity-90">{titleLine1}</span>
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-white to-brand-secondary filter drop-shadow-[0_0_40px_rgba(0,212,255,0.35)]">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-white to-brand-secondary filter drop-shadow-[0_0_40px_rgba(139,92,246,0.35)]">
                             {titleLine2}
                         </span>
                     </motion.h1>
@@ -151,7 +151,7 @@ function HeroSection({ data }: { data?: any }) {
                     {/* CTAs */}
                     <motion.div variants={heroTextReveal} className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full max-w-xl px-4">
                         <Link href="/contact" className="w-full sm:w-1/2">
-                            <Button size="xl" variant="primary" icon={<ArrowRight size={22} />} className="w-full h-16 text-lg font-bold rounded-xl group shadow-neon-cyan transition-all duration-500 hover:scale-105 active:scale-95">
+                            <Button size="xl" variant="primary" icon={<ArrowRight size={22} />} className="w-full h-16 text-lg font-bold rounded-xl group shadow-neon-purple transition-all duration-500 hover:scale-105 active:scale-95">
                                 {primaryBtnText}
                             </Button>
                         </Link>
@@ -174,7 +174,7 @@ function HeroSection({ data }: { data?: any }) {
                             { icon: <Shield size={20} />, text: 'Swiss Reliability', sub: 'Quality' },
                         ].map((item, i) => (
                             <motion.div key={i} variants={staggerItem} className="flex flex-col items-center gap-3 group">
-                                <span className="p-3.5 rounded-2xl bg-brand-surface border border-white/5 text-brand-accent shadow-neon-cyan group-hover:scale-110 transition-transform duration-300">
+                                <span className="p-3.5 rounded-2xl bg-brand-surface border border-white/5 text-brand-accent shadow-neon-purple group-hover:scale-110 transition-transform duration-300">
                                     {item.icon}
                                 </span>
                                 <div className="text-center">
@@ -229,7 +229,7 @@ function ServicesSection() {
                 title: lang === 'en' && s.titleEn ? s.titleEn : s.title,
                 description: lang === 'en' && s.descriptionEn ? s.descriptionEn : s.description,
                 icon: <ServiceIcon name={s.icon || 'Code2'} size={32} />,
-                color: cat.id % 2 === 0 ? 'cyan' : 'purple', // Alternate colors for variety
+                color: cat.id % 2 === 0 ? 'blue' : 'purple', // Alternate colors for variety
                 href: `/services/${s.slug}`,
                 slug: s.slug
             })))
@@ -266,7 +266,7 @@ function ServicesSection() {
                         <h2 className="text-4xl md:text-6xl font-display font-black text-white mb-6 text-glow tracking-tight">
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-secondary">{dict.home.services.title}</span>
                         </h2>
-                        <div className="w-24 h-1 bg-brand-accent mx-auto mb-8 rounded-full shadow-neon-cyan" />
+                        <div className="w-24 h-1 bg-brand-accent mx-auto mb-8 rounded-full shadow-neon-purple" />
                         <p className="text-brand-muted max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed">
                             {dict.home.services.subtitle}
                         </p>
@@ -303,7 +303,7 @@ function PosSection() {
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-black text-white mb-6 leading-[1.1] tracking-tight">
                             {dict.home.pos.titleLine1} <span className="text-transparent bg-clip-text bg-gradient-to-l from-brand-accent to-brand-secondary">{dict.home.pos.titleHighlight}</span> {dict.home.pos.titleLine2}
                         </h2>
-                        <div className="w-24 h-1 bg-brand-accent mb-8 rounded-full shadow-neon-cyan rtl:ml-auto ltr:mr-auto" />
+                        <div className="w-24 h-1 bg-brand-accent mb-8 rounded-full shadow-neon-purple rtl:ml-auto ltr:mr-auto" />
                         <p className="text-brand-muted text-lg leading-relaxed mb-8 font-light opacity-90">
                             {dict.home.pos.subtitle}
                         </p>
@@ -328,7 +328,7 @@ function PosSection() {
 
                         <div className="flex ltr:justify-start rtl:justify-end">
                             <Link href="/pos">
-                                <Button variant="primary" size="lg" className="px-8 h-14 rounded-xl font-bold font-display tracking-widest gap-3 flex shadow-neon-cyan transition-all hover:scale-105 active:scale-95 text-lg">
+                                <Button variant="primary" size="lg" className="px-8 h-14 rounded-xl font-bold font-display tracking-widest gap-3 flex shadow-neon-purple transition-all hover:scale-105 active:scale-95 text-lg">
                                     <ArrowRight size={20} className="rtl:rotate-180" /> {dict.home.pos.cta}
                                 </Button>
                             </Link>
@@ -369,8 +369,8 @@ function PosSection() {
                                             <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-brand-accent/20 to-transparent" />
                                             {/* Abstract wave representing analytics */}
                                             <svg className="absolute bottom-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100">
-                                                <path d="M0,100 L0,50 Q25,20 50,60 T100,30 L100,100 Z" fill="rgba(0, 212, 255, 0.15)" />
-                                                <path d="M0,50 Q25,20 50,60 T100,30" fill="none" stroke="rgba(0, 212, 255, 0.6)" strokeWidth="2" />
+                                                <path d="M0,100 L0,50 Q25,20 50,60 T100,30 L100,100 Z" fill="rgba(139, 92, 246, 0.15)" />
+                                                <path d="M0,50 Q25,20 50,60 T100,30" fill="none" stroke="rgba(139, 92, 246, 0.6)" strokeWidth="2" />
                                             </svg>
                                         </div>
                                         <div className="w-1/3 flex flex-col gap-3">
@@ -390,7 +390,7 @@ function PosSection() {
                         <motion.div
                             animate={{ y: [0, -15, 0] }}
                             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute -bottom-6 -left-6 glass-card p-4 rounded-full border-brand-accent/30 shadow-neon-cyan bg-brand-primary/80 backdrop-blur-md z-20"
+                            className="absolute -bottom-6 -left-6 glass-card p-4 rounded-full border-brand-accent/30 shadow-neon-purple bg-brand-primary/80 backdrop-blur-md z-20"
                         >
                             <Smartphone size={32} className="text-brand-accent" />
                         </motion.div>
@@ -472,7 +472,7 @@ function WhyChooseSection({ data }: { data?: any }) {
                         {reasons.map((reason, i) => (
                             <SectionReveal key={i} direction="right" delay={i * 0.1}>
                                 <div className="glass-card p-8 group hover:bg-white/[0.03] transition-all duration-500 border-white/5 h-full flex flex-col items-start">
-                                    <div className="p-4 rounded-2xl bg-brand-surface border border-white/10 text-brand-accent w-fit mb-6 group-hover:shadow-neon-cyan transition-all duration-500 group-hover:scale-110">
+                                    <div className="p-4 rounded-2xl bg-brand-surface border border-white/10 text-brand-accent w-fit mb-6 group-hover:shadow-neon-purple transition-all duration-500 group-hover:scale-110">
                                         {reason.icon}
                                     </div>
                                     <h3 className="text-xl font-display font-bold text-white mb-3 group-hover:text-brand-accent transition-colors">
@@ -547,7 +547,7 @@ function TestimonialsSection() {
                         <h2 className="text-4xl md:text-6xl font-display font-black text-white mb-6 text-glow tracking-tight">
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-secondary">{dict.home.testimonials.title}</span>
                         </h2>
-                        <div className="w-24 h-1 bg-brand-accent mx-auto mb-8 rounded-full shadow-neon-cyan" />
+                        <div className="w-24 h-1 bg-brand-accent mx-auto mb-8 rounded-full shadow-neon-purple" />
                         <p className="text-brand-muted max-w-2xl mx-auto text-lg font-light opacity-80 italic">
                             {dict.home.testimonials.subtitle}
                         </p>
@@ -633,7 +633,7 @@ function TechSection() {
                         <h2 className="text-4xl md:text-7xl font-display font-black text-white mb-6 text-glow tracking-tighter">
                             {dict.home.tech.titleLine1} <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-white to-brand-secondary italic">{dict.home.tech.titleHighlight}</span>
                         </h2>
-                        <div className="w-32 h-1 bg-brand-accent mx-auto mb-10 rounded-full shadow-neon-cyan" />
+                        <div className="w-32 h-1 bg-brand-accent mx-auto mb-10 rounded-full shadow-neon-purple" />
                         <p className="text-brand-muted max-w-2xl mx-auto text-lg font-light opacity-80">
                             {dict.home.tech.subtitle}
                         </p>
@@ -711,7 +711,7 @@ function ContactFormSection({ data }: { data?: any }) {
                         <h2 className="text-4xl md:text-6xl font-display font-black text-white mb-6 text-glow tracking-tight uppercase italic">
                             {title}
                         </h2>
-                        <div className="w-24 h-1 bg-brand-accent mx-auto mb-8 rounded-full shadow-neon-cyan" />
+                        <div className="w-24 h-1 bg-brand-accent mx-auto mb-8 rounded-full shadow-neon-purple" />
                         <p className="text-brand-muted max-w-2xl mx-auto text-lg font-light opacity-80">
                             {description}
                         </p>
@@ -747,7 +747,7 @@ function ContactFormSection({ data }: { data?: any }) {
 
                             <Textarea label={dict.home.contact.form.message} placeholder="Define your strategic goals, key features, and estimated timeline..." rows={6} className="bg-white/[0.02] border-white/5 focus:border-brand-accent/30 transition-all" />
 
-                            <Button type="submit" variant="primary" size="lg" fullWidth icon={<ArrowRight size={24} />} className="h-16 text-lg font-bold rounded-xl shadow-neon-cyan transition-all duration-500 hover:scale-[1.02] active:scale-95">
+                            <Button type="submit" variant="primary" size="lg" fullWidth icon={<ArrowRight size={24} />} className="h-16 text-lg font-bold rounded-xl shadow-neon-purple transition-all duration-500 hover:scale-[1.02] active:scale-95">
                                 {dict.home.contact.form.submit}
                             </Button>
                         </form>
@@ -777,16 +777,16 @@ function ContactFormSection({ data }: { data?: any }) {
                             {/* Contact Details Grid */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 {[
-                                    { icon: <Globe size={20} />, title: 'Location', content: COMPANY_ADDRESS, color: 'cyan' },
+                                    { icon: <Globe size={20} />, title: 'Location', content: COMPANY_ADDRESS, color: 'blue' },
                                     { icon: <Shield size={20} />, title: 'Swiss License', content: COMPANY_LICENSE, color: 'purple' },
-                                    { icon: <Smartphone size={20} />, title: 'WhatsApp', content: '+41 77 941 21 26', color: 'cyan' },
+                                    { icon: <Smartphone size={20} />, title: 'WhatsApp', content: '+41 77 941 21 26', color: 'blue' },
                                     { icon: <Mail size={20} />, title: 'Email Us', content: 'info@JOVERO.tech', color: 'purple' },
                                 ].map((item, i) => (
                                     <div key={i} className="glass-card p-6 border-white/5 hover:border-brand-accent/20 transition-all group/info hover:bg-white/[0.01]">
                                         <div className="flex items-center gap-4 mb-4">
                                             <div className={cn(
                                                 "p-3 rounded-xl transition-all duration-500 group-hover/info:scale-110",
-                                                item.color === 'cyan' ? "bg-brand-accent/10 text-brand-accent shadow-neon-cyan/20" : "bg-brand-secondary/10 text-brand-secondary shadow-neon-purple/20"
+                                                item.color === 'blue' ? "bg-brand-accent/10 text-brand-accent shadow-neon-blue/20" : "bg-brand-secondary/10 text-brand-secondary shadow-neon-purple/20"
                                             )}>
                                                 {item.icon}
                                             </div>

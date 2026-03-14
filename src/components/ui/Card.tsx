@@ -29,7 +29,7 @@ export function Card({
             whileHover={hover ? 'hover' : undefined}
             className={cn(
                 'glass-card p-6 relative overflow-hidden group',
-                glow && 'hover:shadow-neon-cyan',
+                glow && 'hover:shadow-neon-purple',
                 gradient && 'border-gradient',
                 className
             )}
@@ -51,7 +51,7 @@ interface ServiceCardProps {
     href?: string;
     onClick?: () => void;
     className?: string;
-    color?: 'cyan' | 'purple';
+    color?: 'blue' | 'purple';
 }
 
 export function ServiceCard({
@@ -61,14 +61,14 @@ export function ServiceCard({
     href,
     onClick,
     className,
-    color = 'cyan'
+    color = 'purple'
 }: ServiceCardProps) {
     const content = (
         <div onClick={onClick} className="flex flex-col items-start gap-6 h-full">
             {/* Icon Container */}
             <div className={cn(
                 'p-4 rounded-2xl bg-brand-surface border border-white/10 group-hover:scale-110 transition-all duration-500 relative',
-                color === 'cyan' ? 'shadow-neon-cyan text-brand-accent' : 'shadow-neon-purple text-brand-secondary'
+                color === 'blue' ? 'shadow-neon-blue text-brand-secondary' : 'shadow-neon-purple text-brand-accent'
             )}>
                 <div className="relative z-10">{icon}</div>
                 <div className="absolute inset-0 rounded-2xl bg-current opacity-10 blur-xl group-hover:opacity-20 transition-opacity" />
@@ -89,7 +89,7 @@ export function ServiceCard({
                 </span>
                 <div className={cn(
                     "w-10 h-10 rounded-xl bg-brand-accent/5 border border-brand-accent/10 flex items-center justify-center transition-all duration-500 ml-auto",
-                    "group-hover:bg-brand-accent group-hover:text-brand-primary group-hover:shadow-neon-cyan group-hover:scale-110"
+                    "group-hover:bg-brand-accent group-hover:text-brand-primary group-hover:shadow-neon-purple group-hover:scale-110"
                 )}>
                     <ArrowRight size={18} />
                 </div>

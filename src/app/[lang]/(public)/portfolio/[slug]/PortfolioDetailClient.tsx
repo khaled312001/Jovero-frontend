@@ -105,7 +105,7 @@ export default function PortfolioDetailClient({ project, lang }: PortfolioDetail
                                         <Button
                                             variant="primary"
                                             size="lg"
-                                            className="shadow-neon-cyan"
+                                            className="shadow-neon-purple"
                                             icon={<ExternalLink size={18} />}
                                         >
                                             {(dict.portfolio?.grid as any)?.visitProject || 'Visit Live Project'}

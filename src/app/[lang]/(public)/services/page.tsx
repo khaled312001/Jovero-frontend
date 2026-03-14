@@ -56,7 +56,7 @@ function ServicesHero() {
                     className="max-w-5xl mx-auto text-center"
                 >
                     <motion.div variants={heroTextReveal} className="mb-8">
-                        <span className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-brand-glass border border-brand-accent/30 text-brand-accent text-sm font-mono tracking-[0.2em] shadow-neon-cyan backdrop-blur-md">
+                        <span className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-brand-glass border border-brand-accent/30 text-brand-accent text-sm font-mono tracking-[0.2em] shadow-neon-purple backdrop-blur-md">
                             <LucideIcons.Shield size={18} className="animate-pulse" />
                             <span className="uppercase">{dict.services.hero.badge}</span>
                         </span>
@@ -80,7 +80,7 @@ function ServicesHero() {
                 <motion.div
                     animate={{ y: [0, -30, 0], rotate: [0, 10, -10, 0], opacity: [0.2, 0.5, 0.2] }}
                     transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute top-[20%] left-[10%] p-5 glass-card border-brand-accent/20 shadow-neon-cyan"
+                    className="absolute top-[20%] left-[10%] p-5 glass-card border-brand-accent/20 shadow-neon-purple"
                 >
                     <LucideIcons.Code2 className="text-brand-accent" size={32} />
                 </motion.div>
@@ -123,7 +123,7 @@ function ServiceSection({ service, index }: { service: ServiceDetail; index: num
                             </p>
                             <div className="flex flex-wrap gap-4">
                                 <Link href={`/services/${service.id}`}>
-                                    <Button variant="primary" size="lg" icon={<ArrowRight size={20} className="rtl:rotate-180" />} className="shadow-neon-cyan">
+                                    <Button variant="primary" size="lg" icon={<ArrowRight size={20} className="rtl:rotate-180" />} className="shadow-neon-purple">
                                         {dict.services.serviceSection.explorationHub}
                                     </Button>
                                 </Link>
@@ -157,7 +157,7 @@ function ServiceSection({ service, index }: { service: ServiceDetail; index: num
                                             transition={{ delay: i * 0.05 }}
                                             className="flex items-center gap-4 group/item"
                                         >
-                                            <div className="w-2 h-2 rounded-full bg-brand-accent shadow-neon-cyan group-hover/item:scale-150 transition-transform flex-shrink-0" />
+                                            <div className="w-2 h-2 rounded-full bg-brand-accent shadow-neon-purple group-hover/item:scale-150 transition-transform flex-shrink-0" />
                                             <span className="text-brand-muted text-sm tracking-wide font-light group-hover/item:text-white transition-colors">
                                                 {feature}
                                             </span>
@@ -207,7 +207,7 @@ function RoadmapSection() {
                                 <div className="absolute -top-6 -left-6 text-6xl font-display font-black text-white/5 group-hover:text-brand-accent/10 transition-colors">
                                     0{i + 1}
                                 </div>
-                                <div className="p-4 rounded-2xl bg-brand-accent/10 text-brand-accent w-fit mb-6 border border-brand-accent/20 group-hover:shadow-neon-cyan transition-all duration-500">
+                                <div className="p-4 rounded-2xl bg-brand-accent/10 text-brand-accent w-fit mb-6 border border-brand-accent/20 group-hover:shadow-neon-purple transition-all duration-500">
                                     {step.icon}
                                 </div>
                                 <h3 className="text-xl font-display font-black text-white mb-3 tracking-tight">{step.title}</h3>
@@ -274,7 +274,7 @@ export default function ServicesPage() {
             <section className="section-padding relative overflow-hidden">
                 <div className="absolute inset-0 bg-accent-gradient opacity-10" />
                 <div className="section-container relative z-10">
-                    <div className="glass-card p-12 md:p-20 text-center max-w-5xl mx-auto border-brand-accent/20 shadow-neon-cyan overflow-hidden relative">
+                    <div className="glass-card p-12 md:p-20 text-center max-w-5xl mx-auto border-brand-accent/20 shadow-neon-purple overflow-hidden relative">
                         <div className="absolute top-0 right-0 w-96 h-96 bg-brand-accent/10 rounded-full blur-[140px] -mr-48 -mt-48" />
                         <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-secondary/10 rounded-full blur-[140px] -ml-48 -mb-48" />
 
@@ -289,7 +289,7 @@ export default function ServicesPage() {
                             </p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                                 <Link href="/contact" className="w-full sm:w-auto">
-                                    <Button size="xl" variant="primary" icon={<ArrowRight size={24} className="rtl:rotate-180" />} className="w-full sm:min-w-[240px] shadow-neon-cyan flex-row-reverse rtl:flex-row">
+                                    <Button size="xl" variant="primary" icon={<ArrowRight size={24} className="rtl:rotate-180" />} className="w-full sm:min-w-[240px] shadow-neon-purple flex-row-reverse rtl:flex-row">
                                         {dict.services.cta.launchSolution}
                                     </Button>
                                 </Link>

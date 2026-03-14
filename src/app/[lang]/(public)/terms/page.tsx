@@ -45,7 +45,7 @@ export default function TermsPage() {
                         className="max-w-5xl mx-auto text-center"
                     >
                         <motion.div variants={heroTextReveal} className="mb-8">
-                            <span className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-brand-glass border border-brand-accent/30 text-brand-accent text-sm font-mono tracking-[0.2em] shadow-neon-cyan uppercase">
+                            <span className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-brand-glass border border-brand-accent/30 text-brand-accent text-sm font-mono tracking-[0.2em] shadow-neon-purple uppercase">
                                 <FileText size={18} />
                                 Governance Framework
                             </span>
@@ -93,9 +93,9 @@ export default function TermsPage() {
 
                         <SectionReveal>
                             <div className="glass-card p-12 border-brand-accent/20 bg-brand-accent/5 relative group">
-                                <div className="absolute top-0 left-0 w-1 h-full bg-brand-accent shadow-neon-cyan" />
+                                <div className="absolute top-0 left-0 w-1 h-full bg-brand-accent shadow-neon-purple" />
                                 <div className="flex flex-col md:flex-row items-center gap-10">
-                                    <div className="p-8 rounded-2xl bg-brand-accent/10 text-brand-accent border border-brand-accent/20 group-hover:shadow-neon-cyan transition-all duration-500">
+                                    <div className="p-8 rounded-2xl bg-brand-accent/10 text-brand-accent border border-brand-accent/20 group-hover:shadow-neon-purple transition-all duration-500">
                                         <Gavel size={56} />
                                     </div>
                                     <div>

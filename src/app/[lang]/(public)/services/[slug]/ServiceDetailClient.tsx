@@ -91,7 +91,7 @@ export default function ServiceDetailClient({ service, lang }: ServiceDetailClie
                             </motion.div>
 
                             <motion.div variants={heroTextReveal} className="flex flex-col lg:flex-row lg:items-center gap-6 mb-8">
-                                <div className="mx-auto lg:mx-0 p-5 rounded-2xl bg-brand-surface border border-brand-accent/30 text-brand-accent shadow-neon-cyan">
+                                <div className="mx-auto lg:mx-0 p-5 rounded-2xl bg-brand-surface border border-brand-accent/30 text-brand-accent shadow-neon-purple">
                                     <DynamicIcon name={service.icon} size={48} />
                                 </div>
                                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-tight">
@@ -160,7 +160,7 @@ export default function ServiceDetailClient({ service, lang }: ServiceDetailClie
                             <motion.div
                                 animate={{ y: [0, -20, 0] }}
                                 transition={{ duration: 4, repeat: Infinity }}
-                                className="absolute -top-10 -right-10 glass-card p-6 border-brand-accent/30 shadow-neon-cyan z-20"
+                                className="absolute -top-10 -right-10 glass-card p-6 border-brand-accent/30 shadow-neon-purple z-20"
                             >
                                 <p className="text-brand-accent font-mono text-xs uppercase mb-1">Status</p>
                                 <p className="text-white font-bold">READY_TO_DEPLOY</p>

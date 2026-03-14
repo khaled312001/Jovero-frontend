@@ -252,7 +252,7 @@ export default function BlogDetailClient({ post }: BlogDetailClientProps) {
                         </p>
                         <div className="flex flex-wrap gap-4">
                             <Link href="/contact">
-                                <Button variant="primary" size="lg" className="shadow-neon-cyan">
+                                <Button variant="primary" size="lg" className="shadow-neon-purple">
                                     {blogDict.detail.contactTeam}
                                 </Button>
                             </Link>

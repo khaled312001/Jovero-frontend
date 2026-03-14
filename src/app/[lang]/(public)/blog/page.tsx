@@ -122,7 +122,7 @@ export default function BlogPage() {
                         className="max-w-4xl mx-auto text-center lg:text-left lg:mx-0"
                     >
                         <motion.div variants={heroTextReveal} className="mb-8">
-                            <span className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-brand-glass border border-brand-accent/30 text-brand-accent text-sm font-mono tracking-wider shadow-neon-cyan uppercase">
+                            <span className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-brand-glass border border-brand-accent/30 text-brand-accent text-sm font-mono tracking-wider shadow-neon-purple uppercase">
                                 <Search size={16} />
                                 {blogDict.hero.badge}
                             </span>
@@ -203,7 +203,7 @@ export default function BlogPage() {
 
                                                     <div className="flex flex-wrap items-center gap-6 mb-8 relative z-10 font-mono tracking-tighter">
                                                         {post.category && (
-                                                            <span className="px-5 py-2 text-[10px] font-bold uppercase bg-brand-glass border border-brand-accent/30 text-brand-accent rounded-full shadow-neon-cyan">
+                                                            <span className="px-5 py-2 text-[10px] font-bold uppercase bg-brand-glass border border-brand-accent/30 text-brand-accent rounded-full shadow-neon-purple">
                                                                 {post.category.name}
                                                             </span>
                                                         )}
@@ -240,7 +240,7 @@ export default function BlogPage() {
                                                             ))}
                                                         </div>
                                                         <Link href={`/blog/${post.slug}`}>
-                                                            <Button variant="outline" size="lg" className="border-white/10 hover:border-brand-accent/50 shadow-sm hover:shadow-neon-cyan px-8 rtl:flex-row flex-row-reverse gap-2" icon={<ArrowRight size={18} className="rtl:rotate-180" />}>
+                                                            <Button variant="outline" size="lg" className="border-white/10 hover:border-brand-accent/50 shadow-sm hover:shadow-neon-purple px-8 rtl:flex-row flex-row-reverse gap-2" icon={<ArrowRight size={18} className="rtl:rotate-180" />}>
                                                                 {blogDict.list.readArticle}
                                                             </Button>
                                                         </Link>
@@ -267,7 +267,7 @@ export default function BlogPage() {
                         <aside className="space-y-10">
                             {/* Search Desktop */}
                             <div className="hidden lg:block glass-card p-10 bg-brand-dark/40 border-white/5 relative group overflow-hidden">
-                                <div className="absolute top-0 left-0 w-1 h-full bg-brand-accent/20 group-focus-within:bg-brand-accent transition-colors shadow-neon-cyan" />
+                                <div className="absolute top-0 left-0 w-1 h-full bg-brand-accent/20 group-focus-within:bg-brand-accent transition-colors shadow-neon-purple" />
                                 <h3 className="text-xl font-display font-black text-white mb-6 uppercase tracking-wider">{blogDict.list.searchHeading}</h3>
                                 <div className="relative">
                                     <Search className="absolute left-4 rtl:right-4 rtl:left-auto top-1/2 -translate-y-1/2 text-brand-muted/40" size={18} />
@@ -290,7 +290,7 @@ export default function BlogPage() {
                                             <button
                                                 onClick={() => setActiveCategory(cat)}
                                                 className={`w-full flex items-center justify-between px-5 py-3.5 rounded-xl text-sm font-mono tracking-tighter transition-all duration-500 overflow-hidden group/cat relative ${activeCategory === cat
-                                                    ? 'text-brand-primary font-bold shadow-neon-cyan'
+                                                    ? 'text-brand-primary font-bold shadow-neon-purple'
                                                     : 'text-brand-muted/60 hover:text-white bg-white/5 hover:bg-white/10'
                                                     }`}
                                             >
@@ -318,7 +318,7 @@ export default function BlogPage() {
                                         placeholder={blogDict.list.newsletterPlaceholder}
                                         className="w-full px-5 py-4 bg-brand-primary/50 border border-white/5 rounded-2xl text-sm text-brand-text placeholder:text-brand-muted/20 focus:outline-none focus:border-brand-accent/40 transition-all font-mono"
                                     />
-                                    <Button variant="primary" size="xl" className="w-full shadow-neon-cyan font-display tracking-widest text-xs uppercase rtl:flex-row flex-row-reverse gap-2" icon={<ArrowRight size={16} className="rtl:rotate-180" />}>
+                                    <Button variant="primary" size="xl" className="w-full shadow-neon-purple font-display tracking-widest text-xs uppercase rtl:flex-row flex-row-reverse gap-2" icon={<ArrowRight size={16} className="rtl:rotate-180" />}>
                                         {blogDict.list.subscribeBtn}
                                     </Button>
                                 </form>

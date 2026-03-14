@@ -136,7 +136,7 @@ export default function PortfolioPage({ params: { lang } }: { params: { lang: st
                         className="max-w-5xl mx-auto text-center"
                     >
                         <motion.div variants={heroTextReveal} className="mb-8">
-                            <span className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-brand-glass border border-brand-accent/30 text-brand-accent text-sm font-mono tracking-[0.2em] shadow-neon-cyan">
+                            <span className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-brand-glass border border-brand-accent/30 text-brand-accent text-sm font-mono tracking-[0.2em] shadow-neon-purple">
                                 <ArrowUpRight size={18} className="animate-bounce" />
                                 <span className="uppercase">{dict.portfolio.hero.badge}</span>
                             </span>
@@ -179,7 +179,7 @@ export default function PortfolioPage({ params: { lang } }: { params: { lang: st
                                 {activeCategory === dict.portfolio.grid.allCategory && (
                                     <motion.div
                                         layoutId="activeFilter"
-                                        className="absolute inset-0 bg-brand-accent shadow-neon-cyan"
+                                        className="absolute inset-0 bg-brand-accent shadow-neon-purple"
                                         transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                                     />
                                 )}
@@ -197,7 +197,7 @@ export default function PortfolioPage({ params: { lang } }: { params: { lang: st
                                     {activeCategory === cat && (
                                         <motion.div
                                             layoutId="activeFilter"
-                                            className="absolute inset-0 bg-brand-accent shadow-neon-cyan"
+                                            className="absolute inset-0 bg-brand-accent shadow-neon-purple"
                                             transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                                         />
                                     )}
@@ -225,7 +225,7 @@ export default function PortfolioPage({ params: { lang } }: { params: { lang: st
                                 {activeType === 'all' && (
                                     <motion.div
                                         layoutId="activeTypeFilter"
-                                        className="absolute inset-0 bg-brand-secondary shadow-neon-cyan"
+                                        className="absolute inset-0 bg-brand-secondary shadow-neon-purple"
                                         transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                                     />
                                 )}
@@ -243,7 +243,7 @@ export default function PortfolioPage({ params: { lang } }: { params: { lang: st
                                     {activeType === type && (
                                         <motion.div
                                             layoutId="activeTypeFilter"
-                                            className="absolute inset-0 bg-brand-secondary shadow-neon-cyan"
+                                            className="absolute inset-0 bg-brand-secondary shadow-neon-purple"
                                             transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                                         />
                                     )}
@@ -280,7 +280,7 @@ export default function PortfolioPage({ params: { lang } }: { params: { lang: st
                                         <div className="relative h-full glass-card overflow-hidden hover:border-brand-accent/50 transition-all duration-500 rounded-2xl flex flex-col group/card">
                                             {/* Category Badge Header */}
                                             <div className="px-8 pt-8 pb-4 border-b border-white/5 flex items-center justify-between">
-                                                <span className="flex items-center gap-2 px-4 py-1.5 text-xs font-semibold tracking-wider uppercase bg-brand-accent text-brand-primary rounded-full shadow-neon-cyan/50 transition-transform duration-300 group-hover/card:scale-105">
+                                                <span className="flex items-center gap-2 px-4 py-1.5 text-xs font-semibold tracking-wider uppercase bg-brand-accent text-brand-primary rounded-full shadow-neon-purple/50 transition-transform duration-300 group-hover/card:scale-105">
                                                     <span className="text-base leading-none">{getFlag(project.displayCategory || project.category)}</span>
                                                     <span>{getCategoryName(project.displayCategory || project.category)}</span>
                                                 </span>
@@ -311,7 +311,7 @@ export default function PortfolioPage({ params: { lang } }: { params: { lang: st
                                                     <Button
                                                         variant="outline"
                                                         size="lg"
-                                                        className="w-full group-hover/card:bg-brand-accent group-hover/card:text-brand-primary group-hover/card:border-brand-accent transition-all duration-300 shadow-sm hover:shadow-neon-cyan"
+                                                        className="w-full group-hover/card:bg-brand-accent group-hover/card:text-brand-primary group-hover/card:border-brand-accent transition-all duration-300 shadow-sm hover:shadow-neon-purple"
                                                         icon={<ArrowUpRight size={20} className="rtl:rotate-270" />}
                                                     >
                                                         {dict.portfolio.grid.viewCaseStudy}

@@ -135,7 +135,7 @@ export function AdminLayoutClient({ children }: { children: React.ReactNode }) {
                                 {isActive && (
                                     <motion.div
                                         layoutId="admin-nav-active"
-                                        className="ml-auto w-1.5 h-1.5 rounded-full bg-brand-accent shadow-neon-cyan"
+                                        className="ml-auto w-1.5 h-1.5 rounded-full bg-brand-accent shadow-neon-purple"
                                     />
                                 )}
                             </Link>
@@ -197,7 +197,7 @@ export function AdminLayoutClient({ children }: { children: React.ReactNode }) {
                         <Link
                             href="/"
                             target="_blank"
-                            className="px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest text-brand-accent bg-brand-accent/5 border border-brand-accent/20 hover:bg-brand-accent hover:text-brand-primary transition-all duration-300 shadow-neon-cyan/10"
+                            className="px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest text-brand-accent bg-brand-accent/5 border border-brand-accent/20 hover:bg-brand-accent hover:text-brand-primary transition-all duration-300 shadow-neon-purple/10"
                         >
                             View Site
                         </Link>

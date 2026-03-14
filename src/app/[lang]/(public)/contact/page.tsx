@@ -74,7 +74,7 @@ export default function ContactPage() {
                         className="max-w-5xl mx-auto text-center"
                     >
                         <motion.div variants={heroTextReveal} className="mb-8">
-                            <span className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-brand-glass border border-brand-accent/30 text-brand-accent text-sm font-mono tracking-[0.2em] shadow-neon-cyan">
+                            <span className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-brand-glass border border-brand-accent/30 text-brand-accent text-sm font-mono tracking-[0.2em] shadow-neon-purple">
                                 <Mail size={18} className="animate-pulse" />
                                 <span className="uppercase">{contactDict.hero.badge}</span>
                             </span>
@@ -128,7 +128,7 @@ export default function ContactPage() {
                                                 className="space-y-10"
                                             >
                                                 <div className="relative">
-                                                    <div className="absolute rtl:-right-10 ltr:-left-10 top-1/2 -translate-y-1/2 w-1 h-12 bg-brand-accent shadow-neon-cyan" />
+                                                    <div className="absolute rtl:-right-10 ltr:-left-10 top-1/2 -translate-y-1/2 w-1 h-12 bg-brand-accent shadow-neon-purple" />
                                                     <h2 className="text-3xl md:text-4xl font-display font-black text-white mb-3 tracking-tight">{contactDict.form.title}</h2>
                                                     <p className="text-brand-muted font-light leading-relaxed">{contactDict.form.subtitle}</p>
                                                 </div>
@@ -165,7 +165,7 @@ export default function ContactPage() {
                                                 />
                                                 <Textarea name="message" label={contactDict.form.fields.message.label} placeholder={contactDict.form.fields.message.placeholder} rows={6} required disabled={status === 'submitting'} className="bg-brand-dark/20 border-white/5 focus:border-brand-accent/50" />
 
-                                                <Button type="submit" variant="primary" size="xl" className="w-full py-5 shadow-neon-cyan text-lg flex-row-reverse rtl:flex-row gap-2" icon={status === 'submitting' ? <div className="animate-spin rounded-full h-6 w-6 border-2 border-white/30 border-t-white" /> : <ArrowRight size={24} className="rtl:rotate-180" />} disabled={status === 'submitting'}>
+                                                <Button type="submit" variant="primary" size="xl" className="w-full py-5 shadow-neon-purple text-lg flex-row-reverse rtl:flex-row gap-2" icon={status === 'submitting' ? <div className="animate-spin rounded-full h-6 w-6 border-2 border-white/30 border-t-white" /> : <ArrowRight size={24} className="rtl:rotate-180" />} disabled={status === 'submitting'}>
                                                     {status === 'submitting' ? contactDict.form.submitting : contactDict.form.submit}
                                                 </Button>
                                             </motion.form>
@@ -179,7 +179,7 @@ export default function ContactPage() {
                         <div className="space-y-6">
                             <SectionReveal direction="right">
                                 <div className="glass-card p-8 hover-glow bg-brand-dark/40 border-white/5 relative group hover:border-brand-accent/30 transition-all duration-500">
-                                    <div className="p-4 rounded-xl bg-brand-accent/10 border border-brand-accent/20 text-brand-accent w-fit mb-6 group-hover:shadow-neon-cyan transition-all duration-500">
+                                    <div className="p-4 rounded-xl bg-brand-accent/10 border border-brand-accent/20 text-brand-accent w-fit mb-6 group-hover:shadow-neon-purple transition-all duration-500">
                                         <MapPin size={24} />
                                     </div>
                                     <h3 className="text-xl font-display font-black text-white mb-3">{contactDict.info.hqTitle}</h3>
@@ -261,7 +261,7 @@ export default function ContactPage() {
                                     referrerPolicy="no-referrer-when-downgrade"
                                     title="JOVERO Office Location"
                                 />
-                                <div className="absolute top-8 right-8 p-4 glass-card bg-brand-primary/80 backdrop-blur-xl border-brand-accent/30 text-brand-accent shadow-neon-cyan max-w-xs">
+                                <div className="absolute top-8 right-8 p-4 glass-card bg-brand-primary/80 backdrop-blur-xl border-brand-accent/30 text-brand-accent shadow-neon-purple max-w-xs">
                                     <div className="flex items-center gap-3">
                                         <div className="w-3 h-3 rounded-full bg-brand-accent animate-ping flex-shrink-0" />
                                         <span className="text-xs font-mono font-bold tracking-widest uppercase text-white rtl:text-right">{contactDict.map.liveOps}</span>

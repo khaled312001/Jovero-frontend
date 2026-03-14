@@ -102,7 +102,7 @@ export function Navbar({ dict, lang, getStartedText }: { dict: any, lang: string
                                         {isActive && (
                                             <motion.div
                                                 layoutId="navbar-indicator"
-                                                className="absolute bottom-1 left-4 right-4 h-0.5 bg-gradient-to-r from-brand-accent to-brand-secondary rounded-full shadow-neon-cyan"
+                                                className="absolute bottom-1 left-4 right-4 h-0.5 bg-gradient-to-r from-brand-accent to-brand-secondary rounded-full shadow-neon-purple"
                                             />
                                         )}
                                     </Link>
@@ -196,7 +196,7 @@ export function Navbar({ dict, lang, getStartedText }: { dict: any, lang: string
                                                 {isActive && (
                                                     <motion.div
                                                         layoutId="mobile-sidebar-active"
-                                                        className="ml-auto w-1.5 h-1.5 rounded-full bg-brand-accent shadow-neon-cyan"
+                                                        className="ml-auto w-1.5 h-1.5 rounded-full bg-brand-accent shadow-neon-purple"
                                                     />
                                                 )}
                                             </Link>
@@ -218,7 +218,7 @@ export function Navbar({ dict, lang, getStartedText }: { dict: any, lang: string
                                         {lang === 'en' ? (dict?.nav?.switchLanguage || 'العربية') : (dict?.nav?.switchLanguage || 'English')}
                                     </button>
                                     <Link href={WHATSAPP_URL} target="_blank">
-                                        <Button variant="neon" size="lg" className="w-full shadow-neon-cyan/20">
+                                        <Button variant="neon" size="lg" className="w-full shadow-neon-purple/20">
                                             {getStartedText || dict?.nav?.getInTouch || 'Get in Touch'}
                                         </Button>
                                     </Link>

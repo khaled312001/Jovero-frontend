@@ -27,7 +27,7 @@ export function Preloader() {
                     <motion.div
                         animate={{ rotate: 360 }}
                         transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                        className="absolute inset-0 border-2 border-brand-accent/20 border-t-brand-accent rounded-2xl shadow-neon-cyan"
+                        className="absolute inset-0 border-2 border-brand-accent/20 border-t-brand-accent rounded-2xl shadow-neon-purple"
                     />
                     <motion.div
                         animate={{ rotate: -360 }}
@@ -37,7 +37,7 @@ export function Preloader() {
 
                     {/* Brand Logo */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                        <Image src="/logo.jpg" alt="JOVERO Logo" width={56} height={56} className="rounded-xl object-contain drop-shadow-neon-cyan" priority />
+                        <Image src="/logo.jpg" alt="JOVERO Logo" width={56} height={56} className="rounded-xl object-contain shadow-neon-purple" priority />
                     </div>
                 </div>
 

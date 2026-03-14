@@ -49,7 +49,7 @@ export default function PrivacyPage() {
                         className="max-w-5xl mx-auto text-center"
                     >
                         <motion.div variants={heroTextReveal} className="mb-8">
-                            <span className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-brand-glass border border-brand-accent/30 text-brand-accent text-sm font-mono tracking-[0.2em] shadow-neon-cyan uppercase">
+                            <span className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-brand-glass border border-brand-accent/30 text-brand-accent text-sm font-mono tracking-[0.2em] shadow-neon-purple uppercase">
                                 <Shield size={18} />
                                 Infrastructure Security
                             </span>
@@ -97,12 +97,12 @@ export default function PrivacyPage() {
 
                         <SectionReveal>
                             <div className="glass-card p-12 border-brand-accent/20 bg-brand-accent/5 relative group">
-                                <div className="absolute top-0 left-0 w-1 h-full bg-brand-accent shadow-neon-cyan" />
+                                <div className="absolute top-0 left-0 w-1 h-full bg-brand-accent shadow-neon-purple" />
                                 <h2 className="text-2xl font-display font-black text-white mb-6 uppercase tracking-widest">Contact Legal Department</h2>
                                 <p className="text-brand-muted leading-relaxed mb-8 font-light italic">
                                     If you have any questions regarding our Privacy Policy or data practices, please contact our legal department at:
                                 </p>
-                                <p className="text-brand-accent font-mono font-black text-xl tracking-tighter shadow-neon-cyan inline-block p-4 bg-white/5 rounded-xl border border-brand-accent/30">legal@JOVERO.com</p>
+                                <p className="text-brand-accent font-mono font-black text-xl tracking-tighter shadow-neon-purple inline-block p-4 bg-white/5 rounded-xl border border-brand-accent/30">legal@JOVERO.com</p>
                             </div>
                         </SectionReveal>
                     </div>
