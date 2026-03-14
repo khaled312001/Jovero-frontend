@@ -18,6 +18,8 @@ import { useDictionary } from '@/lib/contexts/DictionaryContext';
 
 // ============ HERO SECTION ============
 function HeroSection({ data }: { data?: any }) {
+    const params = useParams();
+    const lang = params?.lang as string;
     const dict = useDictionary();
     const {
         badgeText = dict.hero.badge,
@@ -150,12 +152,12 @@ function HeroSection({ data }: { data?: any }) {
 
                     {/* CTAs */}
                     <motion.div variants={heroTextReveal} className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full max-w-xl px-4">
-                        <Link href="/contact" className="w-full sm:w-1/2">
-                            <Button size="xl" variant="primary" icon={<ArrowRight size={22} />} className="w-full h-16 text-lg font-bold rounded-xl group shadow-neon-purple transition-all duration-500 hover:scale-105 active:scale-95">
+                        <Link href={lang === 'ar' ? "/portfolio" : "/contact"} className="w-full sm:w-1/2">
+                            <Button size="xl" variant="primary" icon={<ArrowRight size={22} className="rtl:-scale-x-100" />} className="w-full h-16 text-lg font-bold rounded-xl group shadow-neon-purple transition-all duration-500 hover:scale-105 active:scale-95">
                                 {primaryBtnText}
                             </Button>
                         </Link>
-                        <Link href="/portfolio" className="w-full sm:w-1/2">
+                        <Link href={lang === 'ar' ? "/contact" : "/portfolio"} className="w-full sm:w-1/2">
                             <Button size="xl" variant="neon" className="w-full h-16 text-lg font-bold rounded-xl border-white/20 hover:border-brand-secondary/50 transition-all duration-500 hover:scale-105 active:scale-95">
                                 {secondaryBtnText}
                             </Button>

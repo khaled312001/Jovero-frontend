@@ -28,9 +28,7 @@ export function truncate(text: string, length: number): string {
 
 export const WHATSAPP_NUMBER = '+201055709709';
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER.replace(/\+/g, '')}`;
-export const FACEBOOK_URL = 'https://www.facebook.com/JOVEROOfficial/';
-export const LINKEDIN_URL = 'https://www.linkedin.com/company/jovero';
-export const COMPANY_ADDRESS = 'Amman, Jordan';
+export const FACEBOOK_URL = 'https://www.facebook.com/profile.php?id=61569150491962';
 export const COMPANY_LICENSE = 'JOVERO-2026-HQ';
 export const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL || '').replace(/\/$/, '');
 
