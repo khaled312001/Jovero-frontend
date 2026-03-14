@@ -9,7 +9,7 @@ import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
 import { SectionReveal } from '@/components/ui/SectionReveal';
 import { Input, Textarea, Select } from '@/components/ui/FormElements';
 import { staggerContainer, staggerItem, heroTextReveal } from '@/lib/animations';
-import { cn, WHATSAPP_URL, COMPANY_LICENSE, COMPANY_ADDRESS } from '@/lib/utils';
+import { cn, WHATSAPP_URL } from '@/lib/utils';
 import Link from 'next/link';
 import { MouseFollower } from '@/components/ui/MouseFollower';
 import { useParams } from 'next/navigation';
@@ -650,8 +650,6 @@ function ContactFormSection({ data }: { data?: any }) {
                             {/* Contact Details Grid */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 {[
-                                    { icon: <Globe size={20} />, title: 'Location', content: COMPANY_ADDRESS, color: 'blue' },
-                                    { icon: <Shield size={20} />, title: 'Swiss License', content: COMPANY_LICENSE, color: 'purple' },
                                     { icon: <Smartphone size={20} />, title: 'WhatsApp', content: '+41 77 941 21 26', color: 'blue' },
                                     { icon: <Mail size={20} />, title: 'Email Us', content: 'info@JOVERO.tech', color: 'purple' },
                                 ].map((item, i) => (

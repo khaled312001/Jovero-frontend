@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Shield, Target, Eye, Heart, Lightbulb, Users, Award, Globe, Zap, Cloud, Palette, Search, FileText, BarChart3, TrendingUp, Instagram, Smartphone } from 'lucide-react';
 import { SectionReveal, SectionHeading } from '@/components/ui/SectionReveal';
 import { staggerContainer, staggerItem, heroTextReveal } from '@/lib/animations';
-import { COMPANY_LICENSE, COMPANY_ADDRESS } from '@/lib/utils';
+
 import type { Metadata } from 'next';
 import { useSiteSettings } from '@/lib/contexts/SiteContext';
 import { useDictionary } from '@/lib/contexts/DictionaryContext';
@@ -83,8 +83,6 @@ function AboutHero() {
 function StorySection() {
     const { settings } = useSiteSettings();
     const dict = useDictionary();
-    const address = settings?.address || COMPANY_ADDRESS;
-    const license = settings?.license || COMPANY_LICENSE;
 
     return (
         <section className="section-padding relative overflow-hidden bg-brand-primary">
@@ -129,18 +127,6 @@ function StorySection() {
 
                                 <div className="relative space-y-10">
                                     <div className="flex items-start gap-6 group/item">
-                                        <div className="p-4 rounded-2xl bg-brand-accent/10 text-brand-accent border border-brand-accent/20 group-hover/item:shadow-neon-purple transition-all duration-500">
-                                            <Shield size={28} />
-                                        </div>
-                                        <div>
-                                            <p className="text-white font-bold text-lg mb-1 uppercase tracking-tight">{dict.about.story.licenseTitle}</p>
-                                            <p className="text-brand-accent font-mono text-sm tracking-widest bg-brand-accent/5 px-3 py-1 rounded-md border border-brand-accent/10 inline-block">
-                                                {license}
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex items-start gap-6 group/item">
                                         <div className="p-4 rounded-2xl bg-brand-secondary/10 text-brand-secondary border border-brand-secondary/20 group-hover/item:shadow-neon-purple transition-all duration-500">
                                             <Award size={28} />
                                         </div>
@@ -150,13 +136,6 @@ function StorySection() {
                                                 {dict.about.story.qualityDesc}
                                             </p>
                                         </div>
-                                    </div>
-
-                                    <div className="pt-8 border-t border-white/10 flex items-center gap-4">
-                                        <div className="w-2 h-2 rounded-full bg-brand-accent animate-pulse" />
-                                        <p className="text-brand-muted text-sm font-mono tracking-tighter">
-                                            📍 <span className="hover:text-brand-accent transition-colors">{address}</span>
-                                        </p>
                                     </div>
                                 </div>
                             </div>

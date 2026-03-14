@@ -7,10 +7,10 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { navbarVariants } from '@/lib/animations';
 import { cn } from '@/lib/utils';
-import { Menu, X, Globe, Home, Users, Cpu, Briefcase, Monitor, FileText, Mail, Phone, Facebook, Linkedin } from 'lucide-react';
+import { Menu, X, Globe, Home, Users, Cpu, Briefcase, Monitor, FileText, Mail, Phone, Facebook } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { useUIStore } from '@/store';
-import { WHATSAPP_URL, WHATSAPP_NUMBER, FACEBOOK_URL, LINKEDIN_URL } from '@/lib/utils';
+import { WHATSAPP_URL, WHATSAPP_NUMBER, FACEBOOK_URL } from '@/lib/utils';
 import { TopHeader } from './TopHeader';
 
 export function Navbar({ dict, lang, getStartedText }: { dict: any, lang: string, getStartedText?: string }) {
@@ -63,11 +63,9 @@ export function Navbar({ dict, lang, getStartedText }: { dict: any, lang: string
                     <div className="flex items-center justify-between h-24">
                         {/* Logo */}
                         <Link href="/" className="flex items-center gap-3 group">
-                            <div className="relative w-12 h-12">
-                                <Image src="/logo.jpg" alt="JOVERO Logo" width={48} height={48} className="rounded-2xl object-contain" priority />
-                                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-accent to-brand-secondary opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500" />
-                            </div>
-                            <Image src="/jovero-text-logo.png" alt="JOVERO" width={120} height={40} className="h-8 w-auto object-contain" priority />                        </Link>
+                            <Image src="/logo.jpg" alt="JOVERO Logo" width={160} height={160} className="w-16 h-16 rounded-2xl object-contain" priority />
+                            <Image src="/jovero-text-logo.png" alt="JOVERO" width={160} height={52} className="h-10 w-auto object-contain" priority />
+                        </Link>
 
                         {/* Desktop Links */}
                         <div className="hidden lg:flex items-center gap-2">
@@ -150,8 +148,9 @@ export function Navbar({ dict, lang, getStartedText }: { dict: any, lang: string
                         >
                             <div className="flex items-center justify-between mb-12 shrink-0">
                                 <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenu(false)}>
-                                    <Image src="/logo.jpg" alt="JOVERO Logo" width={32} height={32} className="rounded-lg object-contain" />
-                                    <Image src="/jovero-text-logo.png" alt="JOVERO" width={100} height={32} className="h-6 w-auto object-contain" priority />                                </Link>
+                                    <Image src="/logo.jpg" alt="JOVERO Logo" width={48} height={48} className="w-12 h-12 rounded-xl object-contain" />
+                                    <Image src="/jovero-text-logo.png" alt="JOVERO" width={120} height={36} className="h-7 w-auto object-contain" priority />
+                                </Link>
                                 <button
                                     onClick={() => setMobileMenu(false)}
                                     className="p-2 rounded-lg bg-white/5 text-brand-muted hover:text-brand-text transition-colors"
@@ -245,13 +244,7 @@ export function Navbar({ dict, lang, getStartedText }: { dict: any, lang: string
                                         >
                                             <Facebook size={22} />
                                         </Link>
-                                        <Link
-                                            href={LINKEDIN_URL}
-                                            target="_blank"
-                                            className="p-4 rounded-2xl bg-white/5 text-brand-muted hover:text-brand-accent hover:bg-brand-accent/10 transition-all duration-300"
-                                        >
-                                            <Linkedin size={22} />
-                                        </Link>
+
                                         <Link
                                             href={WHATSAPP_URL}
                                             target="_blank"

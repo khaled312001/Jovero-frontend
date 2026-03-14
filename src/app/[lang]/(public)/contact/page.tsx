@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/Button';
 import { Input, Textarea, Select } from '@/components/ui/FormElements';
 import { SectionReveal } from '@/components/ui/SectionReveal';
 import { staggerContainer, heroTextReveal } from '@/lib/animations';
-import { WHATSAPP_URL, COMPANY_ADDRESS } from '@/lib/utils';
+import { WHATSAPP_URL } from '@/lib/utils';
 import { publicApi } from '@/lib/api';
 import { useSiteSettings } from '@/lib/contexts/SiteContext';
 import { useDictionary } from '@/lib/contexts/DictionaryContext';
@@ -17,7 +17,6 @@ export default function ContactPage() {
     const dict = useDictionary();
     const contactDict = dict.contact;
     const { settings } = useSiteSettings();
-    const address = settings?.address || COMPANY_ADDRESS;
     const email = settings?.email || 'info@JOVERO.ch';
     const whatsapp = settings?.whatsappNumber ? `https://wa.me/${settings.whatsappNumber.replace(/[^0-9]/g, '')}` : WHATSAPP_URL;
 
@@ -177,16 +176,7 @@ export default function ContactPage() {
 
                         {/* Contact Info Sidebar */}
                         <div className="space-y-6">
-                            <SectionReveal direction="right">
-                                <div className="glass-card p-8 hover-glow bg-brand-dark/40 border-white/5 relative group hover:border-brand-accent/30 transition-all duration-500">
-                                    <div className="p-4 rounded-xl bg-brand-accent/10 border border-brand-accent/20 text-brand-accent w-fit mb-6 group-hover:shadow-neon-purple transition-all duration-500">
-                                        <MapPin size={24} />
-                                    </div>
-                                    <h3 className="text-xl font-display font-black text-white mb-3">{contactDict.info.hqTitle}</h3>
-                                    <p className="text-brand-muted text-sm font-light leading-relaxed">{address}</p>
-                                    <div className="mt-6 pt-6 border-t border-white/5 text-[10px] font-mono text-brand-muted/40 uppercase tracking-widest">{contactDict.info.hqVerified}</div>
-                                </div>
-                            </SectionReveal>
+
 
                             <SectionReveal direction="right" delay={0.1}>
                                 <div className="glass-card p-8 hover-glow bg-brand-dark/40 border-white/5 relative group hover:border-brand-secondary/30 transition-all duration-500">
