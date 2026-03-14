@@ -9,6 +9,8 @@ import { staggerContainer, staggerItem, heroTextReveal } from '@/lib/animations'
 import type { Metadata } from 'next';
 import { useSiteSettings } from '@/lib/contexts/SiteContext';
 import { useDictionary } from '@/lib/contexts/DictionaryContext';
+import { useParams } from 'next/navigation';
+import { publicApi } from '@/lib/api';
 
 // ============ HERO ============
 function AboutHero() {
@@ -186,6 +188,8 @@ function MissionVisionSection() {
 
 // ============ VALUES ============
 function ValuesSection({ data }: { data?: any[] }) {
+    const params = useParams();
+    const lang = params?.lang as string;
     const dict = useDictionary();
     const iconMap: Record<string, React.ReactNode> = {
         'Excellence': <Award size={28} />,
@@ -204,11 +208,19 @@ function ValuesSection({ data }: { data?: any[] }) {
 
     const defaultValues: any[] = dict.about.values.default;
 
-    const displayValues = data ? data.map(v => ({
+    const displayValues = data ? data.map(v => {
+        const title = lang === 'en' ? v.title : (v.titleAr || v.title);
+        const desc = lang === 'en' ? (v.desc || v.description) : (v.descAr || v.descriptionAr || v.desc || v.description);
+        return {
+            ...v,
+            displayTitle: title,
+            displayDesc: desc,
+            icon: iconMap[v.title] || <Award size={28} />
+        };
+    }) : defaultValues.map(v => ({
         ...v,
-        icon: iconMap[v.title] || <Award size={28} />
-    })) : defaultValues.map(v => ({
-        ...v,
+        displayTitle: v.title,
+        displayDesc: v.desc || v.description,
         icon: iconMap[v.title] || <Award size={28} />
     }));
 
@@ -237,8 +249,8 @@ function ValuesSection({ data }: { data?: any[] }) {
                                 <div className={`p-4 rounded-2xl bg-brand-${value.color || 'accent'}/10 text-brand-${value.color || 'accent'} w-fit mb-6 border border-brand-${value.color || 'accent'}/20 group-hover:shadow-neon-${value.color || 'accent'} transition-all duration-500`}>
                                     {value.icon}
                                 </div>
-                                <h3 className="text-xl font-display font-bold text-white mb-3 tracking-tight group-hover:text-brand-accent transition-colors">{value.title}</h3>
-                                <p className="text-brand-muted leading-relaxed font-light">{value.desc || value.description}</p>
+                                <h3 className="text-xl font-display font-bold text-white mb-3 tracking-tight group-hover:text-brand-accent transition-colors">{value.displayTitle}</h3>
+                                <p className="text-brand-muted leading-relaxed font-light">{value.displayDesc}</p>
                             </div>
                         </motion.div>
                     ))}
@@ -250,10 +262,16 @@ function ValuesSection({ data }: { data?: any[] }) {
 
 // ============ TIMELINE ============
 function TimelineSection({ data }: { data?: any[] }) {
+    const params = useParams();
+    const lang = params?.lang as string;
     const dict = useDictionary();
     const defaultMilestones = dict.about.timeline.default;
 
-    const milestones = data || defaultMilestones;
+    const milestones = data ? data.map(m => {
+        const title = lang === 'en' ? m.title : (m.titleAr || m.title);
+        const desc = lang === 'en' ? (m.desc || m.description) : (m.descAr || m.descriptionAr || m.desc || m.description);
+        return { ...m, displayTitle: title, displayDesc: desc };
+    }) : defaultMilestones;
 
     return (
         <section className="section-padding relative overflow-hidden bg-brand-primary">
@@ -279,8 +297,8 @@ function TimelineSection({ data }: { data?: any[] }) {
                                             <div className={`absolute -inset-0.5 bg-gradient-to-r from-brand-accent/20 to-brand-secondary/20 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500`} />
                                             <div className="glass-card p-8 hover-glow relative bg-brand-dark/40 border-white/5 group-hover:border-brand-accent/30 transition-all duration-500">
                                                 <span className="text-brand-accent font-mono text-lg font-black tracking-tighter mb-2 block">{m.year}</span>
-                                                <h3 className="text-xl font-display font-black text-white mb-3 tracking-tight">{m.title}</h3>
-                                                <p className="text-brand-muted leading-relaxed font-light">{m.desc || m.description}</p>
+                                                <h3 className="text-xl font-display font-black text-white mb-3 tracking-tight">{m.displayTitle}</h3>
+                                                <p className="text-brand-muted leading-relaxed font-light">{m.displayDesc}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -295,6 +313,117 @@ function TimelineSection({ data }: { data?: any[] }) {
                             </SectionReveal>
                         ))}
                     </div>
+                </div>
+            </div>
+        </section>
+    );
+}
+
+// ============ TEAM SECTION ============
+function TeamSection() {
+    const params = useParams();
+    const lang = params?.lang as string;
+    const [members, setMembers] = React.useState<any[]>([]);
+    const dict = useDictionary();
+
+    React.useEffect(() => {
+        publicApi.getTeam().then(({ data }: any) => setMembers(data)).catch(console.error);
+    }, []);
+
+    if (members.length === 0) return null;
+
+    return (
+        <section className="section-padding relative overflow-hidden bg-brand-primary border-t border-white/5">
+            <div className="absolute inset-0 tech-grid opacity-5" />
+            <div className="section-container relative z-10">
+                <SectionReveal>
+                    <div className="text-center mb-24">
+                        <span className="text-brand-accent font-mono text-xs tracking-[0.4em] uppercase mb-4 block">{dict.about.team.badge}</span>
+                        <h2 className="text-4xl md:text-6xl font-display font-black text-white mb-6 text-glow tracking-tight">
+                            {dict.about.team.title}
+                        </h2>
+                        <div className="w-24 h-1 bg-brand-accent mx-auto mb-8 rounded-full shadow-neon-purple" />
+                    </div>
+                </SectionReveal>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                    {members.map((m, i) => {
+                        const name = lang === 'en' && m.nameEn ? m.nameEn : m.name;
+                        const role = lang === 'en' && m.roleEn ? m.roleEn : m.role;
+                        const bio = lang === 'en' && m.bioEn ? m.bioEn : m.bio;
+
+                        return (
+                            <SectionReveal key={i} delay={i * 0.1}>
+                                <div className="glass-card p-10 group hover:border-brand-accent/30 transition-all duration-500 border-white/5 relative overflow-hidden flex flex-col items-center text-center">
+                                    <div className="w-32 h-32 rounded-3xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent font-black text-4xl mb-8 group-hover:scale-110 transition-transform duration-500 shadow-neon-purple/20">
+                                        {name.charAt(0)}
+                                    </div>
+                                    <h3 className="text-2xl font-display font-black text-white mb-2">{name}</h3>
+                                    <p className="text-brand-accent text-sm font-mono uppercase tracking-[0.2em] mb-6">{role}</p>
+                                    <p className="text-brand-muted leading-relaxed font-light">{bio}</p>
+                                </div>
+                            </SectionReveal>
+                        );
+                    })}
+                </div>
+            </div>
+        </section>
+    );
+}
+
+// ============ FAQ SECTION ============
+import { ChevronDown } from 'lucide-react';
+
+function FAQSection() {
+    const params = useParams();
+    const lang = params?.lang as string;
+    const [faqs, setFaqs] = React.useState<any[]>([]);
+    const [openIndex, setOpenIndex] = React.useState<number | null>(0);
+    const dict = useDictionary();
+
+    React.useEffect(() => {
+        publicApi.getFaq().then(({ data }: any) => setFaqs(data)).catch(console.error);
+    }, []);
+
+    if (faqs.length === 0) return null;
+
+    return (
+        <section className="section-padding relative overflow-hidden bg-brand-primary border-t border-white/5">
+            <div className="section-container relative z-10">
+                <SectionHeading badge={dict.about.faq.badge} title={dict.about.faq.title} description={dict.about.faq.description} />
+
+                <div className="max-w-3xl mx-auto mt-20 space-y-4">
+                    {faqs.map((faq, i) => {
+                        const question = lang === 'en' && faq.questionEn ? faq.questionEn : faq.question;
+                        const answer = lang === 'en' && faq.answerEn ? faq.answerEn : faq.answer;
+                        const isOpen = openIndex === i;
+
+                        return (
+                            <SectionReveal key={i} delay={i * 0.05}>
+                                <div className={`glass-card overflow-hidden border-white/5 hover:border-brand-accent/20 transition-all duration-300 ${isOpen ? 'ring-1 ring-brand-accent/20' : ''}`}>
+                                    <button
+                                        onClick={() => setOpenIndex(isOpen ? null : i)}
+                                        className="w-full p-8 text-left rtl:text-right flex items-center justify-between group"
+                                    >
+                                        <span className={`text-lg font-bold transition-colors ${isOpen ? 'text-brand-accent' : 'text-white'}`}>
+                                            {question}
+                                        </span>
+                                        <ChevronDown className={`text-brand-muted transition-transform duration-500 ${isOpen ? 'rotate-180 text-brand-accent' : ''}`} size={20} />
+                                    </button>
+                                    <motion.div
+                                        initial={false}
+                                        animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
+                                        transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+                                        className="overflow-hidden"
+                                    >
+                                        <div className="p-8 pt-0 text-brand-muted leading-relaxed font-light border-t border-white/5 mt-4">
+                                            {answer}
+                                        </div>
+                                    </motion.div>
+                                </div>
+                            </SectionReveal>
+                        );
+                    })}
                 </div>
             </div>
         </section>
@@ -400,8 +529,6 @@ function GrowthStackSection({ data }: { data?: any[] }) {
 }
 
 // ============ ABOUT PAGE ============
-import { publicApi } from '@/lib/api';
-
 export default function AboutPage() {
     const [data, setData] = React.useState<any>({});
 
@@ -417,6 +544,8 @@ export default function AboutPage() {
             <ValuesSection data={data.values} />
             <TimelineSection data={data.milestones} />
             <GrowthStackSection data={data.tech_arsenal} />
+            <TeamSection />
+            <FAQSection />
         </>
     );
 }

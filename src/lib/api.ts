@@ -95,6 +95,11 @@ export const adminApi = {
     createProject: (data: any) => authClient.post('/admin/portfolio', data),
     updateProject: (id: string, data: any) => authClient.put(`/admin/portfolio/${id}`, data),
     deleteProject: (id: string) => authClient.delete(`/admin/portfolio/${id}`),
+    uploadProjectImages: (projectId: string, formData: FormData) => authClient.post(`/admin/portfolio/${projectId}/images`, formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+    }),
+    deleteProjectImage: (imageId: string) => authClient.delete(`/admin/portfolio/images/${imageId}`),
+    reorderProjectImages: (projectId: string, orders: { id: string; order: number }[]) => authClient.patch(`/admin/portfolio/${projectId}/images/order`, { orders }),
 
     // Blog
     getBlog: () => authClient.get('/admin/blog'),

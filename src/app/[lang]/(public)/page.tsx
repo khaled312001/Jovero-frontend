@@ -150,14 +150,13 @@ function HeroSection({ data }: { data?: any }) {
                         {description}
                     </motion.p>
 
-                    {/* CTAs */}
                     <motion.div variants={heroTextReveal} className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full max-w-xl px-4">
-                        <Link href={lang === 'ar' ? "/portfolio" : "/contact"} className="w-full sm:w-1/2">
+                        <Link href={`/${lang}/contact`} className="w-full sm:w-1/2">
                             <Button size="xl" variant="primary" icon={<ArrowRight size={22} className="rtl:-scale-x-100" />} className="w-full h-16 text-lg font-bold rounded-xl group shadow-neon-purple transition-all duration-500 hover:scale-105 active:scale-95">
                                 {primaryBtnText}
                             </Button>
                         </Link>
-                        <Link href={lang === 'ar' ? "/contact" : "/portfolio"} className="w-full sm:w-1/2">
+                        <Link href={`/${lang}/portfolio`} className="w-full sm:w-1/2">
                             <Button size="xl" variant="neon" className="w-full h-16 text-lg font-bold rounded-xl border-white/20 hover:border-brand-secondary/50 transition-all duration-500 hover:scale-105 active:scale-95">
                                 {secondaryBtnText}
                             </Button>
@@ -415,14 +414,14 @@ function CountersSection({ data }: { data?: any }) {
 
 // ============ TESTIMONIALS SECTION ============
 function TestimonialsSection() {
+    const params = useParams();
+    const lang = params?.lang as string;
     const [testimonials, setTestimonials] = React.useState<any[]>([]);
     const dict = useDictionary();
 
     React.useEffect(() => {
         publicApi.getTestimonials().then(({ data }) => setTestimonials(data)).catch(console.error);
     }, []);
-
-    const displayTestimonials = testimonials;
 
     return (
         <section className="relative overflow-hidden py-32 bg-brand-primary">
@@ -442,35 +441,41 @@ function TestimonialsSection() {
                 </SectionReveal>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
-                    {displayTestimonials.map((t, i) => (
-                        <SectionReveal key={i} delay={i * 0.1}>
-                            <div className="glass-card p-10 h-full flex flex-col group hover:bg-white/[0.04] transition-all duration-500 border-white/5 relative overflow-hidden">
-                                <div className="absolute top-0 right-0 p-6 opacity-[0.05] group-hover:opacity-[0.1] transition-opacity">
-                                    <Globe size={80} className="text-brand-accent" />
-                                </div>
+                    {testimonials.map((t, i) => {
+                        const name = lang === 'en' && t.nameEn ? t.nameEn : t.name;
+                        const role = lang === 'en' && t.roleEn ? t.roleEn : t.role;
+                        const content = lang === 'en' && t.contentEn ? t.contentEn : t.content;
 
-                                <div className="flex gap-1.5 mb-8 text-brand-accent">
-                                    {Array.from({ length: t.rating }).map((_, j) => (
-                                        <Star key={j} size={16} className="fill-current" />
-                                    ))}
-                                </div>
-
-                                <p className="text-brand-muted text-lg leading-relaxed flex-1 mb-10 font-light opacity-90">
-                                    &ldquo;{t.content}&rdquo;
-                                </p>
-
-                                <div className="flex items-center gap-5 border-t border-white/10 pt-8 mt-auto">
-                                    <div className="w-14 h-14 rounded-2xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent font-black text-xl shadow-inner">
-                                        {t.name.charAt(0)}
+                        return (
+                            <SectionReveal key={i} delay={i * 0.1}>
+                                <div className="glass-card p-10 h-full flex flex-col group hover:bg-white/[0.04] transition-all duration-500 border-white/5 relative overflow-hidden">
+                                    <div className="absolute top-0 right-0 p-6 opacity-[0.05] group-hover:opacity-[0.1] transition-opacity">
+                                        <Globe size={80} className="text-brand-accent" />
                                     </div>
-                                    <div>
-                                        <p className="text-white font-black leading-none mb-1.5 text-lg">{t.name}</p>
-                                        <p className="text-brand-accent text-xs font-mono uppercase tracking-[0.2em] opacity-80">{t.role}</p>
+
+                                    <div className="flex gap-1.5 mb-8 text-brand-accent">
+                                        {Array.from({ length: t.rating }).map((_, j) => (
+                                            <Star key={j} size={16} className="fill-current" />
+                                        ))}
+                                    </div>
+
+                                    <p className="text-brand-muted text-lg leading-relaxed flex-1 mb-10 font-light opacity-90">
+                                        &ldquo;{content}&rdquo;
+                                    </p>
+
+                                    <div className="flex items-center gap-5 border-t border-white/10 pt-8 mt-auto">
+                                        <div className="w-14 h-14 rounded-2xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent font-black text-xl shadow-inner">
+                                            {name.charAt(0)}
+                                        </div>
+                                        <div>
+                                            <p className="text-white font-black leading-none mb-1.5 text-lg">{name}</p>
+                                            <p className="text-brand-accent text-xs font-mono uppercase tracking-[0.2em] opacity-80">{role}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </SectionReveal>
-                    ))}
+                            </SectionReveal>
+                        );
+                    })}
                 </div>
             </div>
         </section>
@@ -518,7 +523,7 @@ function TechSection() {
                     </div>
                 </SectionReveal>
 
-                <div className="relative w-full overflow-hidden py-10 group">
+                <div className="relative w-full overflow-hidden py-10 group" dir="ltr">
                     <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-brand-primary to-transparent z-10 pointer-events-none" />
                     <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-brand-primary to-transparent z-10 pointer-events-none" />
 

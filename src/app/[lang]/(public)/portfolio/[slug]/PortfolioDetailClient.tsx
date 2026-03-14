@@ -33,10 +33,12 @@ export default function PortfolioDetailClient({ project, lang }: PortfolioDetail
         return (
             <div className="min-h-screen flex items-center justify-center bg-brand-primary text-center px-6">
                 <div className="max-w-md">
-                    <h2 className="text-4xl font-display font-bold text-white mb-6">Project Not Found</h2>
+                    <h2 className="text-4xl font-display font-bold text-white mb-6">
+                        {(dict.portfolio?.detail as any)?.notFound || 'Project Not Found'}
+                    </h2>
                     <Link href="/portfolio">
                         <Button variant="primary" icon={<ArrowLeft size={20} />}>
-                            Back to Portfolio
+                            {(dict.portfolio?.detail as any)?.backToPortfolio || 'Back to Portfolio'}
                         </Button>
                     </Link>
                 </div>
@@ -68,7 +70,7 @@ export default function PortfolioDetailClient({ project, lang }: PortfolioDetail
                         <motion.div variants={heroTextReveal} className="mb-8">
                             <Link href="/portfolio" className="inline-flex items-center gap-2 text-brand-accent font-mono text-sm hover:gap-3 transition-all">
                                 <ArrowLeft size={16} />
-                                <span>CASE_STUDY_INDEX</span>
+                                <span>{(dict.portfolio?.detail as any)?.backToPortfolio || 'BACK_TO_PORTFOLIO'}</span>
                             </Link>
                         </motion.div>
 
@@ -83,21 +85,21 @@ export default function PortfolioDetailClient({ project, lang }: PortfolioDetail
                         <motion.div variants={heroTextReveal} className="grid grid-cols-2 md:grid-cols-4 gap-6 border-y border-white/10 py-8">
                             <div>
                                 <h4 className="text-brand-accent font-mono text-xs uppercase mb-2 flex items-center gap-2">
-                                    <Tag size={14} /> Category
+                                    <Tag size={14} /> {(dict.portfolio?.detail as any)?.category || 'Category'}
                                 </h4>
                                 <p className="text-white font-medium">{category}</p>
                             </div>
                             <div>
                                 <h4 className="text-brand-accent font-mono text-xs uppercase mb-2 flex items-center gap-2">
-                                    <User size={14} /> Client
+                                    <User size={14} /> {(dict.portfolio?.detail as any)?.client || 'Client'}
                                 </h4>
-                                <p className="text-white font-medium">{project.client || 'Confidential'}</p>
+                                <p className="text-white font-medium">{project.client || (lang === 'ar' ? 'سري' : 'Confidential')}</p>
                             </div>
                             <div>
                                 <h4 className="text-brand-accent font-mono text-xs uppercase mb-2 flex items-center gap-2">
-                                    <Calendar size={14} /> Duration
+                                    <Calendar size={14} /> {(dict.portfolio?.detail as any)?.duration || 'Duration'}
                                 </h4>
-                                <p className="text-white font-medium">{project.duration || 'Ongoing'}</p>
+                                <p className="text-white font-medium">{project.duration || (lang === 'ar' ? 'مستمر' : 'Ongoing')}</p>
                             </div>
                             {project.content && project.content.startsWith('http') && (
                                 <div>
@@ -108,7 +110,7 @@ export default function PortfolioDetailClient({ project, lang }: PortfolioDetail
                                             className="shadow-neon-purple"
                                             icon={<ExternalLink size={18} />}
                                         >
-                                            {(dict.portfolio?.grid as any)?.visitProject || 'Visit Live Project'}
+                                            {(dict.portfolio?.grid as any)?.visitProject || (lang === 'ar' ? 'زيارة المشروع' : 'Visit Live Project')}
                                         </Button>
                                     </a>
                                 </div>
@@ -118,15 +120,57 @@ export default function PortfolioDetailClient({ project, lang }: PortfolioDetail
                 </div>
             </section>
 
+            {/* Gallery Section */}
+            {project.images && project.images.length > 0 && (
+                <section className="relative pb-20">
+                    <div className="section-container">
+                        <SectionReveal>
+                            <div className="flex items-center gap-4 mb-12">
+                                <h3 className="text-2xl font-display font-bold text-white uppercase tracking-wider">
+                                    {(dict.portfolio?.detail as any)?.gallery || 'Project Gallery'}
+                                </h3>
+                                <div className="h-px flex-1 bg-white/10" />
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                {project.images.map((img: any, index: number) => (
+                                    <motion.div
+                                        key={img.id}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: index * 0.1 }}
+                                        whileHover={{ y: -8, scale: 1.02 }}
+                                        className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 group cursor-pointer shadow-lg shadow-black/20"
+                                    >
+                                        <Image
+                                            src={img.url}
+                                            alt={img.alt || `${title} - Exhibit ${index + 1}`}
+                                            fill
+                                            className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                        <div className="absolute bottom-4 left-4 text-white/60 text-xs font-mono opacity-0 group-hover:opacity-100 transition-opacity delay-100 duration-300 uppercase">
+                                            {(dict.portfolio?.detail as any)?.viewExhibit || 'VIEW_EXHIBIT'} {index + 1}
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </SectionReveal>
+                    </div>
+                </section>
+            )}
+
             {/* Content & Tech Stack */}
             <section className="section-padding pt-0">
                 <div className="section-container">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
                         <div className="lg:col-span-2 space-y-12">
                             <SectionReveal>
-                                <h3 className="text-2xl font-display font-bold text-white mb-6">The Challenge & Solution</h3>
+                                <h3 className="text-2xl font-display font-bold text-white mb-6">
+                                    {(dict.portfolio?.detail as any)?.challengeSolution || 'The Challenge & Solution'}
+                                </h3>
                                 <div className="prose prose-invert prose-lg max-w-none text-brand-muted font-light leading-relaxed"
-                                    dangerouslySetInnerHTML={{ __html: project.content || '<p>Detailed case study content coming soon.</p>' }}
+                                    dangerouslySetInnerHTML={{ __html: project.content || `<p>${lang === 'ar' ? 'تفاصيل حالة الدراسة قريباً.' : 'Detailed case study content coming soon.'}</p>` }}
                                 />
                             </SectionReveal>
 
@@ -134,7 +178,7 @@ export default function PortfolioDetailClient({ project, lang }: PortfolioDetail
                                 <SectionReveal>
                                     <div className="glass-card p-8 border-brand-accent/20 bg-brand-accent/5">
                                         <h3 className="text-xl font-display font-bold text-white mb-6 flex items-center gap-3">
-                                            <CheckCircle2 className="text-brand-accent" /> Key Results
+                                            <CheckCircle2 className="text-brand-accent" /> {(dict.portfolio?.detail as any)?.keyResults || 'Key Results'}
                                         </h3>
                                         <p className="text-brand-muted">{project.results}</p>
                                     </div>
@@ -145,7 +189,9 @@ export default function PortfolioDetailClient({ project, lang }: PortfolioDetail
                         <div>
                             <SectionReveal direction="left">
                                 <div className="glass-card p-8 sticky top-32">
-                                    <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-widest border-b border-white/10 pb-4">Tech Stack</h3>
+                                    <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-widest border-b border-white/10 pb-4">
+                                        {(dict.portfolio?.detail as any)?.techStack || 'Tech Stack'}
+                                    </h3>
                                     <div className="flex flex-wrap gap-2">
                                         {technologies.map((tech: string) => (
                                             <span key={tech} className="px-3 py-1.5 text-xs font-mono bg-white/5 border border-white/10 rounded text-brand-accent">
