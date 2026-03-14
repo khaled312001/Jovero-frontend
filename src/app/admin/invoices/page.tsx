@@ -99,7 +99,8 @@ export default function AdminInvoicesPage() {
                 </div>
                 <Button
                     onClick={() => setIsAdding(!isAdding)}
-                    className="flex items-center gap-2 bg-brand-primary hover:bg-brand-primary/90"
+                    variant={isAdding ? 'outline' : 'primary'}
+                    className="flex items-center gap-2"
                 >
                     {isAdding ? 'Cancel' : (
                         <>

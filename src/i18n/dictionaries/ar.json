@@ -130,9 +130,14 @@
             "reliability": "موثوقية عالمية",
             "reliabilitySub": "جودة"
         },
-        "testimonialsBadge": "توصيات العملاء",
         "contactBadge": "البداية",
-        "scrollExplore": "اكتشف"
+        "scrollExplore": "اكتشف",
+        "invoices": {
+            "title": "البحث عن الفواتير",
+            "badge": "منطقة العملاء",
+            "subtitle": "الوصول السريع إلى فواتيرك وتنزيلها بصيغة PDF عبر نظامنا الآمن.",
+            "cta": "اذهب إلى الفواتير"
+        }
     },
     "about": {
         "hero": {

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Palette, TrendingUp, ArrowRight, Shield, Zap, Users, Globe, CheckCircle2, Star, Terminal, Target } from 'lucide-react';
+import { Code2, Palette, TrendingUp, ArrowRight, Shield, Zap, Users, Globe, CheckCircle2, Star, Terminal, Target, Receipt } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { ServiceCard } from '@/components/ui/Card';
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
@@ -636,6 +636,57 @@ function ContactFormSection({ data }: { data?: any }) {
 }
 
 
+// ============ INVOICE CTA SECTION ============
+function InvoiceCtaSection() {
+    const dict = useDictionary();
+    const params = useParams();
+    const lang = params?.lang as string;
+
+    if (!dict.home.invoices) return null;
+
+    return (
+        <section className="relative overflow-hidden py-16 bg-brand-primary border-t border-white/5">
+            <div className="section-container relative z-10">
+                <div className="glass-card p-8 md:p-12 border-brand-accent/20 bg-brand-accent/5 overflow-hidden group">
+                    {/* Animated background element */}
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-brand-accent/20 transition-all duration-700" />
+
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
+                        <div className="flex items-center gap-6">
+                            <div className="p-4 rounded-2xl bg-brand-surface border border-brand-accent/20 text-brand-accent shadow-neon-purple group-hover:scale-110 transition-transform duration-500">
+                                <Receipt size={32} />
+                            </div>
+                            <div className="text-left rtl:text-right">
+                                <span className="text-brand-accent font-mono text-[10px] tracking-[0.4em] uppercase mb-1 block">
+                                    {dict.home.invoices.badge}
+                                </span>
+                                <h3 className="text-2xl md:text-3xl font-display font-black text-white mb-2">
+                                    {dict.home.invoices.title}
+                                </h3>
+                                <p className="text-brand-muted text-sm md:text-base opacity-70 max-w-xl">
+                                    {dict.home.invoices.subtitle}
+                                </p>
+                            </div>
+                        </div>
+
+                        <Link href={`/${lang}/invoices`} className="shrink-0 w-full md:w-auto">
+                            <Button
+                                variant="neon"
+                                size="lg"
+                                icon={<ArrowRight size={20} className="rtl:-scale-x-100" />}
+                                className="w-full md:w-auto px-8 h-14 rounded-xl border-brand-accent/30 hover:border-brand-accent text-brand-accent shadow-[0_0_20px_rgba(139,92,246,0.1)] hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] transition-all duration-500"
+                            >
+                                {dict.home.invoices.cta}
+                            </Button>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+}
+
+
 // ============ HOME PAGE ============
 export default function HomePage() {
     const [data, setData] = React.useState<any>({});
@@ -662,6 +713,7 @@ export default function HomePage() {
             <TestimonialsSection />
             <PartnersSection />
             <ContactFormSection data={data.cta} />
+            <InvoiceCtaSection />
         </>
     );
 }

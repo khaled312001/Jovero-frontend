@@ -130,9 +130,14 @@
             "reliability": "Elite Reliability",
             "reliabilitySub": "Quality"
         },
-        "testimonialsBadge": "Endorsements",
         "contactBadge": "Initiation",
-        "scrollExplore": "Explore"
+        "scrollExplore": "Explore",
+        "invoices": {
+            "title": "Invoice Retrieval",
+            "badge": "Client Area",
+            "subtitle": "Access and download your project invoices securely through our digital retrieval system.",
+            "cta": "Search Invoices"
+        }
     },
     "about": {
         "hero": {
