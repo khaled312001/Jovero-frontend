@@ -26,12 +26,12 @@ export function truncate(text: string, length: number): string {
     return text.slice(0, length) + '...';
 }
 
-export const WHATSAPP_NUMBER = '+41779412126';
+export const WHATSAPP_NUMBER = '+962700000000';
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER.replace(/\+/g, '')}`;
 export const FACEBOOK_URL = 'https://www.facebook.com/JOVEROOfficial/';
-export const LINKEDIN_URL = 'https://www.linkedin.com/company/102957997';
-export const COMPANY_ADDRESS = 'Hardstrasse 201, 8005 Zürich, Switzerland';
-export const COMPANY_LICENSE = 'CHE-154.312.079';
+export const LINKEDIN_URL = 'https://www.linkedin.com/company/jovero';
+export const COMPANY_ADDRESS = 'Amman, Jordan';
+export const COMPANY_LICENSE = 'JOVERO-2026-HQ';
 export const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL || '').replace(/\/$/, '');
 
 export function formatBytes(bytes: number, decimals: number = 2): string {
