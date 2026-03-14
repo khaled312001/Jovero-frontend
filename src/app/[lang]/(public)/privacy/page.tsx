@@ -23,7 +23,7 @@ export default function PrivacyPage() {
         {
             icon: <Shield size={20} />,
             title: 'Data Security',
-            content: 'We implement enterprise-grade security measures to protect your data from unauthorized access, alteration, or disclosure. As a Swiss-licensed company, we adhere to the highest standards of data protection.'
+            content: 'We implement enterprise-grade security measures to protect your data from unauthorized access, alteration, or disclosure. We adhere to the highest international standards of data protection.'
         },
         {
             icon: <FileText size={20} />,
@@ -62,7 +62,7 @@ export default function PrivacyPage() {
                             Privacy <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-white to-brand-secondary">Protocols</span>
                         </motion.h1>
                         <motion.p variants={heroTextReveal} className="text-brand-muted text-xl md:text-2xl max-w-3xl mx-auto font-light leading-relaxed">
-                            System Version: {lastUpdated} | <span className="text-white">Compliance: Swiss Standards</span>
+                            System Version: {lastUpdated} | <span className="text-white">Compliance: Global Standards</span>
                         </motion.p>
                     </motion.div>
                 </div>

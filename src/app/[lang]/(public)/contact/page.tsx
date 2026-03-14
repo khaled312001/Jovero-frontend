@@ -60,76 +60,73 @@ export default function ContactPage() {
             </section>
 
             {/* Contact Content */}
-            <section className="section-padding">
-                <div className="section-container">
-                    <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <SectionReveal direction="right" delay={0.1}>
-                            <div className="glass-card p-8 hover-glow bg-brand-dark/40 border-white/5 relative group hover:border-brand-secondary/30 transition-all duration-500">
-                                <div className="p-4 rounded-xl bg-brand-secondary/10 border border-brand-secondary/20 text-brand-secondary w-fit mb-6 group-hover:shadow-neon-purple transition-all duration-500">
-                                    <MessageCircle size={24} />
+            <section className="section-padding relative overflow-hidden">
+                <div className="absolute inset-0 tech-grid opacity-10" />
+                <div className="section-container relative z-10">
+                    <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+                        {/* WhatsApp Card */}
+                        <SectionReveal direction="up" delay={0.1}>
+                            <div className="glass-card p-10 hover-glow bg-brand-dark/40 border-white/5 relative group hover:border-brand-accent/30 transition-all duration-500 text-center h-full flex flex-col items-center">
+                                <div className="p-5 rounded-2xl bg-brand-accent/10 border border-brand-accent/20 text-brand-accent mb-8 group-hover:shadow-neon-purple transition-all duration-500 scale-110">
+                                    <MessageCircle size={32} />
                                 </div>
-                                <h3 className="text-xl font-display font-black text-white mb-3">{contactDict.info.techTitle}</h3>
-                                <p className="text-brand-muted text-sm font-light mb-8 italic">{contactDict.info.techDesc}</p>
-                                <Link href={whatsapp} target="_blank">
-                                    <Button variant="outline" size="lg" icon={<MessageCircle size={18} />} className="w-full border-white/10 hover:border-brand-secondary/30 flex-row-reverse rtl:flex-row gap-2">
-                                        {contactDict.info.techBtn}
-                                    </Button>
-                                </Link>
+                                <h3 className="text-2xl font-display font-black text-white mb-4">{contactDict.info.techTitle}</h3>
+                                <p className="text-brand-muted text-sm font-light mb-10 leading-relaxed">{contactDict.info.techDesc}</p>
+                                <div className="mt-auto w-full">
+                                    <Link href={whatsapp} target="_blank" className="w-full">
+                                        <Button variant="outline" size="lg" className="w-full border-white/10 hover:border-brand-accent/30 group/btn overflow-hidden relative">
+                                            <span className="relative z-10 flex items-center justify-center gap-2">
+                                                {contactDict.info.techBtn}
+                                                <ArrowRight size={18} className="rtl:rotate-180 group-hover/btn:translate-x-1 transition-transform" />
+                                            </span>
+                                        </Button>
+                                    </Link>
+                                </div>
                             </div>
                         </SectionReveal>
 
-                        <SectionReveal direction="right" delay={0.3}>
-                            <div className="glass-card p-8 bg-brand-dark/40 border-white/5">
-                                <div className="flex flex-row-reverse rtl:flex-row-reverse ltr:flex-row items-center gap-6 mb-6">
-                                    <div className="p-4 rounded-xl bg-white/5 text-brand-muted border border-white/10 flex-shrink-0">
-                                        <Clock size={24} />
-                                    </div>
-                                    <h3 className="text-lg font-display font-black text-white rtl:text-right ltr:text-left">{contactDict.info.hoursTitle}</h3>
+                        {/* Phone Card */}
+                        <SectionReveal direction="up" delay={0.2}>
+                            <div className="glass-card p-10 hover-glow bg-brand-dark/40 border-white/5 relative group hover:border-brand-secondary/30 transition-all duration-500 text-center h-full flex flex-col items-center">
+                                <div className="p-5 rounded-2xl bg-brand-secondary/10 border border-brand-secondary/20 text-brand-secondary mb-8 group-hover:shadow-neon-blue transition-all duration-500 scale-110">
+                                    <MessageCircle size={32} className="rotate-[270deg]" /> {/* Using MessageCircle as Phone fallback if needed, but let's see imports */}
                                 </div>
-                                <div className="space-y-3">
-                                    <div className="flex flex-row-reverse rtl:flex-row items-center justify-between text-sm">
-                                        <span className="text-brand-muted font-light">{contactDict.info.monFri}</span>
-                                        <span className="text-white font-mono" dir="ltr">09:00 - 18:00</span>
-                                    </div>
-                                    <div className="flex flex-row-reverse rtl:flex-row items-center justify-between text-sm">
-                                        <span className="text-brand-muted font-light">{contactDict.info.sat}</span>
-                                        <span className="text-white font-mono" dir="ltr">10:00 - 14:00</span>
-                                    </div>
-                                    <div className="pt-4 text-[10px] font-mono text-brand-muted/40 uppercase text-center border-t border-white/5 mt-4">{contactDict.info.timezone}</div>
+                                <h3 className="text-2xl font-display font-black text-white mb-4">{contactDict.info.phoneTitle}</h3>
+                                <p className="text-brand-muted text-sm font-light mb-10 leading-relaxed">{contactDict.info.phoneDesc}</p>
+                                <div className="mt-auto w-full">
+                                    <Link href={`tel:${settings?.phone || '+201055709709'}`} className="w-full">
+                                        <Button variant="outline" size="lg" className="w-full border-white/10 hover:border-brand-secondary/30 group/btn overflow-hidden relative">
+                                            <span className="relative z-10 flex items-center justify-center gap-2">
+                                                {contactDict.info.phoneBtn}
+                                                <ArrowRight size={18} className="rtl:rotate-180 group-hover/btn:translate-x-1 transition-transform" />
+                                            </span>
+                                        </Button>
+                                    </Link>
+                                </div>
+                            </div>
+                        </SectionReveal>
+
+                        {/* Email Card */}
+                        <SectionReveal direction="up" delay={0.3}>
+                            <div className="glass-card p-10 hover-glow bg-brand-dark/40 border-white/5 relative group hover:border-white/20 transition-all duration-500 text-center h-full flex flex-col items-center">
+                                <div className="p-5 rounded-2xl bg-white/5 border border-white/10 text-white mb-8 transition-all duration-500 scale-110">
+                                    <MessageCircle size={32} /> {/* Using MessageCircle for consistency in visual style */}
+                                </div>
+                                <h3 className="text-2xl font-display font-black text-white mb-4">{contactDict.info.emailTitle}</h3>
+                                <p className="text-brand-muted text-sm font-light mb-10 leading-relaxed">{contactDict.info.emailDesc}</p>
+                                <div className="mt-auto w-full">
+                                    <Link href={`mailto:${settings?.email || 'info@jovero.net'}`} className="w-full">
+                                        <Button variant="outline" size="lg" className="w-full border-white/10 hover:border-white/30 group/btn overflow-hidden relative">
+                                            <span className="relative z-10 flex items-center justify-center gap-2">
+                                                {contactDict.info.emailBtn}
+                                                <ArrowRight size={18} className="rtl:rotate-180 group-hover/btn:translate-x-1 transition-transform" />
+                                            </span>
+                                        </Button>
+                                    </Link>
                                 </div>
                             </div>
                         </SectionReveal>
                     </div>
-                </div>
-            </section>
-
-            {/* Map Section */}
-            <section className="pb-32 relative overflow-hidden">
-                <div className="absolute inset-0 tech-grid opacity-5" />
-                <div className="section-container relative z-10">
-                    <SectionReveal>
-                        <div className="relative group">
-                            <div className="absolute -inset-1 bg-gradient-to-r from-brand-accent/20 to-brand-secondary/20 rounded-[2rem] blur opacity-30 group-hover:opacity-60 transition duration-1000" />
-                            <div className="glass-card p-2 overflow-hidden border-white/10 relative bg-brand-dark/50">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2701.8641668267813!2d8.5204!3d47.3863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47900a0d7d0f0000%3A0x0!2sHardstrasse%20201%2C%208005%20Z%C3%BCrich!5e0!3m2!1sen!2sch!4v1710691886490!5m2!1sen!2sch"
-                                    width="100%"
-                                    height="500"
-                                    style={{ border: 0, borderRadius: '1.5rem', filter: 'grayscale(1) invert(0.9) hue-rotate(180deg) brightness(0.8)' }}
-                                    allowFullScreen
-                                    loading="lazy"
-                                    referrerPolicy="no-referrer-when-downgrade"
-                                    title="JOVERO Office Location"
-                                />
-                                <div className="absolute top-8 right-8 p-4 glass-card bg-brand-primary/80 backdrop-blur-xl border-brand-accent/30 text-brand-accent shadow-neon-purple max-w-xs">
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-3 h-3 rounded-full bg-brand-accent animate-ping flex-shrink-0" />
-                                        <span className="text-xs font-mono font-bold tracking-widest uppercase text-white rtl:text-right">{contactDict.map.liveOps}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </SectionReveal>
                 </div>
             </section>
         </>

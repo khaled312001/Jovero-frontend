@@ -269,7 +269,7 @@ const initialize = () => {
                             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/5 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2" />
                             <div className="relative z-10">
                                 <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-8">Ready to Build This <span className="gradient-text">Architecture?</span></h2>
-                                <p className="text-brand-muted text-lg max-w-2xl mx-auto mb-12">Connect with our Swiss-trained architects to transform this service module into a scalable reality for your enterprise.</p>
+                                <p className="text-brand-muted text-lg max-w-2xl mx-auto mb-12">Connect with our elite architects to transform this service module into a scalable reality for your enterprise.</p>
                                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                                     <Link href="/contact">
                                         <Button size="lg" variant="primary" icon={<ArrowRight size={24} />}>

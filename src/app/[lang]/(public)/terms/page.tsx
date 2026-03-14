@@ -12,7 +12,7 @@ export default function TermsPage() {
     const terms = [
         {
             title: '1. Service Agreement',
-            content: 'By engaging with JOVERO, you agree to the terms of our project agreements, which outline scope, timelines, and deliverables. All projects are governed by Swiss law.'
+            content: 'By engaging with JOVERO, you agree to the terms of our project agreements, which outline scope, timelines, and deliverables. All projects are governed by international business laws.'
         },
         {
             title: '2. Intellectual Property',
@@ -58,7 +58,7 @@ export default function TermsPage() {
                             Terms of <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-white to-brand-secondary">Service</span>
                         </motion.h1>
                         <motion.p variants={heroTextReveal} className="text-brand-muted text-xl md:text-2xl max-w-3xl mx-auto font-light leading-relaxed">
-                            Agreement Protocol: {lastUpdated} | <span className="text-white">Legal Jurisdiction: Switzerland</span>
+                            Agreement Protocol: {lastUpdated} | <span className="text-white">Legal Jurisdiction: Global</span>
                         </motion.p>
                     </motion.div>
                 </div>
@@ -101,7 +101,7 @@ export default function TermsPage() {
                                     <div>
                                         <h2 className="text-3xl font-display font-black text-white mb-6 uppercase tracking-wider">Governing Law</h2>
                                         <p className="text-brand-muted leading-relaxed font-light text-lg">
-                                            These terms are governed by and construed in accordance with the laws of <span className="text-white font-semibold">Switzerland</span>. Any disputes arising from these terms or our services shall be subject to the exclusive jurisdiction of the Swiss federal courts.
+                                            These terms are governed by and construed in accordance with international business laws. Any disputes arising from these terms or our services shall be subject to the exclusive jurisdiction of the competent courts.
                                         </p>
                                     </div>
                                 </div>
@@ -112,7 +112,7 @@ export default function TermsPage() {
                             <div className="text-center py-10">
                                 <p className="text-brand-muted mb-4 flex items-center justify-center gap-2">
                                     <Globe size={16} className="text-brand-accent" />
-                                    JOVERO is a Swiss Licensed Software Company (CHE-154.312.079)
+                                    JOVERO is a Premier International Software Agency
                                 </p>
                             </div>
                         </SectionReveal>
