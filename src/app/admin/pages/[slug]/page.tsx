@@ -58,7 +58,7 @@ const HomeEditor = ({ data, onChange }: { data: Record<string, any>, onChange: (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <Input label="Badge Text" value={hero.badgeText || ''} onChange={(e) => updateHero('badgeText', e.target.value)} placeholder="Licensed Swiss Tech Company" />
                     <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <Input label="Title Line 1" value={hero.titleLine1 || ''} onChange={(e) => updateHero('titleLine1', e.target.value)} placeholder="Barmagly:" />
+                        <Input label="Title Line 1" value={hero.titleLine1 || ''} onChange={(e) => updateHero('titleLine1', e.target.value)} placeholder="JOVERO:" />
                         <Input label="Title Line 2" value={hero.titleLine2 || ''} onChange={(e) => updateHero('titleLine2', e.target.value)} placeholder="Swiss Precision..." />
                     </div>
                     <div className="md:col-span-2">

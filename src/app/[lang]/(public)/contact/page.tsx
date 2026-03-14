@@ -18,7 +18,7 @@ export default function ContactPage() {
     const contactDict = dict.contact;
     const { settings } = useSiteSettings();
     const address = settings?.address || COMPANY_ADDRESS;
-    const email = settings?.email || 'info@barmagly.ch';
+    const email = settings?.email || 'info@JOVERO.ch';
     const whatsapp = settings?.whatsappNumber ? `https://wa.me/${settings.whatsappNumber.replace(/[^0-9]/g, '')}` : WHATSAPP_URL;
 
     const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -259,7 +259,7 @@ export default function ContactPage() {
                                     allowFullScreen
                                     loading="lazy"
                                     referrerPolicy="no-referrer-when-downgrade"
-                                    title="Barmagly Office Location"
+                                    title="JOVERO Office Location"
                                 />
                                 <div className="absolute top-8 right-8 p-4 glass-card bg-brand-primary/80 backdrop-blur-xl border-brand-accent/30 text-brand-accent shadow-neon-cyan max-w-xs">
                                     <div className="flex items-center gap-3">

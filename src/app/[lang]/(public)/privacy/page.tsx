@@ -76,7 +76,7 @@ export default function PrivacyPage() {
                             <div className="glass-card p-10 border-white/5">
                                 <h2 className="text-2xl font-display font-bold text-brand-text mb-6">Introduction</h2>
                                 <p className="text-brand-muted leading-relaxed">
-                                    At Barmagly, we take your privacy seriously. This Policy outlines how we collect, use, and safeguard your data. By using our services, you agree to the terms described herein.
+                                    At JOVERO, we take your privacy seriously. This Policy outlines how we collect, use, and safeguard your data. By using our services, you agree to the terms described herein.
                                 </p>
                             </div>
                         </SectionReveal>
@@ -102,7 +102,7 @@ export default function PrivacyPage() {
                                 <p className="text-brand-muted leading-relaxed mb-8 font-light italic">
                                     If you have any questions regarding our Privacy Policy or data practices, please contact our legal department at:
                                 </p>
-                                <p className="text-brand-accent font-mono font-black text-xl tracking-tighter shadow-neon-cyan inline-block p-4 bg-white/5 rounded-xl border border-brand-accent/30">legal@barmagly.com</p>
+                                <p className="text-brand-accent font-mono font-black text-xl tracking-tighter shadow-neon-cyan inline-block p-4 bg-white/5 rounded-xl border border-brand-accent/30">legal@JOVERO.com</p>
                             </div>
                         </SectionReveal>
                     </div>

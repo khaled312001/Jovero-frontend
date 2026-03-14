@@ -3,13 +3,13 @@ import '../globals.css';
 import { ToastProvider } from '@/components/ui/Toast';
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://www.barmagly.tech'),
+    metadataBase: new URL('https://www.JOVERO.tech'),
     title: {
-        default: 'Barmagly | Swiss Licensed Software Development Company',
-        template: '%s | Barmagly',
+        default: 'JOVERO | Swiss Licensed Software Development Company',
+        template: '%s | JOVERO',
     },
     description:
-        'Barmagly is a Swiss-licensed software development company specializing in web development, mobile apps, UI/UX design, business systems, and digital marketing solutions.',
+        'JOVERO is a Swiss-licensed software development company specializing in web development, mobile apps, UI/UX design, business systems, and digital marketing solutions.',
     keywords: [
         'software development',
         'Swiss software company',
@@ -19,18 +19,18 @@ export const metadata: Metadata = {
         'ERP systems',
         'POS systems',
         'digital marketing',
-        'Barmagly',
+        'JOVERO',
         'Zürich',
     ],
-    authors: [{ name: 'Barmagly' }],
-    creator: 'Barmagly',
-    publisher: 'Barmagly',
+    authors: [{ name: 'JOVERO' }],
+    creator: 'JOVERO',
+    publisher: 'JOVERO',
     openGraph: {
         type: 'website',
         locale: 'en_US',
-        url: 'https://www.barmagly.tech',
-        siteName: 'Barmagly',
-        title: 'Barmagly | Swiss Licensed Software Development Company',
+        url: 'https://www.JOVERO.tech',
+        siteName: 'JOVERO',
+        title: 'JOVERO | Swiss Licensed Software Development Company',
         description:
             'Swiss-licensed software development company delivering enterprise-grade web, mobile, and business solutions.',
         images: [
@@ -38,13 +38,13 @@ export const metadata: Metadata = {
                 url: '/og-image.png',
                 width: 1200,
                 height: 630,
-                alt: 'Barmagly - Swiss Licensed Software Development',
+                alt: 'JOVERO - Swiss Licensed Software Development',
             },
         ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Barmagly | Swiss Licensed Software Development Company',
+        title: 'JOVERO | Swiss Licensed Software Development Company',
         description:
             'Swiss-licensed software development company delivering enterprise-grade web, mobile, and business solutions.',
         images: ['/og-image.png'],
@@ -81,9 +81,9 @@ export default async function RootLayout({
                         __html: JSON.stringify({
                             '@context': 'https://schema.org',
                             '@type': 'Organization',
-                            name: 'Barmagly',
-                            url: 'https://www.barmagly.tech',
-                            logo: 'https://www.barmagly.tech/logo.png',
+                            name: 'JOVERO',
+                            url: 'https://www.JOVERO.tech',
+                            logo: 'https://www.JOVERO.tech/logo.png',
                             description:
                                 'Swiss-licensed software development company specializing in enterprise solutions.',
                             address: {

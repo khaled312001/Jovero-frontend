@@ -143,7 +143,7 @@ export default function BlogDetailClient({ post }: BlogDetailClientProps) {
                                 {post.author?.name?.charAt(0) || 'B'}
                             </div>
                             <div>
-                                <p className="text-base font-semibold text-white">{post.author?.name || 'Barmagly Team'}</p>
+                                <p className="text-base font-semibold text-white">{post.author?.name || 'JOVERO Team'}</p>
                                 <p className="text-xs text-brand-muted/60">{blogDict.detail.publishedOn} {formatDate(post.publishedAt)}</p>
                             </div>
                         </div>

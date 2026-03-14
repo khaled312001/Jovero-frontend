@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
     if (!project) {
         return {
-            title: 'Project Not Found | Barmagly',
+            title: 'Project Not Found | JOVERO',
         };
     }
 
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const description = lang === 'en' && project.descriptionEn ? project.descriptionEn : project.description;
 
     return {
-        title: `${title} | Barmagly Portfolio`,
+        title: `${title} | JOVERO Portfolio`,
         description: description,
         openGraph: {
             title: title,
@@ -61,8 +61,8 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         description: description,
         creator: {
             '@type': 'Organization',
-            name: 'Barmagly',
-            url: 'https://www.barmagly.tech'
+            name: 'JOVERO',
+            url: 'https://www.JOVERO.tech'
         },
         image: project.image,
         dateCreated: project.createdAt

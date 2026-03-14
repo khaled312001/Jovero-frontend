@@ -98,7 +98,7 @@ export function AdminLayoutClient({ children }: { children: React.ReactNode }) {
                 {/* Logo */}
                 <div className="h-20 flex items-center px-8 border-b border-brand-glass-border gap-4">
                     <Link href="/admin/dashboard" className="flex items-center gap-3">
-                        <Image src="/logo.png" alt="Barmagly Logo" width={40} height={40} className="rounded-xl object-contain" />
+                        <Image src="/logo.png" alt="JOVERO Logo" width={40} height={40} className="rounded-xl object-contain" />
                         <span className="font-display font-bold text-xl text-brand-text">
                             Barm<span className="gradient-text">agly</span>
                         </span>

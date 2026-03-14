@@ -348,7 +348,7 @@ function PosSection() {
                                     <div className="w-3 h-3 rounded-full bg-yellow-500/80 hover:bg-yellow-400 transition-colors cursor-pointer" />
                                     <div className="w-3 h-3 rounded-full bg-green-500/80 hover:bg-green-400 transition-colors cursor-pointer" />
                                     <div className="ml-4 flex-1 flex justify-center">
-                                        <div className="text-xs text-white/30 font-mono tracking-widest">Barmagly POS Dashboard</div>
+                                        <div className="text-xs text-white/30 font-mono tracking-widest">JOVERO POS Dashboard</div>
                                     </div>
                                 </div>
                                 {/* Mockup Content */}
@@ -780,7 +780,7 @@ function ContactFormSection({ data }: { data?: any }) {
                                     { icon: <Globe size={20} />, title: 'Location', content: COMPANY_ADDRESS, color: 'cyan' },
                                     { icon: <Shield size={20} />, title: 'Swiss License', content: COMPANY_LICENSE, color: 'purple' },
                                     { icon: <Smartphone size={20} />, title: 'WhatsApp', content: '+41 77 941 21 26', color: 'cyan' },
-                                    { icon: <Mail size={20} />, title: 'Email Us', content: 'info@barmagly.tech', color: 'purple' },
+                                    { icon: <Mail size={20} />, title: 'Email Us', content: 'info@JOVERO.tech', color: 'purple' },
                                 ].map((item, i) => (
                                     <div key={i} className="glass-card p-6 border-white/5 hover:border-brand-accent/20 transition-all group/info hover:bg-white/[0.01]">
                                         <div className="flex items-center gap-4 mb-4">

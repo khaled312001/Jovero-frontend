@@ -12,11 +12,11 @@ export default function TermsPage() {
     const terms = [
         {
             title: '1. Service Agreement',
-            content: 'By engaging with Barmagly, you agree to the terms of our project agreements, which outline scope, timelines, and deliverables. All projects are governed by Swiss law.'
+            content: 'By engaging with JOVERO, you agree to the terms of our project agreements, which outline scope, timelines, and deliverables. All projects are governed by Swiss law.'
         },
         {
             title: '2. Intellectual Property',
-            content: 'Unless otherwise agreed in writing, Barmagly retains ownership of all underlying code and frameworks. Upon full payment, clients are granted a comprehensive license to use the final product for its intended purpose.'
+            content: 'Unless otherwise agreed in writing, JOVERO retains ownership of all underlying code and frameworks. Upon full payment, clients are granted a comprehensive license to use the final product for its intended purpose.'
         },
         {
             title: '3. Payment Terms',
@@ -24,7 +24,7 @@ export default function TermsPage() {
         },
         {
             title: '4. Limitation of Liability',
-            content: 'Barmagly provides services "as is" and shall not be liable for any indirect, incidental, or consequential damages resulting from the use of our software.'
+            content: 'JOVERO provides services "as is" and shall not be liable for any indirect, incidental, or consequential damages resulting from the use of our software.'
         }
     ];
 
@@ -72,7 +72,7 @@ export default function TermsPage() {
                             <div className="glass-card p-10 border-white/5">
                                 <h2 className="text-2xl font-display font-bold text-brand-text mb-6">Agreement to Terms</h2>
                                 <p className="text-brand-muted leading-relaxed">
-                                    Welcome to Barmagly. By accessing our website or using our services, you agree to be bound by these Terms of Service. Please read them carefully.
+                                    Welcome to JOVERO. By accessing our website or using our services, you agree to be bound by these Terms of Service. Please read them carefully.
                                 </p>
                             </div>
                         </SectionReveal>
@@ -112,7 +112,7 @@ export default function TermsPage() {
                             <div className="text-center py-10">
                                 <p className="text-brand-muted mb-4 flex items-center justify-center gap-2">
                                     <Globe size={16} className="text-brand-accent" />
-                                    Barmagly is a Swiss Licensed Software Company (CHE-154.312.079)
+                                    JOVERO is a Swiss Licensed Software Company (CHE-154.312.079)
                                 </p>
                             </div>
                         </SectionReveal>

@@ -153,7 +153,7 @@ export function LoginForm({ onSuccess }: LoginFormProps) {
             >
                 <div className="h-px w-24 bg-brand-glass-border" />
                 <p className="text-center text-brand-muted text-xs tracking-widest uppercase opacity-60">
-                    System Protocol v2.0.4 • Barmagly High Security
+                    System Protocol v2.0.4 • JOVERO High Security
                 </p>
             </motion.div>
         </motion.div>

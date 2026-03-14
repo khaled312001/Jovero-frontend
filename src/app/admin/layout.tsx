@@ -5,8 +5,8 @@ import { ToastProvider } from '@/components/ui/Toast';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Admin Control Center | Barmagly',
-    description: 'Barmagly Administrative Interface',
+    title: 'Admin Control Center | JOVERO',
+    description: 'JOVERO Administrative Interface',
 };
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {

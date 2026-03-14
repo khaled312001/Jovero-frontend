@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
     if (!service) {
         return {
-            title: 'Service Not Found | Barmagly',
+            title: 'Service Not Found | JOVERO',
         };
     }
 
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const description = lang === 'en' && service.descriptionEn ? service.descriptionEn : service.description;
 
     return {
-        title: `${title} | Barmagly Swiss Tech`,
+        title: `${title} | JOVERO Swiss Tech`,
         description: description,
         openGraph: {
             title: title,
@@ -61,8 +61,8 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         description: description,
         provider: {
             '@type': 'Organization',
-            name: 'Barmagly',
-            url: 'https://www.barmagly.tech'
+            name: 'JOVERO',
+            url: 'https://www.JOVERO.tech'
         },
         offers: {
             '@type': 'Offer',

@@ -22,19 +22,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
     if (!post) {
         return {
-            title: 'Post Not Found | Barmagly Blog',
+            title: 'Post Not Found | JOVERO Blog',
         };
     }
 
     return {
-        title: `${post.title} | Barmagly Insights`,
+        title: `${post.title} | JOVERO Insights`,
         description: post.excerpt || post.content.substring(0, 160),
         openGraph: {
             title: post.title,
             description: post.excerpt,
             type: 'article',
             publishedTime: post.publishedAt,
-            authors: [post.author?.name || 'Barmagly'],
+            authors: [post.author?.name || 'JOVERO'],
             images: post.image ? [{ url: post.image }] : undefined,
         },
     };
@@ -57,19 +57,19 @@ export default async function BlogPostPage({ params }: PageProps) {
         datePublished: post.publishedAt,
         author: {
             '@type': 'Person',
-            name: post.author?.name || 'Barmagly'
+            name: post.author?.name || 'JOVERO'
         },
         publisher: {
             '@type': 'Organization',
-            name: 'Barmagly',
+            name: 'JOVERO',
             logo: {
                 '@type': 'ImageObject',
-                url: 'https://www.barmagly.tech/logo.png' // Ensure this exists or use a variable
+                url: 'https://www.JOVERO.tech/logo.png' // Ensure this exists or use a variable
             }
         },
         mainEntityOfPage: {
             '@type': 'WebPage',
-            '@id': `https://www.barmagly.tech/blog/${params.slug}`
+            '@id': `https://www.JOVERO.tech/blog/${params.slug}`
         }
     };
 
