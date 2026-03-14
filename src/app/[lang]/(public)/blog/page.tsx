@@ -316,22 +316,6 @@ export default function BlogPage() {
                                 </ul>
                             </div>
 
-                            {/* Newsletter CTA */}
-                            <div className="glass-card p-10 bg-gradient-to-br from-brand-dark to-brand-accent/5 border-brand-accent/10 relative overflow-hidden group">
-                                <div className="absolute -bottom-20 -left-20 w-48 h-48 bg-brand-accent/5 rounded-full blur-[80px] group-hover:bg-brand-accent/10 transition-colors" />
-                                <h3 className="text-2xl font-display font-black text-white mb-4 leading-tight">{blogDict.list.newsletterTitle1} <br /><span className="text-brand-accent">{blogDict.list.newsletterTitle2}</span></h3>
-                                <p className="text-brand-muted text-sm mb-8 leading-relaxed font-light">{blogDict.list.newsletterDesc}</p>
-                                <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                                    <input
-                                        type="email"
-                                        placeholder={blogDict.list.newsletterPlaceholder}
-                                        className="w-full px-5 py-4 bg-brand-primary/50 border border-white/5 rounded-2xl text-sm text-brand-text placeholder:text-brand-muted/20 focus:outline-none focus:border-brand-accent/40 transition-all font-mono"
-                                    />
-                                    <Button variant="primary" size="xl" className="w-full shadow-neon-purple font-display tracking-widest text-xs uppercase rtl:flex-row flex-row-reverse gap-2" icon={<ArrowRight size={16} className="rtl:rotate-180" />}>
-                                        {blogDict.list.subscribeBtn}
-                                    </Button>
-                                </form>
-                            </div>
                         </aside>
                     </div>
                 </div>

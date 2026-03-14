@@ -62,10 +62,6 @@ export function Footer({ dict, lang }: FooterProps) {
                                 <Phone size={16} className="text-brand-accent shrink-0" />
                                 <span>{phone}</span>
                             </div>
-                            <div className="flex items-center gap-2 text-brand-muted">
-                                <Mail size={16} className="text-brand-accent shrink-0" />
-                                <span>{email}</span>
-                            </div>
                         </div>
                     </div>
 

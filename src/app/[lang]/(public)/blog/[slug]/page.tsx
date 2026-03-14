@@ -4,6 +4,19 @@ import { notFound } from 'next/navigation';
 import BlogDetailClient from './BlogDetailClient';
 import { publicApi } from '@/lib/api';
 
+interface PageProps {
+    params: { slug: string; lang: string };
+}
+
+async function getPostData(slug: string) {
+    try {
+        const { data } = await publicApi.getPost(slug);
+        return data;
+    } catch (error) {
+        return null;
+    }
+}
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const { slug, lang } = params;
     const post = await getPostData(slug);

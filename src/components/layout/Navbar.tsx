@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { navbarVariants } from '@/lib/animations';
 import { cn } from '@/lib/utils';
-import { Menu, X, Globe, Home, Users, Cpu, Briefcase, Monitor, FileText, Mail, Phone, Facebook } from 'lucide-react';
+import { Menu, X, Globe, Home, Users, Cpu, Briefcase, Monitor, FileText, MessageCircle, Phone, Facebook } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { useUIStore } from '@/store';
 import { WHATSAPP_URL, WHATSAPP_NUMBER, FACEBOOK_URL } from '@/lib/utils';
@@ -23,7 +23,7 @@ export function Navbar({ dict, lang, getStartedText }: { dict: any, lang: string
         { href: `/${lang}/about`, label: dict?.navbar?.about || 'About', icon: Users },
         { href: `/${lang}/services`, label: dict?.navbar?.services || 'Services', icon: Cpu },
         { href: `/${lang}/portfolio`, label: dict?.navbar?.portfolio || 'Portfolio', icon: Briefcase },
-        { href: `/${lang}/contact`, label: dict?.navbar?.contact || 'Contact', icon: Mail },
+        { href: `/${lang}/contact`, label: dict?.navbar?.contact || 'Contact', icon: MessageCircle },
     ];
 
     const switchLanguage = (newLang: string) => {
