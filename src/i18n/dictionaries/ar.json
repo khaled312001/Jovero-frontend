@@ -450,6 +450,22 @@
         "switchShort": "EN",
         "callUs": "اتصل بنا",
         "followUs": "تابعنا",
-        "visitInstagram": "زورونا على إنستجرام"
+        "visitInstagram": "زورونا على إنستجرام",
+        "invoices": "الفواتير"
+    },
+    "invoices": {
+        "title": "نظام الفواتير",
+        "subtitle": "البحث عن فاتورتك وتنزيلها",
+        "placeholder": "أدخل رقم الفاتورة...",
+        "search": "بحث عن فاتورة",
+        "notFound": "الفاتورة غير موجودة",
+        "found": "تم العثور على الفاتورة",
+        "download": "تنزيل الفاتورة (PDF)",
+        "details": {
+            "number": "رقم الفاتورة",
+            "client": "العميل",
+            "amount": "المبلغ",
+            "date": "التاريخ"
+        }
     }
 }

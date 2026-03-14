@@ -20,7 +20,7 @@
     },
     "hero": {
         "badge": "Leading Digital Marketing Agency",
-        "titleLine1": "JOVERO:",
+        "titleLine1": "JOVERO",
         "titleLine2": "Innovating Your Digital Growth",
         "subtitle": "Engineering enterprise-grade marketing and software solutions with unparalleled quality and impact.",
         "ctaPrimary": "Start Your Growth",
@@ -450,6 +450,22 @@
         "switchShort": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
         "callUs": "Call Us",
         "followUs": "Follow Us",
-        "visitInstagram": "Visit Instagram"
+        "visitInstagram": "Visit Instagram",
+        "invoices": "Invoices"
+    },
+    "invoices": {
+        "title": "Invoice System",
+        "subtitle": "Search and download your invoices",
+        "placeholder": "Enter invoice number...",
+        "search": "Search Invoice",
+        "notFound": "Invoice not found",
+        "found": "Invoice found",
+        "download": "Download PDF",
+        "details": {
+            "number": "Invoice Number",
+            "client": "Client Name",
+            "amount": "Amount",
+            "date": "Date"
+        }
     }
 }

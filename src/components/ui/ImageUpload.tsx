@@ -13,9 +13,10 @@ interface ImageUploadProps {
     onChange: (url: string) => void;
     label?: string;
     className?: string;
+    onRemove?: () => void;
 }
 
-export function ImageUpload({ value, onChange, label = "Upload Image", className }: ImageUploadProps) {
+export function ImageUpload({ value, onChange, label = "Upload Image", className, onRemove }: ImageUploadProps) {
     const fileInputRef = useRef<HTMLInputElement>(null);
     const [uploading, setUploading] = useState(false);
     const { showToast } = useToast();
