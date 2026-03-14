@@ -63,7 +63,6 @@ export function Navbar({ dict, lang, getStartedText }: { dict: any, lang: string
                     <div className="flex items-center justify-between h-24">
                         {/* Logo */}
                         <Link href="/" className="flex items-center gap-3 group">
-                            <Image src="/logo.jpg" alt="JOVERO Logo" width={160} height={160} className="w-16 h-16 rounded-2xl object-contain" priority />
                             <Image src="/jovero-text-logo.png" alt="JOVERO" width={160} height={52} className="h-10 w-auto object-contain" priority />
                         </Link>
 
@@ -148,7 +147,6 @@ export function Navbar({ dict, lang, getStartedText }: { dict: any, lang: string
                         >
                             <div className="flex items-center justify-between mb-12 shrink-0">
                                 <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenu(false)}>
-                                    <Image src="/logo.jpg" alt="JOVERO Logo" width={48} height={48} className="w-12 h-12 rounded-xl object-contain" />
                                     <Image src="/jovero-text-logo.png" alt="JOVERO" width={120} height={36} className="h-7 w-auto object-contain" priority />
                                 </Link>
                                 <button
