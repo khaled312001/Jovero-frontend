@@ -209,7 +209,8 @@ export default function BlogDetailClient({ post, lang }: BlogDetailClientProps) 
                         prose-table:border-collapse prose-table:my-8 prose-table:w-full
                         prose-th:bg-brand-accent/10 prose-th:text-brand-accent prose-th:font-bold prose-th:text-sm prose-th:uppercase prose-th:tracking-wider prose-th:px-4 prose-th:py-3 prose-th:border prose-th:border-white/10 prose-th:text-left
                         prose-td:px-4 prose-td:py-3 prose-td:border prose-td:border-white/10 prose-td:text-brand-muted prose-td:text-sm
-                    >
+                    "
+                >
                     <div dangerouslySetInnerHTML={{ __html: content }} />
                 </motion.div>
 
@@ -221,64 +222,64 @@ export default function BlogDetailClient({ post, lang }: BlogDetailClientProps) 
                         transition={{ delay: 0.7 }}
                         className="mt-16 pt-10 border-t border-white /10"
                     >
-                <h4 className="text-sm font-mono text-brand-muted/60 uppercase tracking-widest mb-5 flex items-center gap-2">
-                    <Tag size={14} className="text-brand-accent/50" />
-                    {blogDict.detail.relatedTopics}
-                </h4>
-                <div className="flex flex-wrap gap-3">
-                    {post.tags.map((tag: any) => (
-                        <span
-                            key={tag.id}
-                            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 hover:bg-brand-accent/10 text-sm text-brand-muted hover:text-brand-accent transition-all duration-300 border border-white/5 hover:border-brand-accent/20 cursor-default"
-                        >
-                            #{tag.name}
-                        </span>
-                    ))}
-                </div>
-            </motion.div>
+                        <h4 className="text-sm font-mono text-brand-muted/60 uppercase tracking-widest mb-5 flex items-center gap-2">
+                            <Tag size={14} className="text-brand-accent/50" />
+                            {blogDict.detail.relatedTopics}
+                        </h4>
+                        <div className="flex flex-wrap gap-3">
+                            {post.tags.map((tag: any) => (
+                                <span
+                                    key={tag.id}
+                                    className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 hover:bg-brand-accent/10 text-sm text-brand-muted hover:text-brand-accent transition-all duration-300 border border-white/5 hover:border-brand-accent/20 cursor-default"
+                                >
+                                    #{tag.name}
+                                </span>
+                            ))}
+                        </div>
+                    </motion.div>
                 )}
 
-            {/* CTA Section */}
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8 }}
-                className="mt-16 p-8 md:p-12 rounded-3xl bg-gradient-to-br from-brand-dark to-brand-accent/5 border border-brand-accent/10 relative overflow-hidden"
-            >
-                <div className="absolute -bottom-16 -right-16 w-40 h-40 bg-brand-accent/5 rounded-full blur-[60px]" />
-                <div className="relative z-10">
-                    <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">
-                        {blogDict.detail.ctaTitle}
-                    </h3>
-                    <p className="text-brand-muted mb-8 max-w-2xl leading-relaxed">
-                        {blogDict.detail.ctaDesc}
-                    </p>
-                    <div className="flex flex-wrap gap-4">
-                        <Link href={`/${lang}/contact`}>
-                            <Button variant="primary" size="lg" className="shadow-neon-purple">
-                                {blogDict.detail.contactTeam}
-                            </Button>
-                        </Link>
-                        <Link href={`/${lang}/services`}>
-                            <Button variant="outline" size="lg" className="border-white/10 hover:border-brand-accent/50">
-                                {blogDict.detail.viewServices}
-                            </Button>
-                        </Link>
-                    </div>
-                </div>
-            </motion.div>
-
-            {/* Back to Blog */}
-            <div className="mt-12 text-center">
-                <Link
-                    href="/blog"
-                    className="inline-flex items-center gap-2 text-brand-muted hover:text-brand-accent transition-colors group text-sm font-mono uppercase tracking-wider"
+                {/* CTA Section */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.8 }}
+                    className="mt-16 p-8 md:p-12 rounded-3xl bg-gradient-to-br from-brand-dark to-brand-accent/5 border border-brand-accent/10 relative overflow-hidden"
                 >
-                    <ArrowLeft size={16} className="rtl:rotate-180 group-hover:-translate-x-1 rtl:group-hover:translate-x-1 transition-transform" />
-                    {blogDict.detail.backToArticles}
-                </Link>
-            </div>
-        </article>
+                    <div className="absolute -bottom-16 -right-16 w-40 h-40 bg-brand-accent/5 rounded-full blur-[60px]" />
+                    <div className="relative z-10">
+                        <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">
+                            {blogDict.detail.ctaTitle}
+                        </h3>
+                        <p className="text-brand-muted mb-8 max-w-2xl leading-relaxed">
+                            {blogDict.detail.ctaDesc}
+                        </p>
+                        <div className="flex flex-wrap gap-4">
+                            <Link href={`/${lang}/contact`}>
+                                <Button variant="primary" size="lg" className="shadow-neon-purple">
+                                    {blogDict.detail.contactTeam}
+                                </Button>
+                            </Link>
+                            <Link href={`/${lang}/services`}>
+                                <Button variant="outline" size="lg" className="border-white/10 hover:border-brand-accent/50">
+                                    {blogDict.detail.viewServices}
+                                </Button>
+                            </Link>
+                        </div>
+                    </div>
+                </motion.div>
+
+                {/* Back to Blog */}
+                <div className="mt-12 text-center">
+                    <Link
+                        href="/blog"
+                        className="inline-flex items-center gap-2 text-brand-muted hover:text-brand-accent transition-colors group text-sm font-mono uppercase tracking-wider"
+                    >
+                        <ArrowLeft size={16} className="rtl:rotate-180 group-hover:-translate-x-1 rtl:group-hover:translate-x-1 transition-transform" />
+                        {blogDict.detail.backToArticles}
+                    </Link>
+                </div>
+            </article>
         </main >
     );
 }
