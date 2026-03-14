@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Plus, Edit, Trash2, Save, X, Star, ExternalLink, MoreVertical, LayoutGrid } from 'lucide-react';
 import Image from 'next/image';
 import { adminApi } from '@/lib/api';
-import { cn } from '@/lib/utils';
+import { cn, getImageUrl } from '@/lib/utils';
 import { Button } from '@/components/ui/Button';
 import { Input, Textarea } from '@/components/ui/FormElements';
 import { ImageUpload } from '@/components/ui/ImageUpload';
@@ -164,7 +164,7 @@ export default function AdminPortfolioPage() {
                                     <div className="flex flex-wrap gap-2">
                                         {gallery.map((img) => (
                                             <div key={img.id} className="relative group w-20 h-20 rounded-lg overflow-hidden border border-brand-glass-border">
-                                                <Image src={img.url} className="w-full h-full object-cover" alt="" fill sizes="80px" />
+                                                <Image src={getImageUrl(img.url)} className="w-full h-full object-cover" alt="" fill sizes="80px" />
                                                 <button
                                                     onClick={() => handleDeleteImage(img.id)}
                                                     className="absolute inset-0 bg-red-500/80 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
@@ -240,7 +240,7 @@ export default function AdminPortfolioPage() {
                         <div className="flex items-center gap-3 mb-3">
                             {item.image ? (
                                 <div className="relative w-12 h-12 rounded-lg overflow-hidden flex-shrink-0">
-                                    <Image src={item.image} className="object-cover bg-brand-surface" alt="" fill sizes="48px" />
+                                    <Image src={getImageUrl(item.image)} className="object-cover bg-brand-surface" alt="" fill sizes="48px" />
                                 </div>
                             ) : (
                                 <div className="w-12 h-12 rounded-lg bg-brand-surface flex items-center justify-center">

@@ -10,7 +10,7 @@ import { adminApi } from '@/lib/api';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/FormElements';
 import { useToast } from '@/components/ui/Toast';
-import { formatBytes } from '@/lib/utils';
+import { formatBytes, getImageUrl } from '@/lib/utils';
 import { staggerContainer, staggerItem } from '@/lib/animations';
 import Image from 'next/image';
 
@@ -214,7 +214,7 @@ export default function AdminMediaPage() {
                                         {item.mimetype.startsWith('image/') ? (
                                             <div className="relative w-full h-full">
                                                 <Image
-                                                    src={`${process.env.NEXT_PUBLIC_API_URL?.replace('/api', '') || 'http://localhost:3001'}${item.url}`}
+                                                    src={getImageUrl(item.url)}
                                                     alt={item.alt || item.filename}
                                                     fill
                                                     className="object-cover transition-transform group-hover:scale-110"
@@ -251,7 +251,7 @@ export default function AdminMediaPage() {
                                     <div className="w-12 h-12 rounded-lg bg-brand-surface flex items-center justify-center shrink-0 overflow-hidden relative">
                                         {item.mimetype.startsWith('image/') ? (
                                             <Image
-                                                src={`${process.env.NEXT_PUBLIC_API_URL?.replace('/api', '') || 'http://localhost:3001'}${item.url}`}
+                                                src={getImageUrl(item.url)}
                                                 alt={item.alt || item.filename}
                                                 fill
                                                 className="object-cover"
@@ -310,7 +310,7 @@ export default function AdminMediaPage() {
                                 {selectedItem.mimetype.startsWith('image/') ? (
                                     <div className="relative w-full h-full">
                                         <Image
-                                            src={`${process.env.NEXT_PUBLIC_API_URL?.replace('/api', '') || 'http://localhost:3001'}${selectedItem.url}`}
+                                            src={getImageUrl(selectedItem.url)}
                                             alt={selectedItem.alt || selectedItem.filename}
                                             fill
                                             className="object-contain shadow-2xl"
