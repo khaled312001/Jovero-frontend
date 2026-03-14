@@ -46,7 +46,7 @@ export function Footer({ dict, lang }: FooterProps) {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                     {/* Brand Column */}
                     <div className="lg:col-span-1">
-                        <Link href={`/${lang}`} className="relative h-12 w-40 mb-6 block hover:opacity-80 transition-opacity">
+                        <Link href={`/${lang}`} className="relative h-16 w-52 mb-6 block hover:opacity-80 transition-opacity">
                             <Image
                                 src="/images/logo.png"
                                 alt="JOVERO"
