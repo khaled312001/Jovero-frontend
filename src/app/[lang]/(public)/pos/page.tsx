@@ -38,7 +38,7 @@ export default function PosPage() {
                 <div className="section-container relative z-10 text-center flex flex-col items-center">
                     <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="max-w-4xl mx-auto flex flex-col items-center">
                         <motion.div variants={heroTextReveal} className="mb-8">
-                            <span className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-brand-glass border border-brand-accent/30 text-brand-accent text-xs font-mono tracking-[0.2em] shadow-neon-cyan backdrop-blur-md">
+                            <span className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-brand-glass border border-brand-accent/30 text-brand-accent text-xs font-mono tracking-[0.2em] shadow-neon-purple backdrop-blur-md">
                                 <Store size={16} className="animate-pulse" />
                                 <span className="uppercase">{posDict.hero.badge}</span>
                             </span>
@@ -57,7 +57,7 @@ export default function PosPage() {
 
                         <motion.div variants={heroTextReveal} className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full max-w-xl">
                             <Link href="/contact" className="w-full sm:w-1/2">
-                                <Button size="xl" variant="primary" icon={<ArrowRight size={22} className="rtl:rotate-180" />} className="w-full h-16 text-lg font-bold rounded-xl shadow-neon-cyan transition-all duration-500 hover:scale-105 active:scale-95 flex-row-reverse rtl:flex-row gap-3 font-display">
+                                <Button size="xl" variant="primary" icon={<ArrowRight size={22} className="rtl:rotate-180" />} className="w-full h-16 text-lg font-bold rounded-xl shadow-neon-purple transition-all duration-500 hover:scale-105 active:scale-95 flex-row-reverse rtl:flex-row gap-3 font-display">
                                     {posDict.hero.btnPrimary}
                                 </Button>
                             </Link>
@@ -81,7 +81,7 @@ export default function PosPage() {
                             <h2 className="text-4xl md:text-6xl font-display font-black text-white mb-6 text-glow tracking-tight">
                                 {posDict.features.titleLine1} <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-secondary">{posDict.features.titleHighlight}</span>
                             </h2>
-                            <div className="w-24 h-1 bg-brand-accent mx-auto mb-8 rounded-full shadow-neon-cyan" />
+                            <div className="w-24 h-1 bg-brand-accent mx-auto mb-8 rounded-full shadow-neon-purple" />
                         </div>
                     </SectionReveal>
 
@@ -89,7 +89,7 @@ export default function PosPage() {
                         {posDict.features.list.map((feat: any, i: number) => (
                             <SectionReveal key={i} delay={i * 0.1}>
                                 <div className="glass-card p-8 group hover:bg-white/[0.03] transition-all duration-500 border-white/5 h-full flex flex-col items-start gap-4">
-                                    <div className="p-4 rounded-2xl bg-brand-surface border border-white/10 text-brand-accent w-fit group-hover:shadow-neon-cyan transition-all duration-500 group-hover:scale-110 rtl:ml-auto ltr:mr-auto">
+                                    <div className="p-4 rounded-2xl bg-brand-surface border border-white/10 text-brand-accent w-fit group-hover:shadow-neon-purple transition-all duration-500 group-hover:scale-110 rtl:ml-auto ltr:mr-auto">
                                         {featureIcons[Math.min(i, featureIcons.length - 1)]}
                                     </div>
                                     <h3 className="text-xl font-display font-bold text-white group-hover:text-brand-accent transition-colors rtl:text-right w-full ltr:text-left">

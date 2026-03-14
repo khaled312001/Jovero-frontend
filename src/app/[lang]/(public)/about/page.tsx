@@ -36,7 +36,7 @@ function AboutHero() {
                 <motion.div
                     animate={{ y: [0, -20, 0], rotate: [0, 5, -5, 0] }}
                     transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute top-1/3 left-[15%] p-4 glass-card border-brand-accent/20 opacity-40 shadow-neon-cyan"
+                    className="absolute top-1/3 left-[15%] p-4 glass-card border-brand-accent/20 opacity-40 shadow-neon-purple"
                 >
                     <Shield className="text-brand-accent" size={32} />
                 </motion.div>
@@ -57,7 +57,7 @@ function AboutHero() {
                     className="max-w-4xl mx-auto text-center"
                 >
                     <motion.div variants={heroTextReveal} className="mb-8">
-                        <span className="inline-flex items-center gap-2 px-6 py-2 rounded-full text-xs font-mono font-bold uppercase tracking-[0.2em] bg-brand-glass border border-brand-accent/30 text-brand-accent shadow-neon-cyan backdrop-blur-md">
+                        <span className="inline-flex items-center gap-2 px-6 py-2 rounded-full text-xs font-mono font-bold uppercase tracking-[0.2em] bg-brand-glass border border-brand-accent/30 text-brand-accent shadow-neon-purple backdrop-blur-md">
                             <Zap size={14} className="animate-pulse" />
                             {dict.about.hero.badge}
                         </span>
@@ -129,7 +129,7 @@ function StorySection() {
 
                                 <div className="relative space-y-10">
                                     <div className="flex items-start gap-6 group/item">
-                                        <div className="p-4 rounded-2xl bg-brand-accent/10 text-brand-accent border border-brand-accent/20 group-hover/item:shadow-neon-cyan transition-all duration-500">
+                                        <div className="p-4 rounded-2xl bg-brand-accent/10 text-brand-accent border border-brand-accent/20 group-hover/item:shadow-neon-purple transition-all duration-500">
                                             <Shield size={28} />
                                         </div>
                                         <div>
@@ -181,7 +181,7 @@ function MissionVisionSection() {
                     <SectionReveal direction="left">
                         <div className="glass-card p-12 h-full hover-glow group border-white/5 relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent/5 rounded-full blur-3xl group-hover:bg-brand-accent/10 transition-colors" />
-                            <div className="p-4 rounded-2xl bg-brand-accent/10 text-brand-accent w-fit mb-8 border border-brand-accent/20 group-hover:shadow-neon-cyan transition-all duration-500">
+                            <div className="p-4 rounded-2xl bg-brand-accent/10 text-brand-accent w-fit mb-8 border border-brand-accent/20 group-hover:shadow-neon-purple transition-all duration-500">
                                 <Target size={32} />
                             </div>
                             <h3 className="text-3xl font-display font-black text-white mb-6 tracking-tight">{dict.about.missionVision.missionTitle}</h3>
@@ -285,7 +285,7 @@ function TimelineSection({ data }: { data?: any[] }) {
                 <div className="relative max-w-5xl mx-auto mt-20">
                     <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-brand-accent/50 via-brand-secondary/50 to-transparent hidden md:block">
                         <motion.div
-                            className="absolute top-0 left-[-2px] w-[6px] h-20 bg-white shadow-neon-cyan blur-[2px] rounded-full"
+                            className="absolute top-0 left-[-2px] w-[6px] h-20 bg-white shadow-neon-purple blur-[2px] rounded-full"
                             animate={{ y: ['0%', '500%'], opacity: [0, 1, 0] }}
                             transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
                         />
@@ -308,7 +308,7 @@ function TimelineSection({ data }: { data?: any[] }) {
 
                                     <div className="hidden md:flex relative items-center justify-center w-12 h-12">
                                         <div className="absolute inset-0 bg-brand-accent/20 rounded-full animate-ping opacity-20" />
-                                        <div className="w-5 h-5 rounded-full bg-brand-accent border-4 border-brand-primary shadow-neon-cyan z-10" />
+                                        <div className="w-5 h-5 rounded-full bg-brand-accent border-4 border-brand-primary shadow-neon-purple z-10" />
                                     </div>
 
                                     <div className="flex-1 hidden md:block" />
@@ -374,7 +374,7 @@ function TechStackSection({ data }: { data?: any[] }) {
                                                 initial={{ width: 0 }}
                                                 whileInView={{ width: `${tech.level}%` }}
                                                 transition={{ duration: 1.5, delay: i * 0.1, ease: 'circOut' }}
-                                                className="h-full bg-gradient-to-r from-brand-accent to-brand-secondary shadow-neon-cyan"
+                                                className="h-full bg-gradient-to-r from-brand-accent to-brand-secondary shadow-neon-purple"
                                             />
                                         </div>
                                     </div>
@@ -394,11 +394,11 @@ function TechStackSection({ data }: { data?: any[] }) {
                                     transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
                                 >
                                     <div className="p-8 rounded-full border-2 border-dashed border-brand-secondary/20">
-                                        <div className="w-32 h-32 rounded-full bg-brand-glass flex items-center justify-center backdrop-blur-3xl border border-brand-accent/30 shadow-neon-cyan">
+                                        <div className="w-32 h-32 rounded-full bg-brand-glass flex items-center justify-center backdrop-blur-3xl border border-brand-accent/30 shadow-neon-purple">
                                             <Zap size={48} className="text-brand-accent animate-pulse" />
                                         </div>
                                     </div>
-                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 p-4 glass-card border-brand-accent/30 text-brand-accent shadow-neon-cyan">
+                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 p-4 glass-card border-brand-accent/30 text-brand-accent shadow-neon-purple">
                                         <Atom size={24} />
                                     </div>
                                     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 p-4 glass-card border-brand-secondary/30 text-brand-secondary shadow-neon-purple">

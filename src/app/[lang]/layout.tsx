@@ -17,7 +17,6 @@ export const metadata: Metadata = {
         'mobile app development',
         'UI/UX design',
         'ERP systems',
-        'POS systems',
         'digital marketing',
         'JOVERO',
         'Zürich',
