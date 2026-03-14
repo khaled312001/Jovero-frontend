@@ -4,21 +4,9 @@ import { notFound } from 'next/navigation';
 import BlogDetailClient from './BlogDetailClient';
 import { publicApi } from '@/lib/api';
 
-interface PageProps {
-    params: { slug: string };
-}
-
-async function getPostData(slug: string) {
-    try {
-        const { data } = await publicApi.getPost(slug);
-        return data; // Usually API returns data wrapper
-    } catch (error) {
-        return null;
-    }
-}
-
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-    const post = await getPostData(params.slug);
+    const { slug, lang } = params;
+    const post = await getPostData(slug);
 
     if (!post) {
         return {
@@ -26,12 +14,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         };
     }
 
+    const title = lang === 'en' && post.titleEn ? post.titleEn : post.title;
+    const excerpt = lang === 'en' && post.excerptEn ? post.excerptEn : post.excerpt;
+
     return {
-        title: `${post.title} | JOVERO Insights`,
-        description: post.excerpt || post.content.substring(0, 160),
+        title: `${title} | JOVERO Insights`,
+        description: excerpt || (post.contentEn || post.content).substring(0, 160),
         openGraph: {
-            title: post.title,
-            description: post.excerpt,
+            title: title,
+            description: excerpt,
             type: 'article',
             publishedTime: post.publishedAt,
             authors: [post.author?.name || 'JOVERO'],
@@ -41,18 +32,22 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
-    const post = await getPostData(params.slug);
+    const { slug, lang } = params;
+    const post = await getPostData(slug);
 
     if (!post) {
         notFound();
     }
 
+    const title = lang === 'en' && post.titleEn ? post.titleEn : post.title;
+    const excerpt = lang === 'en' && post.excerptEn ? post.excerptEn : post.excerpt;
+
     // JSON-LD Structured Data
     const jsonLd = {
         '@context': 'https://schema.org',
         '@type': 'BlogPosting',
-        headline: post.title,
-        description: post.excerpt,
+        headline: title,
+        description: excerpt,
         image: post.image,
         datePublished: post.publishedAt,
         author: {
@@ -64,12 +59,12 @@ export default async function BlogPostPage({ params }: PageProps) {
             name: 'JOVERO',
             logo: {
                 '@type': 'ImageObject',
-                url: 'https://www.JOVERO.tech/logo.png' // Ensure this exists or use a variable
+                url: 'https://www.JOVERO.tech/logo.png'
             }
         },
         mainEntityOfPage: {
             '@type': 'WebPage',
-            '@id': `https://www.JOVERO.tech/blog/${params.slug}`
+            '@id': `https://www.JOVERO.tech/blog/${slug}`
         }
     };
 
@@ -79,7 +74,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
-            <BlogDetailClient post={post} />
+            <BlogDetailClient post={post} lang={lang} />
         </>
     );
 }

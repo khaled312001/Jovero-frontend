@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Calendar, Clock, ArrowRight, Tag, Search } from 'lucide-react';
+import { useParams } from 'next/navigation';
 import { Button } from '@/components/ui/Button';
 import { SectionReveal, SectionHeading } from '@/components/ui/SectionReveal';
 import { staggerContainer, staggerItem, heroTextReveal } from '@/lib/animations';
@@ -28,6 +29,8 @@ interface BlogPost {
 const allCategoryValue = 'ALL_CATEGORIES_LOGICAL_VALUE';
 
 export default function BlogPage() {
+    const params = useParams();
+    const lang = params?.lang as string;
     const dict = useDictionary();
     const blogDict = dict.blog;
 
@@ -47,10 +50,16 @@ export default function BlogPage() {
                 const mapped = postsData.map((p: any) => ({
                     id: p.id,
                     slug: p.slug,
-                    title: p.title,
-                    excerpt: p.excerpt,
-                    category: p.category,
-                    tags: p.tags || [],
+                    title: lang === 'en' && p.titleEn ? p.titleEn : p.title,
+                    excerpt: lang === 'en' && p.excerptEn ? p.excerptEn : p.excerpt,
+                    category: p.category ? {
+                        ...p.category,
+                        name: lang === 'en' && p.category.nameEn ? p.category.nameEn : p.category.name
+                    } : null,
+                    tags: (p.tags || []).map((t: any) => ({
+                        ...t,
+                        name: lang === 'en' && t.nameEn ? t.nameEn : t.name
+                    })),
                     publishedAt: p.publishedAt,
                     readTime: p.readTime,
                     image: p.image
@@ -239,7 +248,7 @@ export default function BlogPage() {
                                                                 </span>
                                                             ))}
                                                         </div>
-                                                        <Link href={`/blog/${post.slug}`}>
+                                                        <Link href={`/${lang}/blog/${post.slug}`}>
                                                             <Button variant="outline" size="lg" className="border-white/10 hover:border-brand-accent/50 shadow-sm hover:shadow-neon-purple px-8 rtl:flex-row flex-row-reverse gap-2" icon={<ArrowRight size={18} className="rtl:rotate-180" />}>
                                                                 {blogDict.list.readArticle}
                                                             </Button>

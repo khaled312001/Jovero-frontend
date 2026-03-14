@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { WHATSAPP_URL, FACEBOOK_URL } from '@/lib/utils';
 import { Phone, Mail, ExternalLink } from 'lucide-react';
 import { useSiteSettings } from '@/lib/contexts/SiteContext';
@@ -45,12 +46,12 @@ export function Footer({ dict, lang }: FooterProps) {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                     {/* Brand Column */}
                     <div className="lg:col-span-1">
-                        <Link href="/" className="flex items-center gap-3 mb-6">
-                            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-accent to-brand-secondary flex items-center justify-center font-display font-bold text-white text-lg">
-                                J
-                            </div>
-                            <span className="text-xl font-display font-bold text-brand-text uppercase tracking-wider">
-                                JOV<span className="gradient-text">ERO</span>
+                        <Link href="/" className="flex flex-col items-start leading-none group no-underline mb-6">
+                            <span className="font-serif text-2xl text-white tracking-widest opacity-80 group-hover:opacity-100 group-hover:text-brand-accent transition-all duration-500">
+                                JOVERO
+                            </span>
+                            <span className="font-sans text-[8px] uppercase tracking-[0.2em] text-brand-muted mt-1 group-hover:text-white transition-all duration-500">
+                                Marketing Agency
                             </span>
                         </Link>
                         <p className="text-brand-muted text-sm leading-relaxed mb-6">

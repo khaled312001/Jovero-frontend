@@ -97,6 +97,8 @@ function ServicesHero() {
 }
 
 function ServiceSection({ service, index }: { service: ServiceDetail; index: number }) {
+    const params = useParams();
+    const lang = params?.lang as string;
     const isEven = index % 2 === 0;
     const dict = useDictionary();
 
@@ -122,7 +124,7 @@ function ServiceSection({ service, index }: { service: ServiceDetail; index: num
                                 {service.description}
                             </p>
                             <div className="flex flex-wrap gap-4">
-                                <Link href={`/services/${service.id}`}>
+                                <Link href={`/${lang}/services/${service.id}`}>
                                     <Button variant="primary" size="lg" icon={<ArrowRight size={20} className="rtl:rotate-180" />} className="shadow-neon-purple">
                                         {dict.services.serviceSection.explorationHub}
                                     </Button>
@@ -288,7 +290,7 @@ export default function ServicesPage() {
                                 {dict.services.cta.subtitle}
                             </p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                                <Link href="/contact" className="w-full sm:w-auto">
+                                <Link href={`/${lang}/contact`} className="w-full sm:w-auto">
                                     <Button size="xl" variant="primary" icon={<ArrowRight size={24} className="rtl:rotate-180" />} className="w-full sm:min-w-[240px] shadow-neon-purple flex-row-reverse rtl:flex-row">
                                         {dict.services.cta.launchSolution}
                                     </Button>

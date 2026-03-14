@@ -86,7 +86,7 @@ export default function ServiceDetailClient({ service, lang }: ServiceDetailClie
                             <motion.div variants={heroTextReveal} className="mb-6">
                                 <Link href={`/${lang}/services`} className="inline-flex items-center gap-2 text-brand-accent font-mono text-sm hover:gap-3 transition-all group">
                                     <ArrowLeft size={16} />
-                                    <span>SYSTEM_SERVICES</span>
+                                    <span>{dict.navbar.services}</span>
                                 </Link>
                             </motion.div>
 
@@ -110,12 +110,12 @@ export default function ServiceDetailClient({ service, lang }: ServiceDetailClie
                             <motion.div variants={heroTextReveal} className="flex flex-col sm:flex-row items-center gap-6">
                                 <Link href={`${WHATSAPP_URL}?text=I'm interested in ${title}`} target="_blank">
                                     <Button size="lg" variant="primary" icon={<MessageCircle size={20} />}>
-                                        Inquire Now
+                                        {lang === 'ar' ? 'استفسر الآن' : 'Inquire Now'}
                                     </Button>
                                 </Link>
                                 <Link href={`/${lang}/contact`}>
                                     <Button size="lg" variant="neon" icon={<ArrowRight size={20} />}>
-                                        Custom Roadmap
+                                        {lang === 'ar' ? 'خارطة طريق مخصصة' : 'Custom Roadmap'}
                                     </Button>
                                 </Link>
                             </motion.div>

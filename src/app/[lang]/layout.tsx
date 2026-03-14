@@ -5,11 +5,11 @@ import { ToastProvider } from '@/components/ui/Toast';
 export const metadata: Metadata = {
     metadataBase: new URL('https://www.JOVERO.tech'),
     title: {
-        default: 'JOVERO | Swiss Licensed Software Development Company',
+        default: 'JOVERO | Premier Marketing \u0026 Digital Growth Agency',
         template: '%s | JOVERO',
     },
     description:
-        'JOVERO is a Swiss-licensed software development company specializing in web development, mobile apps, UI/UX design, business systems, and digital marketing solutions.',
+        'JOVERO is a premier digital marketing agency specializing in electronic growth, digital strategy, SEO, and bespoke software solutions.',
     keywords: [
         'software development',
         'Swiss software company',
@@ -82,9 +82,9 @@ export default async function RootLayout({
                             '@type': 'Organization',
                             name: 'JOVERO',
                             url: 'https://www.JOVERO.tech',
-                            logo: 'https://www.JOVERO.tech/logo.png',
+                            logo: 'https://www.JOVERO.tech/jovero-text-logo.png',
                             description:
-                                'Swiss-licensed software development company specializing in enterprise solutions.',
+                                'Premier digital marketing agency specializing in enterprise growth and tech solutions.',
                             address: {
                                 '@type': 'PostalAddress',
                                 streetAddress: 'Hardstrasse 201',

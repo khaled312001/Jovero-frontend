@@ -10,29 +10,30 @@ const config: Config = {
         extend: {
             colors: {
                 brand: {
-                    // === JOVERO BRAND COLORS ===
-                    primary: '#0a0b17',         // True JOVERO deep navy background
-                    accent: '#8B5CF6',          // JOVERO Purple (Violet-500)
-                    secondary: '#3B82F6',       // JOVERO Blue (Blue-500)
-                    dark: '#05060d',            // Darkest depth
-                    surface: '#111326',         // Panel BG (Lighter deep navy)
-                    text: '#F8FAFC',            // White-ish text
-                    muted: '#94A3B8',           // Slate-400 for muted text
+                    // === JOVERO BRAND COLORS - Marketing Agency Aesthetic ===
+                    primary: '#05011a',         // Deep midnight/purple background
+                    accent: '#bb26ff',          // Vibrant Magenta/Purple
+                    secondary: '#00f2ff',       // Vibrant Cyan/Blue
+                    dark: '#020617',            // Darkest depth
+                    surface: '#0d0d21',         // Panel BG (Lighter dark navy)
+                    text: '#ffffff',            // Pure white text
+                    muted: '#94a3b8',           // Slate-400 for muted text
 
                     // Specific UI states
-                    'accent-hover': '#7C3AED',
-                    'secondary-hover': '#2563EB',
+                    'accent-hover': '#9d1df5',
+                    'secondary-hover': '#00d8e6',
 
                     // Glass & Glow
-                    glass: 'rgba(3, 7, 18, 0.6)',
-                    'glass-border': 'rgba(139, 92, 246, 0.15)',
-                    'glass-border-hover': 'rgba(139, 92, 246, 0.3)',
-                    glow: 'rgba(139, 92, 246, 0.15)',
+                    glass: 'rgba(5, 1, 26, 0.7)',
+                    'glass-border': 'rgba(187, 38, 255, 0.15)',
+                    'glass-border-hover': 'rgba(0, 242, 255, 0.3)',
+                    glow: 'rgba(187, 38, 255, 0.2)',
                 },
             },
             fontFamily: {
                 sans: ['Inter', 'system-ui', 'sans-serif'],
                 display: ['Outfit', 'system-ui', 'sans-serif'],
+                serif: ['Playfair Display', 'serif'],
                 mono: ['JetBrains Mono', 'monospace'],
             },
             boxShadow: {
@@ -85,9 +86,10 @@ const config: Config = {
                 },
             },
             backgroundImage: {
-                'hero-gradient': 'radial-gradient(circle at top center, #1E1B4B 0%, #02040A 100%)',
-                'accent-gradient': 'linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%)',
-                'card-gradient': 'linear-gradient(180deg, rgba(11,17,32,0.8) 0%, rgba(2,4,10,0.9) 100%)',
+                'hero-gradient': 'radial-gradient(circle at top center, #1e1b4b 0%, #05011a 100%)',
+                'accent-gradient': 'linear-gradient(135deg, #bb26ff 0%, #00f2ff 100%)',
+                'card-gradient': 'linear-gradient(180deg, rgba(13, 13, 33, 0.8) 0%, rgba(5, 1, 26, 0.9) 100%)',
+                'glow-radial': 'radial-gradient(circle at center, var(--tw-gradient-from) 0%, transparent 70%)',
             },
         },
     },

@@ -68,7 +68,7 @@ export default function PortfolioDetailClient({ project, lang }: PortfolioDetail
                         className="max-w-4xl"
                     >
                         <motion.div variants={heroTextReveal} className="mb-8">
-                            <Link href="/portfolio" className="inline-flex items-center gap-2 text-brand-accent font-mono text-sm hover:gap-3 transition-all">
+                            <Link href={`/${lang}/portfolio`} className="inline-flex items-center gap-2 text-brand-accent font-mono text-sm hover:gap-3 transition-all">
                                 <ArrowLeft size={16} />
                                 <span>{(dict.portfolio?.detail as any)?.backToPortfolio || 'BACK_TO_PORTFOLIO'}</span>
                             </Link>
