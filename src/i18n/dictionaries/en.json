@@ -1,0 +1,419 @@
+{
+    "common": {
+        "loading": "Loading...",
+        "error": "An error occurred",
+        "backToHome": "Back to Home",
+        "contactUs": "Contact Us",
+        "readMore": "Read More",
+        "viewAll": "View All",
+        "submit": "Submit"
+    },
+    "navbar": {
+        "home": "Home",
+        "services": "Services",
+        "portfolio": "Portfolio",
+        "blog": "Blog",
+        "about": "About Us",
+        "contact": "Contact",
+        "getStarted": "Get Started",
+        "admin": "Admin"
+    },
+    "hero": {
+        "badge": "Leading Digital Marketing Agency",
+        "titleLine1": "JOVERO:",
+        "titleLine2": "Innovating Your Digital Growth",
+        "subtitle": "Engineering enterprise-grade marketing and software solutions with unparalleled quality and impact.",
+        "ctaPrimary": "Explore Our Work",
+        "ctaSecondary": "Talk to an Expert"
+    },
+    "footer": {
+        "description": "JOVERO is a premier digital marketing and software development agency specializing in enterprise-grade web, mobile, and digital growth solutions.",
+        "quickLinks": "Quick Links",
+        "legal": "Legal",
+        "contact": "Contact Us",
+        "newsletter": "Newsletter",
+        "newsletterDesc": "Subscribe to our newsletter for the latest marketing trends and tech updates.",
+        "newsletterPlaceholder": "Enter your email",
+        "subscribe": "Subscribe",
+        "rights": "All rights reserved.",
+        "privacyPolicy": "Privacy Policy",
+        "termsOfService": "Terms of Service",
+        "services": "Services",
+        "chatWhatsapp": "Chat on WhatsApp",
+        "links": {
+            "web": "Web Development & Design",
+            "mobile": "Mobile Application Development",
+            "design": "UI/UX & Brand Identity",
+            "marketing": "Digital Marketing & SEO",
+            "business": "Business Growth Solutions"
+        }
+    },
+    "home": {
+        "services": {
+            "title": "Digital Excellence",
+            "subtitle": "We combine creative strategy with cutting-edge technology to deliver systems that drive growth and institutionalize innovation."
+        },
+        "portfolio": {
+            "title": "Our Work",
+            "subtitle": "Discover how we've helped businesses transform and scale.",
+            "viewProject": "View Project",
+            "noProjects": "No projects found"
+        },
+        "statistics": {
+            "years": "Years of Excellence",
+            "projects": "Projects Completed",
+            "clients": "Happy Clients",
+            "support": "Growth Strategy"
+        },
+        "testimonials": {
+            "title": "Client Success",
+            "subtitle": "What our partners say about working with JOVERO."
+        },
+        "blog": {
+            "title": "Insights & News",
+            "subtitle": "Latest updates from the marketing world and our company."
+        },
+        "contact": {
+            "title": "Let's Build Together",
+            "subtitle": "Ready to transform your ideas into reality? Let's discuss your project.",
+            "form": {
+                "name": "Full Name",
+                "email": "Email Address",
+                "phone": "Phone Number",
+                "company": "Company Name",
+                "service": "Interested Service",
+                "message": "Project Details",
+                "submit": "Send Message",
+                "success": "Message sent successfully! We'll be in touch soon.",
+                "error": "Failed to send message. Please try again."
+            }
+        },
+        "whyChoose": {
+            "badge": "Core Values",
+            "title": "Built on Strategic Excellence",
+            "subtitle": "We combine engineering discipline with global rapid innovation to deliver digital solutions that redefine industry standards in growth, security, and performance.",
+            "cta": "Our Strategic Approach",
+            "cards": {
+                "licensed": {
+                    "title": "Expert Team",
+                    "desc": "A multidisciplinary team of designers, developers, and marketers dedicated to your success."
+                },
+                "performance": {
+                    "title": "Elite Performance",
+                    "desc": "We utilize high-end frameworks to build ultra-fast, scalable, and future-proof digital architectures."
+                },
+                "partners": {
+                    "title": "Strategic Partners",
+                    "desc": "Our team acts as your technology partner, working closely to translate goals into scalable reality."
+                },
+                "global": {
+                    "title": "Global Delivery",
+                    "desc": "Operating globally, delivering quality that meets international standards of excellence."
+                }
+            }
+        },
+        "tech": {
+            "badge": "Tech Ecosystem",
+            "titleLine1": "Advanced",
+            "titleHighlight": "Standards",
+            "subtitle": "We architect high-performance infrastructures using the world's most sophisticated technology frameworks."
+        }
+    },
+    "about": {
+        "hero": {
+            "badge": "Digital Excellence",
+            "titleLine1": "Crafting Digital",
+            "titleHighlight": "Solutions with Impact",
+            "subtitle": "We are a premier digital marketing and software powerhouse, engineering advanced systems that redefine industry standards through precision and innovation."
+        },
+        "story": {
+            "badge": "Our Origin",
+            "title": "Innovation Driven",
+            "desc1": "JOVERO was born from a simple yet powerful vision: to bridge the gap between cutting-edge technology and real-world business needs.",
+            "desc2": "Founded on a commitment to excellence, we set out to create software and marketing solutions that don't just meet expectations — they redefine them.",
+            "desc3": "Our multidisciplinary team combines engineering traditions with global innovative speed. We specialize in architecting complex digital ecosystems that empower businesses to lead in a technology-first world.",
+            "stat1Value": "100+",
+            "stat1Label": "Projects Delivered",
+            "stat2Value": "5+",
+            "stat2Label": "Years of Innovation",
+            "qualityTitle": "Quality Certified",
+            "qualityDesc": "Adhering to the most rigorous standards for software engineering and digital marketing."
+        },
+        "missionVision": {
+            "missionTitle": "Our Mission",
+            "missionDesc": "To empower businesses worldwide with <span class=\"text-white font-medium\">innovative, reliable, and scalable</span> digital solutions. We are committed to transforming complex challenges into elegant experiences that drive measurable growth and lasting impact.",
+            "visionTitle": "Our Vision",
+            "visionDesc": "To be the leading global agency recognized for innovation, quality, and client success. We envision a future where every business, regardless of size, can harness the power of technology to reach its full potential."
+        },
+        "values": {
+            "badge": "Core Principles",
+            "title": "The JOVERO DNA",
+            "description": "These core values are the foundation of everything we architect.",
+            "default": [
+                {
+                    "title": "Excellence",
+                    "desc": "We deliver nothing short of the highest quality in every single campaign and unit of code.",
+                    "color": "cyan"
+                },
+                {
+                    "title": "Innovation",
+                    "desc": "Continuously pushing boundaries with futuristic technical and marketing solutions.",
+                    "color": "purple"
+                },
+                {
+                    "title": "Integrity",
+                    "desc": "Transparent, honest, and ethical in every partnership we build.",
+                    "color": "cyan"
+                },
+                {
+                    "title": "Collaboration",
+                    "desc": "Working closely with clients as true architects of their success.",
+                    "color": "purple"
+                },
+                {
+                    "title": "Reliability",
+                    "desc": "Delivering on our promises with absolute precision, every time.",
+                    "color": "cyan"
+                },
+                {
+                    "title": "Impact",
+                    "desc": "Creating digital solutions that make a tangible difference in growth.",
+                    "color": "purple"
+                }
+            ]
+        },
+        "timeline": {
+            "badge": "The Journey",
+            "title": "Innovation Milestones",
+            "default": [
+                {
+                    "year": "2019",
+                    "title": "Company Founded",
+                    "description": "JOVERO established with a vision for digital marketing and tech excellence."
+                },
+                {
+                    "year": "2020",
+                    "title": "Enterprise Milestone",
+                    "description": "Delivered our first large-scale enterprise system for a major financial client."
+                },
+                {
+                    "year": "2021",
+                    "title": "Core Expansion",
+                    "description": "Grew to a team of specialists across marketing, development and digital design."
+                },
+                {
+                    "year": "2022",
+                    "title": "Global Reach",
+                    "description": "Extended innovation to clients across Europe and the Middle East."
+                },
+                {
+                    "year": "2023",
+                    "title": "150+ Projects",
+                    "description": "Milestone of delivering over 150 successful high-performance solutions."
+                },
+                {
+                    "year": "2024",
+                    "title": "Future Tech Hub",
+                    "description": "Launched R&D division for AI integration and enterprise marketing systems."
+                }
+            ]
+        },
+        "techStack": {
+            "badge": "Our Arsenal",
+            "title": "The Tech That Powers Us",
+            "description": "We utilize a high-performance technology stack designed for enterprise scalability and global performance."
+        }
+    },
+    "services": {
+        "hero": {
+            "badge": "Global Marketing \u0026 Tech Agency",
+            "titleLine1": "Strategic",
+            "titleHighlight": "Digital Solutions",
+            "subtitle": "We architect enterprise-grade digital systems and bespoke marketing solutions with <span class=\"text-white font-semibold\">absolute precision</span>. Every system we build is engineered for performance, security, and global scale."
+        },
+        "serviceSection": {
+            "explorationHub": "Exploration Hub",
+            "expertConsult": "Expert Consult",
+            "technicalCapabilities": "Technical Capabilities",
+            "verifiedArchitecture": "Verified Architecture"
+        },
+        "roadmap": {
+            "badge": "The Process",
+            "title": "Technical Roadmap",
+            "steps": [
+                {
+                    "title": "Discovery \u0026 Audit",
+                    "desc": "In-depth analysis of your business requirements and technical ecosystem."
+                },
+                {
+                    "title": "Strategic Architecture",
+                    "desc": "Designing a scalable system blueprint with engineering precision."
+                },
+                {
+                    "title": "Agile Implementation",
+                    "desc": "Iterative development process with real-time feedback and transparent milestones."
+                },
+                {
+                    "title": "QA \u0026 Growth",
+                    "desc": "Rigorous testing protocols followed by seamless global delivery and optimization."
+                }
+            ]
+        },
+        "cta": {
+            "badge": "Initiate Your Project",
+            "titleLine1": "Ready to Architect",
+            "titleHighlight": "Something Amazing?",
+            "subtitle": "Every enterprise begins with a single line of strategic vision. Let's discuss your goals and build a solution that lasts.",
+            "launchSolution": "Launch Solution",
+            "whatsappIntel": "WhatsApp Intel"
+        }
+    },
+    "portfolio": {
+        "allCategory": "All",
+        "hero": {
+            "badge": "Our Portfolio",
+            "titleLine1": "6 Years of",
+            "titleHighlight": "Digital Excellence",
+            "subtitle": "Over six years of professional work, we have developed integrated digital solutions across education, healthcare, e-commerce, tourism, restaurants, logistics, and legal services in <span class=\"text-white font-semibold\">7 countries worldwide</span>."
+        },
+        "grid": {
+            "filtersTitle": "Filter by Country",
+            "filtersDesc": "Our projects categorized by the countries we've worked in",
+            "typeFiltersTitle": "Filter by Type",
+            "allCategory": "All",
+            "allTypes": "All",
+            "types": {
+                "website": "Website",
+                "app": "App",
+                "social": "Social Media"
+            },
+            "more": "MORE",
+            "viewCaseStudy": "View Project",
+            "visitProject": "Visit Live Project",
+            "countries": {
+                "JO": "Jordan",
+                "AE": "UAE",
+                "SA": "Saudi Arabia",
+                "EG": "Egypt",
+                "IQ": "Iraq",
+                "GLOBAL": "Global"
+            },
+            "emptyState": "No projects found in this category.",
+            "viewAll": "View All Projects"
+        }
+    },
+    "contact": {
+        "title": "Contact Us",
+        "subtitle": "We'd love to hear from you.",
+        "hero": {
+            "badge": "Global Operations Hub",
+            "titleLine1": "Initiate",
+            "titleHighlight": "Connection",
+            "subtitle": "Ready to integrate our expertise into your technical roadmap? Reach out to our global support teams to start your enterprise journey."
+        },
+        "form": {
+            "successTitle": "Message Received!",
+            "successDesc": "Thank you for reaching out. Our team has received your message and we'll get back to you within 24 hours.",
+            "successBtn": "Send Another Message",
+            "title": "Send Intel",
+            "subtitle": "Fill out the encrypted form below to initiate communication.",
+            "errorDefault": "Something went wrong. Please try again.",
+            "fields": {
+                "name": {
+                    "label": "Full Name",
+                    "placeholder": "John Doe"
+                },
+                "email": {
+                    "label": "Email Address",
+                    "placeholder": "john@example.com"
+                },
+                "phone": {
+                    "label": "Phone Number",
+                    "placeholder": "+1 XXX XXX XXXX"
+                },
+                "company": {
+                    "label": "Company / Organization",
+                    "placeholder": "Your company"
+                },
+                "service": {
+                    "label": "Sector of Interest",
+                    "options": {
+                        "default": "Select a sector...",
+                        "web": "Web Architecture",
+                        "mobile": "Mobile Engineering",
+                        "design": "UI/UX \u0026 Brand Identity",
+                        "marketing": "Digital Marketing \u0026 SEO",
+                        "business": "Growth Strategy",
+                        "other": "Custom R\u0026D Request"
+                    }
+                },
+                "message": {
+                    "label": "Project Brief",
+                    "placeholder": "Detail your requirements, goals, and desired timeframe..."
+                }
+            },
+            "submitting": "Transmitting...",
+            "submit": "Establish Connection"
+        },
+        "info": {
+            "hqTitle": "JOVERO Hub",
+            "hqVerified": "Global Operations Verified",
+            "techTitle": "Technical Intel",
+            "techDesc": "Direct channel to our strategy leads.",
+            "techBtn": "Establish Link",
+            "emailTitle": "Secure Email",
+            "hoursTitle": "Duty Hours",
+            "monFri": "Mon - Fri",
+            "sat": "Saturday",
+            "timezone": "Timezone: GMT +3"
+        },
+        "map": {
+            "liveOps": "Live Operations: JOVERO Global Hub"
+        }
+    },
+    "blog": {
+        "hero": {
+            "badge": "LATEST INSIGHTS \u0026 NEWS",
+            "titleLine1": "Insights \u0026",
+            "titleHighlight": "Knowledge",
+            "subtitle": "Stay up to date with the latest in technology, marketing systems, and digital innovation."
+        },
+        "list": {
+            "searchPlaceholder": "Search articles...",
+            "readArticle": "Read Article",
+            "noArticles": "No articles found matching your search.",
+            "clearSearch": "Clear Search",
+            "searchHeading": "Search",
+            "searchSidebarPlaceholder": "Enter keywords...",
+            "categoriesHeading": "Categories",
+            "newsletterTitle1": "Stay",
+            "newsletterTitle2": "Updated",
+            "newsletterDesc": "Subscribe to our newsletter for the latest insights on technology \u0026 digital innovation.",
+            "newsletterPlaceholder": "email@provider.com",
+            "subscribeBtn": "Subscribe",
+            "allCategories": "All"
+        },
+        "detail": {
+            "notFound": "Article Not Found",
+            "notFoundDesc": "The article you're looking for doesn't exist or has been removed.",
+            "backToArticles": "Back to Articles",
+            "publishedOn": "Published on",
+            "share": "Share",
+            "shareTwitter": "Share on Twitter",
+            "shareLinkedin": "Share on LinkedIn",
+            "copyLink": "Copy link",
+            "copied": "Copied!",
+            "relatedTopics": "Related Topics",
+            "ctaTitle": "Ready to Build Your Next Project?",
+            "ctaDesc": "JOVERO delivers enterprise-grade software and marketing solutions with absolute precision. From web and mobile apps to strategic growth campaigns — we turn your vision into reality.",
+            "contactTeam": "Contact Our Team",
+            "viewServices": "View Our Services"
+        }
+    },
+    "nav": {
+        "getInTouch": "Get in Touch",
+        "craftingExcellence": "Crafting Digital Excellence",
+        "switchLanguage": "Switch to Arabic (\u0627\u0644\u0639\u0631\u0628\u064a\u0629)",
+        "switchShort": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629"
+    }
+}
