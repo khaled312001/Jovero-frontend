@@ -118,7 +118,20 @@
             "titleLine1": "تميز",
             "titleHighlight": "تسويقي",
             "subtitle": "نصمم استراتيجيات تسويقية عالية التأثير باستخدام أكثر أطر النمو الرقمي تطوراً في العالم."
-        }
+        },
+        "trustIndicators": {
+            "programming": "برمجة متطورة",
+            "programmingSub": "تقنية عالية",
+            "marketing": "تسويق استراتيجي",
+            "marketingSub": "نمو",
+            "sales": "تحسين المبيعات",
+            "salesSub": "إيرادات",
+            "reliability": "موثوقية عالمية",
+            "reliabilitySub": "جودة"
+        },
+        "testimonialsBadge": "توصيات العملاء",
+        "contactBadge": "البداية",
+        "scrollExplore": "اكتشف"
     },
     "about": {
         "hero": {
@@ -415,6 +428,8 @@
         "getInTouch": "تواصل معنا",
         "craftingExcellence": "نصنع التميز الرقمي",
         "switchLanguage": "Switch to English (EN)",
-        "switchShort": "EN"
+        "switchShort": "EN",
+        "callUs": "اتصل بنا",
+        "followUs": "تابعنا"
     }
 }

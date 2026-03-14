@@ -21,14 +21,14 @@ function HeroSection({ data }: { data?: any }) {
     const params = useParams();
     const lang = params?.lang as string;
     const dict = useDictionary();
-    const {
-        badgeText = dict.hero.badge,
-        titleLine1 = dict.hero.titleLine1,
-        titleLine2 = dict.hero.titleLine2,
-        description = dict.hero.subtitle,
-        primaryBtnText = dict.hero.ctaPrimary,
-        secondaryBtnText = dict.hero.ctaSecondary
-    } = data || {};
+    // Always use dict values to ensure correct language translation
+    const badgeText = dict.hero.badge;
+    const titleLine1 = dict.hero.titleLine1;
+    const titleLine2 = dict.hero.titleLine2;
+    const description = dict.hero.subtitle;
+    const primaryBtnText = dict.hero.ctaPrimary;
+    const secondaryBtnText = dict.hero.ctaSecondary;
+
 
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-primary">
@@ -170,10 +170,10 @@ function HeroSection({ data }: { data?: any }) {
                         className="mt-20 grid grid-cols-2 lg:flex lg:flex-nowrap items-center justify-center gap-6 sm:gap-12 w-full px-4"
                     >
                         {[
-                            { icon: <Terminal size={20} />, text: 'High-End Programming', sub: 'Tech Stack' },
-                            { icon: <Target size={20} />, text: 'Strategic Marketing', sub: 'Growth' },
-                            { icon: <TrendingUp size={20} />, text: 'Sales Optimization', sub: 'Revenue' },
-                            { icon: <Shield size={20} />, text: 'Swiss Reliability', sub: 'Quality' },
+                            { icon: <Terminal size={20} />, text: dict.home.trustIndicators.programming, sub: dict.home.trustIndicators.programmingSub },
+                            { icon: <Target size={20} />, text: dict.home.trustIndicators.marketing, sub: dict.home.trustIndicators.marketingSub },
+                            { icon: <TrendingUp size={20} />, text: dict.home.trustIndicators.sales, sub: dict.home.trustIndicators.salesSub },
+                            { icon: <Shield size={20} />, text: dict.home.trustIndicators.reliability, sub: dict.home.trustIndicators.reliabilitySub },
                         ].map((item, i) => (
                             <motion.div key={i} variants={staggerItem} className="flex flex-col items-center gap-3 group">
                                 <span className="p-3.5 rounded-2xl bg-brand-surface border border-white/5 text-brand-accent shadow-neon-purple group-hover:scale-110 transition-transform duration-300">
@@ -196,7 +196,7 @@ function HeroSection({ data }: { data?: any }) {
                 transition={{ delay: 2, duration: 1 }}
                 className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-brand-accent/40"
             >
-                <span className="text-[10px] uppercase tracking-[0.4em] font-mono">Explore</span>
+                <span className="text-[10px] uppercase tracking-[0.4em] font-mono">{dict.home.scrollExplore}</span>
                 <div className="w-px h-12 bg-gradient-to-b from-brand-accent/50 to-transparent relative overflow-hidden">
                     <motion.div
                         animate={{ y: [0, 48] }}
@@ -294,12 +294,11 @@ function ServicesSection() {
 // ============ WHY CHOOSE US ============
 function WhyChooseSection({ data }: { data?: any }) {
     const dict = useDictionary();
-    const {
-        badge = dict.home.whyChoose.badge,
-        title = dict.home.whyChoose.title,
-        description = dict.home.whyChoose.subtitle,
-        btnText = dict.home.whyChoose.cta
-    } = data || {};
+    // Always use dict values to ensure correct language translation
+    const badge = dict.home.whyChoose.badge;
+    const title = dict.home.whyChoose.title;
+    const description = dict.home.whyChoose.subtitle;
+    const btnText = dict.home.whyChoose.cta;
 
     const reasons = [
         {
@@ -383,9 +382,15 @@ function CountersSection({ data }: { data?: any }) {
         { label: dict.home.statistics.support, value: "100", suffix: "%", icon: <CheckCircle2 size={24} /> },
     ];
 
-    // Merge dynamic stats with defaults (preserving icons if possible, or just using defaults if no dynamic data)
-    // If we have dynamic stats, we use them.
-    const stats: any[] = data?.stats && data.stats.length > 0 ? data.stats : defaultStats;
+    // Always use dict labels for translation correctness.
+    // If DB provides stats, use their value/suffix but override labels with dict translations.
+    const stats: any[] = data?.stats && data.stats.length > 0
+        ? data.stats.map((s: any, i: number) => ({
+            ...s,
+            label: defaultStats[i]?.label || s.label,
+            icon: defaultStats[i]?.icon || <Star size={24} />,
+        }))
+        : defaultStats;
 
     return (
         <section className="relative overflow-hidden py-24 bg-brand-primary border-y border-white/5">
@@ -399,7 +404,7 @@ function CountersSection({ data }: { data?: any }) {
                             end={parseInt(stat.value) || 0}
                             suffix={stat.suffix}
                             label={stat.label}
-                            icon={defaultStats[i]?.icon || <Star size={24} />}
+                            icon={stat.icon || defaultStats[i]?.icon || <Star size={24} />}
                         />
                     ))}
                 </div>
@@ -425,7 +430,7 @@ function TestimonialsSection() {
             <div className="section-container relative z-10">
                 <SectionReveal>
                     <div className="text-center mb-24">
-                        <span className="text-brand-accent font-mono text-xs tracking-[0.4em] uppercase mb-4 block">Endorsements</span>
+                        <span className="text-brand-accent font-mono text-xs tracking-[0.4em] uppercase mb-4 block">{dict.home.testimonialsBadge}</span>
                         <h2 className="text-4xl md:text-6xl font-display font-black text-white mb-6 text-glow tracking-tight">
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-secondary">{dict.home.testimonials.title}</span>
                         </h2>
@@ -568,11 +573,10 @@ function TechSection() {
 // ============ CONTACT CTA SECTION ============
 function ContactFormSection({ data }: { data?: any }) {
     const dict = useDictionary();
-    const {
-        badge = "Initiation",
-        title = dict.home.contact.title,
-        description = dict.home.contact.subtitle
-    } = data || {};
+    // Always use dict values to ensure correct language translation
+    const badge = dict.home.contactBadge;
+    const title = dict.home.contact.title;
+    const description = dict.home.contact.subtitle;
 
     return (
         <section className="relative overflow-hidden py-32 bg-brand-primary border-t border-white/5">

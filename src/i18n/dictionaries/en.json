@@ -118,7 +118,20 @@
             "titleLine1": "Marketing",
             "titleHighlight": "Excellence",
             "subtitle": "We architect high-impact marketing strategies using the world's most sophisticated digital growth frameworks."
-        }
+        },
+        "trustIndicators": {
+            "programming": "High-End Programming",
+            "programmingSub": "Tech Stack",
+            "marketing": "Strategic Marketing",
+            "marketingSub": "Growth",
+            "sales": "Sales Optimization",
+            "salesSub": "Revenue",
+            "reliability": "Swiss Reliability",
+            "reliabilitySub": "Quality"
+        },
+        "testimonialsBadge": "Endorsements",
+        "contactBadge": "Initiation",
+        "scrollExplore": "Explore"
     },
     "about": {
         "hero": {
@@ -415,6 +428,8 @@
         "getInTouch": "Get in Touch",
         "craftingExcellence": "Crafting Digital Excellence",
         "switchLanguage": "Switch to Arabic (\u0627\u0644\u0639\u0631\u0628\u064a\u0629)",
-        "switchShort": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629"
+        "switchShort": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
+        "callUs": "Call Us",
+        "followUs": "Follow Us"
     }
 }

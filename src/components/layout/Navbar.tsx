@@ -63,7 +63,12 @@ export function Navbar({ dict, lang, getStartedText }: { dict: any, lang: string
                     <div className="flex items-center justify-between h-24">
                         {/* Logo */}
                         <Link href="/" className="flex items-center gap-3 group">
-                            <Image src="/jovero-text-logo.png" alt="JOVERO" width={360} height={152} className="h-10 w-auto object-contain" priority />
+                            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-accent to-brand-secondary flex items-center justify-center font-display font-bold text-white text-xl shadow-neon-purple/30">
+                                J
+                            </div>
+                            <span className="text-2xl font-display font-bold text-brand-text uppercase tracking-wider">
+                                JOV<span className="gradient-text">ERO</span>
+                            </span>
                         </Link>
 
                         {/* Desktop Links */}
@@ -146,8 +151,13 @@ export function Navbar({ dict, lang, getStartedText }: { dict: any, lang: string
                             className="fixed top-0 right-0 bottom-0 w-[300px] z-[120] bg-brand-dark/95 backdrop-blur-2xl border-l border-brand-glass-border p-6 lg:hidden flex flex-col overflow-y-auto custom-scrollbar"
                         >
                             <div className="flex items-center justify-between mb-12 shrink-0">
-                                <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenu(false)}>
-                                    <Image src="/jovero-text-logo.png" alt="JOVERO" width={320} height={136} className="h-7 w-auto object-contain" priority />
+                                <Link href="/" className="flex items-center gap-3" onClick={() => setMobileMenu(false)}>
+                                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-accent to-brand-secondary flex items-center justify-center font-display font-bold text-white text-lg">
+                                        J
+                                    </div>
+                                    <span className="text-xl font-display font-bold text-brand-text uppercase tracking-wider">
+                                        JOV<span className="gradient-text">ERO</span>
+                                    </span>
                                 </Link>
                                 <button
                                     onClick={() => setMobileMenu(false)}
@@ -227,13 +237,13 @@ export function Navbar({ dict, lang, getStartedText }: { dict: any, lang: string
                                         <Phone size={20} />
                                     </div>
                                     <div className="flex flex-col">
-                                        <span className="text-[10px] uppercase tracking-widest text-brand-muted/50 font-bold">Call Us</span>
+                                        <span className="text-[10px] uppercase tracking-widest text-brand-muted/50 font-bold">{dict?.nav?.callUs || 'Call Us'}</span>
                                         <span className="text-sm font-bold tracking-wider">{WHATSAPP_NUMBER}</span>
                                     </div>
                                 </Link>
 
                                 <div className="flex flex-col gap-4">
-                                    <span className="text-[10px] uppercase tracking-widest text-brand-muted/50 font-bold">Follow Us</span>
+                                    <span className="text-[10px] uppercase tracking-widest text-brand-muted/50 font-bold">{dict?.nav?.followUs || 'Follow Us'}</span>
                                     <div className="flex items-center gap-3">
                                         <Link
                                             href={FACEBOOK_URL}
