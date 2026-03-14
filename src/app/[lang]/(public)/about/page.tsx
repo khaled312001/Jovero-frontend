@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Target, Eye, Heart, Lightbulb, Users, Award, Globe, Zap, Atom, Server, Cpu, Cloud, Database, Code2 } from 'lucide-react';
+import { Shield, Target, Eye, Heart, Lightbulb, Users, Award, Globe, Zap, Cloud, Palette, Search, FileText, BarChart3, TrendingUp, Instagram, Smartphone } from 'lucide-react';
 import { SectionReveal, SectionHeading } from '@/components/ui/SectionReveal';
 import { staggerContainer, staggerItem, heroTextReveal } from '@/lib/animations';
 import { COMPANY_LICENSE, COMPANY_ADDRESS } from '@/lib/utils';
@@ -323,22 +323,22 @@ function TimelineSection({ data }: { data?: any[] }) {
 }
 
 // ============ TECH STACK ============
-function TechStackSection({ data }: { data?: any[] }) {
+function GrowthStackSection({ data }: { data?: any[] }) {
     const dict = useDictionary();
     const techIconMap: Record<string, React.ReactNode> = {
-        'React / Next.js': <Atom size={24} />,
-        'Node.js / Express': <Server size={24} />,
-        'TypeScript': <Code2 size={24} />,
-        '.NET / C#': <Cpu size={24} />,
-        'Cloud & DevOps': <Cloud size={24} />,
+        'Marketing Automation': <Zap size={24} />,
+        'SEO & Search Ads': <Search size={24} />,
+        'Content Strategy': <FileText size={24} />,
+        'Healthcare Compliance': <Shield size={24} />,
+        'Performance Analytics': <BarChart3 size={24} />,
     };
 
     const defaultTech = [
-        { name: 'React / Next.js', level: 98, icon: <Atom size={24} /> },
-        { name: 'Node.js / Express', level: 95, icon: <Server size={24} /> },
-        { name: 'TypeScript', level: 96, icon: <Code2 size={24} /> },
-        { name: '.NET / C#', level: 92, icon: <Cpu size={24} /> },
-        { name: 'Cloud & DevOps', level: 90, icon: <Cloud size={24} /> },
+        { name: 'Marketing Automation', level: 98, icon: <Zap size={24} /> },
+        { name: 'SEO & Search Ads', level: 95, icon: <Search size={24} /> },
+        { name: 'Content Strategy', level: 96, icon: <FileText size={24} /> },
+        { name: 'Healthcare Compliance', level: 94, icon: <Shield size={24} /> },
+        { name: 'Performance Analytics', level: 90, icon: <BarChart3 size={24} /> },
     ];
 
     const displayTech = data ? data.map(t => ({
@@ -399,16 +399,16 @@ function TechStackSection({ data }: { data?: any[] }) {
                                         </div>
                                     </div>
                                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 p-4 glass-card border-brand-accent/30 text-brand-accent shadow-neon-purple">
-                                        <Atom size={24} />
+                                        <TrendingUp size={24} />
                                     </div>
                                     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 p-4 glass-card border-brand-secondary/30 text-brand-secondary shadow-neon-purple">
-                                        <Server size={24} />
+                                        <Search size={24} />
                                     </div>
                                     <div className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 p-4 glass-card border-brand-accent/30 text-brand-accent">
-                                        <Code2 size={24} />
+                                        <Users size={24} />
                                     </div>
                                     <div className="absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 p-4 glass-card border-brand-secondary/30 text-brand-secondary">
-                                        <Database size={24} />
+                                        <Instagram size={24} />
                                     </div>
                                 </motion.div>
                             </div>
@@ -437,7 +437,7 @@ export default function AboutPage() {
             <MissionVisionSection />
             <ValuesSection data={data.values} />
             <TimelineSection data={data.milestones} />
-            <TechStackSection data={data.tech_arsenal} />
+            <GrowthStackSection data={data.tech_arsenal} />
         </>
     );
 }
