@@ -5,7 +5,7 @@ import { Plus, Search, Trash2, Download, FilePlus, Loader2, AlertCircle, CheckCi
 import { adminApi } from '@/lib/api';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/FormElements';
-import { ImageUpload } from '@/components/ui/ImageUpload';
+import { FileUpload } from '@/components/ui/FileUpload';
 import { formatDate } from '@/lib/utils';
 import { toast } from 'react-hot-toast';
 
@@ -148,10 +148,12 @@ export default function AdminInvoicesPage() {
 
                         <div className="space-y-2">
                             <label className="text-sm font-bold text-brand-muted uppercase tracking-wider">PDF Upload *</label>
-                            <ImageUpload
+                            <FileUpload
                                 value={formData.pdfUrl}
                                 onChange={(url) => setFormData({ ...formData, pdfUrl: url })}
                                 onRemove={() => setFormData({ ...formData, pdfUrl: '' })}
+                                accept="application/pdf"
+                                label="PDF Document *"
                             />
                             <p className="text-xs text-brand-muted/60">Upload the PDF file here. It will be stored securely.</p>
                         </div>
