@@ -46,13 +46,13 @@ export function Footer({ dict, lang }: FooterProps) {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                     {/* Brand Column */}
                     <div className="lg:col-span-1">
-                        <Link href={`/${lang}`} className="flex flex-col items-start leading-none group no-underline mb-6">
-                            <span className="font-serif text-2xl text-white tracking-widest opacity-80 group-hover:opacity-100 group-hover:text-brand-accent transition-all duration-500">
-                                JOVERO
-                            </span>
-                            <span className="font-sans text-[8px] uppercase tracking-[0.2em] text-brand-muted mt-1 group-hover:text-white transition-all duration-500">
-                                Marketing Agency
-                            </span>
+                        <Link href={`/${lang}`} className="relative h-12 w-40 mb-6 block hover:opacity-80 transition-opacity">
+                            <Image
+                                src="/images/logo.png"
+                                alt="JOVERO"
+                                fill
+                                className="object-contain"
+                            />
                         </Link>
                         <p className="text-brand-muted text-sm leading-relaxed mb-6">
                             {dict?.footer?.description || ''}

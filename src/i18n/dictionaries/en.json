@@ -24,7 +24,7 @@
         "titleLine2": "Innovating Your Digital Growth",
         "subtitle": "Engineering enterprise-grade marketing and software solutions with unparalleled quality and impact.",
         "ctaPrimary": "Start Your Growth",
-        "ctaSecondary": "Explore Our Work"
+        "ctaSecondary": "Contact Us"
     },
     "footer": {
         "description": "JOVERO is a premier digital marketing and software development agency specializing in enterprise-grade web, mobile, and digital growth solutions.",
@@ -113,11 +113,11 @@
                 }
             }
         },
-        "tech": {
+        "partners": {
             "badge": "Growth Ecosystem",
-            "titleLine1": "Marketing",
-            "titleHighlight": "Excellence",
-            "subtitle": "We architect high-impact marketing strategies using the world's most sophisticated digital growth frameworks."
+            "titleLine1": "Success",
+            "titleHighlight": "Partners",
+            "subtitle": "We architect high-impact marketing strategies in collaboration with elite partners across various sectors."
         },
         "trustIndicators": {
             "programming": "High-End Programming",

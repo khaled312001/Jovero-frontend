@@ -23,6 +23,7 @@ const sidebarLinks = [
     { href: '/admin/testimonials', label: 'Testimonials', icon: MessageSquare },
     { href: '/admin/team', label: 'Team', icon: Users },
     { href: '/admin/faq', label: 'FAQ', icon: HelpCircle },
+    { href: '/admin/partners', label: 'Partners', icon: Users },
     { href: '/admin/leads', label: 'Leads', icon: Mail },
     { href: '/admin/media', label: 'Media', icon: ImageIcon },
     { href: '/admin/seo', label: 'SEO', icon: Globe },

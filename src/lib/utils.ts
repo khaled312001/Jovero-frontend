@@ -30,6 +30,7 @@ export const WHATSAPP_NUMBER = '+201055709709';
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER.replace(/\+/g, '')}`;
 export const FACEBOOK_URL = 'https://www.facebook.com/profile.php?id=61569150491962';
 export const LINKEDIN_URL = 'https://www.linkedin.com/company/jovero';
+export const INSTAGRAM_URL = 'https://www.instagram.com/jovero_marketing';
 export const COMPANY_ADDRESS = 'Cairo, Egypt';
 export const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL || '').replace(/\/$/, '');
 

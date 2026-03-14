@@ -9,8 +9,9 @@ import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
 import { SectionReveal } from '@/components/ui/SectionReveal';
 
 import { staggerContainer, staggerItem, heroTextReveal } from '@/lib/animations';
-import { cn, WHATSAPP_URL } from '@/lib/utils';
+import { cn, WHATSAPP_URL, getImageUrl } from '@/lib/utils';
 import Link from 'next/link';
+import Image from 'next/image';
 import { MouseFollower } from '@/components/ui/MouseFollower';
 import { useParams } from 'next/navigation';
 import { publicApi } from '@/lib/api';
@@ -483,25 +484,16 @@ function TestimonialsSection() {
     );
 }
 
-// ============ TECHNOLOGIES SECTION ============
-function TechSection() {
+// ============ PARTNERS SECTION ============
+function PartnersSection() {
     const dict = useDictionary();
-    const techs = [
-        { name: 'Google Ads', icon: <LucideIcons.BarChart3 size={32} />, color: '#4285F4' },
-        { name: 'Meta Ads', icon: <LucideIcons.Instagram size={32} />, color: '#0668E1' },
-        { name: 'Healthcare SEO', icon: <LucideIcons.Search size={32} />, color: '#FF9800' },
-        { name: 'WhatsApp Marketing', icon: <LucideIcons.MessageCircle size={32} />, color: '#25D366' },
-        { name: 'TikTok Ads', icon: <LucideIcons.Play size={32} />, color: '#000000' },
-        { name: 'LinkedIn Ads', icon: <LucideIcons.Linkedin size={32} />, color: '#0077B5' },
-        { name: 'Marketing CRM', icon: <LucideIcons.Users size={32} />, color: '#7F52FF' },
-        { name: 'Content Strategy', icon: <LucideIcons.FileText size={32} />, color: '#FF2D20' },
-        { name: 'Email Marketing', icon: <LucideIcons.Mail size={32} />, color: '#4479A1' },
-        { name: 'Growth Analytics', icon: <LucideIcons.PieChart size={32} />, color: '#F24E1E' },
-        { name: 'Snapchat Ads', icon: <LucideIcons.Ghost size={32} />, color: '#FFFC00' },
-        { name: 'Brand Identity', icon: <LucideIcons.Palette size={32} />, color: '#06B6D4' },
-    ];
+    const [partners, setPartners] = React.useState<any[]>([]);
 
-    const marqueeItems = [...techs, ...techs];
+    React.useEffect(() => {
+        publicApi.getPartners().then(({ data }) => setPartners(data)).catch(console.error);
+    }, []);
+
+    const marqueeItems = [...partners, ...partners];
 
     return (
         <section className="relative overflow-hidden py-32 bg-brand-primary border-t border-white/5">
@@ -513,63 +505,63 @@ function TechSection() {
             <div className="section-container relative z-10 px-0 max-w-none">
                 <SectionReveal>
                     <div className="text-center mb-24 section-container pb-0">
-                        <span className="text-brand-accent font-mono text-xs tracking-[0.4em] uppercase mb-4 block">{dict.home.tech.badge}</span>
+                        <span className="text-brand-accent font-mono text-xs tracking-[0.4em] uppercase mb-4 block">
+                            {dict.home.partners?.badge || 'PARTNERS'}
+                        </span>
                         <h2 className="text-4xl md:text-7xl font-display font-black text-white mb-6 text-glow tracking-tighter">
-                            {dict.home.tech.titleLine1} <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-white to-brand-secondary italic">{dict.home.tech.titleHighlight}</span>
+                            {dict.home.partners?.titleLine1} <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-white to-brand-secondary italic">{dict.home.partners?.titleHighlight}</span>
                         </h2>
                         <div className="w-32 h-1 bg-brand-accent mx-auto mb-10 rounded-full shadow-neon-purple" />
                         <p className="text-brand-muted max-w-2xl mx-auto text-lg font-light opacity-80">
-                            {dict.home.tech.subtitle}
+                            {dict.home.partners?.subtitle}
                         </p>
                     </div>
                 </SectionReveal>
 
-                <div className="relative w-full overflow-hidden py-10 group" dir="ltr">
-                    <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-brand-primary to-transparent z-10 pointer-events-none" />
-                    <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-brand-primary to-transparent z-10 pointer-events-none" />
+                {partners.length > 0 && (
+                    <div className="relative w-full overflow-hidden py-10 group" dir="ltr">
+                        <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-brand-primary to-transparent z-10 pointer-events-none" />
+                        <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-brand-primary to-transparent z-10 pointer-events-none" />
 
-                    <motion.div
-                        className="flex whitespace-nowrap gap-10 w-max px-4"
-                        animate={{
-                            x: [0, "-50%"]
-                        }}
-                        transition={{
-                            x: {
-                                repeat: Infinity,
-                                repeatType: "loop",
-                                duration: 50,
-                                ease: "linear",
-                            }
-                        }}
-                        style={{ display: 'flex' }}
-                        whileHover={{ animationPlayState: 'paused' as any }}
-                    >
-                        {marqueeItems.map((tech, i) => (
-                            <div
-                                key={i}
-                                className="group/card relative flex items-center gap-6 px-10 py-8 glass-card border-white/5 bg-white/[0.01] hover:bg-white/[0.05] transition-all duration-700 cursor-pointer overflow-hidden rounded-2xl min-w-[280px]"
-                            >
+                        <motion.div
+                            className="flex whitespace-nowrap gap-10 w-max px-4"
+                            animate={{
+                                x: [0, "-50%"]
+                            }}
+                            transition={{
+                                x: {
+                                    repeat: Infinity,
+                                    repeatType: "loop",
+                                    duration: 50,
+                                    ease: "linear",
+                                }
+                            }}
+                            style={{ display: 'flex' }}
+                            whileHover={{ animationPlayState: 'paused' as any }}
+                        >
+                            {marqueeItems.map((partner, i) => (
                                 <div
-                                    className="absolute inset-0 opacity-0 group-hover/card:opacity-10 transition-opacity duration-700 pointer-events-none"
-                                    style={{ background: `radial-gradient(100% 100% at center, ${tech.color}44, transparent)` }}
-                                />
-
-                                <div
-                                    className="relative z-10 transition-all duration-700 group-hover/card:scale-110 group-hover/card:rotate-6 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]"
-                                    style={{ color: tech.color }}
+                                    key={i}
+                                    className="group/card relative flex items-center gap-6 px-10 py-8 glass-card border-white/5 bg-white/[0.01] hover:bg-white/[0.05] transition-all duration-700 cursor-pointer overflow-hidden rounded-2xl min-w-[280px]"
                                 >
-                                    {tech.icon}
+                                    <div className="relative z-10 w-12 h-12 flex-shrink-0">
+                                        <Image
+                                            src={getImageUrl(partner.logo)}
+                                            alt={partner.name}
+                                            fill
+                                            className="object-contain filter grayscale group-hover/card:grayscale-0 transition-all duration-500"
+                                        />
+                                    </div>
+                                    <div className="relative z-10 flex flex-col">
+                                        <span className="text-xl font-display font-black tracking-widest text-brand-muted group-hover/card:text-white transition-colors duration-500 uppercase">
+                                            {partner.name}
+                                        </span>
+                                    </div>
                                 </div>
-                                <div className="relative z-10 flex flex-col">
-                                    <span className="text-xl font-display font-black tracking-widest text-brand-muted group-hover/card:text-white transition-colors duration-500 uppercase">
-                                        {tech.name}
-                                    </span>
-                                    <div className="h-[1px] w-0 group-hover/card:w-full bg-current transition-all duration-500 mt-2 opacity-40" style={{ backgroundColor: tech.color }} />
-                                </div>
-                            </div>
-                        ))}
-                    </motion.div>
-                </div>
+                            ))}
+                        </motion.div>
+                    </div>
+                )}
             </div>
         </section>
     );
@@ -668,7 +660,7 @@ export default function HomePage() {
             <WhyChooseSection data={data.features} />
             <CountersSection data={data.stats} />
             <TestimonialsSection />
-            <TechSection />
+            <PartnersSection />
             <ContactFormSection data={data.cta} />
         </>
     );

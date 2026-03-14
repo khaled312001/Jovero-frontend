@@ -62,13 +62,14 @@ export function Navbar({ dict, lang, getStartedText }: { dict: any, lang: string
                 <div className="section-container !py-0">
                     <div className="flex items-center justify-between h-24">
                         {/* Logo */}
-                        <Link href={`/${lang}`} className="flex flex-col items-start leading-none group no-underline">
-                            <span className="font-serif text-3xl md:text-4xl text-white tracking-widest group-hover:text-brand-accent transition-colors duration-500">
-                                JOVERO
-                            </span>
-                            <span className="font-sans text-[10px] md:text-[12px] uppercase tracking-[0.3em] text-brand-muted mt-1 group-hover:text-white transition-colors duration-500">
-                                Marketing Agency
-                            </span>
+                        <Link href={`/${lang}`} className="relative h-12 w-40 hover:opacity-80 transition-opacity">
+                            <Image
+                                src="/images/logo.png"
+                                alt="JOVERO"
+                                fill
+                                className="object-contain"
+                                priority
+                            />
                         </Link>
 
                         {/* Desktop Links */}
@@ -151,13 +152,13 @@ export function Navbar({ dict, lang, getStartedText }: { dict: any, lang: string
                             className="fixed top-0 right-0 bottom-0 w-[300px] z-[120] bg-brand-dark/95 backdrop-blur-2xl border-l border-brand-glass-border p-6 lg:hidden flex flex-col overflow-y-auto custom-scrollbar"
                         >
                             <div className="flex items-center justify-between mb-12 shrink-0">
-                                <Link href={`/${lang}`} className="flex flex-col items-start leading-none" onClick={() => setMobileMenu(false)}>
-                                    <span className="font-serif text-2xl text-white tracking-widest">
-                                        JOVERO
-                                    </span>
-                                    <span className="font-sans text-[8px] uppercase tracking-[0.2em] text-brand-muted mt-1">
-                                        Marketing Agency
-                                    </span>
+                                <Link href={`/${lang}`} className="relative h-10 w-32" onClick={() => setMobileMenu(false)}>
+                                    <Image
+                                        src="/images/logo.png"
+                                        alt="JOVERO"
+                                        fill
+                                        className="object-contain"
+                                    />
                                 </Link>
                                 <button
                                     onClick={() => setMobileMenu(false)}

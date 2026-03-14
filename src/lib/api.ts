@@ -29,6 +29,7 @@ export const publicApi = {
     submitLead: (data: any) => axios.post(`${API_URL}/leads`, data),
     subscribe: (email: string) => axios.post(`${API_URL}/newsletter`, { email }),
     getPageSections: (page: string) => axios.get(`${API_URL}/pages/${page}`),
+    getPartners: () => axios.get(`${API_URL}/partners`),
 };
 
 // ============ AUTH API ============
@@ -153,6 +154,12 @@ export const adminApi = {
     // Pages
     getPageSections: (page: string) => authClient.get(`/admin/pages/${page}`),
     updatePageSection: (page: string, section: string, data: any) => authClient.post(`/admin/pages/${page}/sections/${section}`, data),
+
+    // Partners
+    getPartners: () => authClient.get('/admin/partners'),
+    createPartner: (data: any) => authClient.post('/admin/partners', data),
+    updatePartner: (id: string, data: any) => authClient.put(`/admin/partners/${id}`, data),
+    deletePartner: (id: string) => authClient.delete(`/admin/partners/${id}`),
 };
 
 export const systemApi = {

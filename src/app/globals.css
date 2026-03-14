@@ -4,6 +4,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'GE SS Two';
+  src: url('/fonts/GE-SS-Two-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+[lang="ar"] {
+  font-family: 'GE SS Two', sans-serif !important;
+}
+
+[lang="ar"] h1,
+[lang="ar"] h2,
+[lang="ar"] h3,
+[lang="ar"] h4,
+[lang="ar"] h5,
+[lang="ar"] h6,
+[lang="ar"] .font-display {
+  font-family: 'GE SS Two', sans-serif !important;
+}
+
 @layer base {
   * {
     margin: 0;
