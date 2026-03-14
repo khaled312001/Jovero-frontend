@@ -34,7 +34,7 @@ export function Footer({ dict, lang }: FooterProps) {
     // Use settings or fallbacks
     const address = settings?.address || COMPANY_ADDRESS;
     const email = settings?.email || 'info@jovero.net';
-    const phone = settings?.phone || '+962 7 0000 0000';
+    const phone = settings?.phone || '+201055709709';
     const license = settings?.license || COMPANY_LICENSE;
     const whatsapp = settings?.whatsappNumber ? `https://wa.me/${settings.whatsappNumber.replace(/[^0-9]/g, '')}` : WHATSAPP_URL;
 

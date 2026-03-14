@@ -67,10 +67,7 @@ export function Navbar({ dict, lang, getStartedText }: { dict: any, lang: string
                                 <Image src="/logo.jpg" alt="JOVERO Logo" width={48} height={48} className="rounded-2xl object-contain" priority />
                                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-accent to-brand-secondary opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500" />
                             </div>
-                            <span className="text-2xl font-display font-bold text-brand-text uppercase tracking-wider">
-                                JOV<span className="gradient-text">ERO</span>
-                            </span>
-                        </Link>
+                            <Image src="/jovero-text-logo.png" alt="JOVERO" width={120} height={40} className="h-8 w-auto object-contain" priority />                        </Link>
 
                         {/* Desktop Links */}
                         <div className="hidden lg:flex items-center gap-2">
@@ -154,10 +151,7 @@ export function Navbar({ dict, lang, getStartedText }: { dict: any, lang: string
                             <div className="flex items-center justify-between mb-12 shrink-0">
                                 <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenu(false)}>
                                     <Image src="/logo.jpg" alt="JOVERO Logo" width={32} height={32} className="rounded-lg object-contain" />
-                                    <span className="text-xl font-display font-bold text-brand-text uppercase tracking-wider">
-                                        JOV<span className="gradient-text">ERO</span>
-                                    </span>
-                                </Link>
+                                    <Image src="/jovero-text-logo.png" alt="JOVERO" width={100} height={32} className="h-6 w-auto object-contain" priority />                                </Link>
                                 <button
                                     onClick={() => setMobileMenu(false)}
                                     className="p-2 rounded-lg bg-white/5 text-brand-muted hover:text-brand-text transition-colors"

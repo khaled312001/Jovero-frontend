@@ -11,11 +11,11 @@ const config: Config = {
             colors: {
                 brand: {
                     // === JOVERO BRAND COLORS ===
-                    primary: '#030712',         // Almost black (Main BG)
+                    primary: '#0a0b17',         // True JOVERO deep navy background
                     accent: '#8B5CF6',          // JOVERO Purple (Violet-500)
                     secondary: '#3B82F6',       // JOVERO Blue (Blue-500)
-                    dark: '#02040a',            // Darkest depth
-                    surface: '#0B1120',         // Panel BG (Deep Navy)
+                    dark: '#05060d',            // Darkest depth
+                    surface: '#111326',         // Panel BG (Lighter deep navy)
                     text: '#F8FAFC',            // White-ish text
                     muted: '#94A3B8',           // Slate-400 for muted text
 

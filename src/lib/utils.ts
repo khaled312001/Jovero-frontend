@@ -26,7 +26,7 @@ export function truncate(text: string, length: number): string {
     return text.slice(0, length) + '...';
 }
 
-export const WHATSAPP_NUMBER = '+962700000000';
+export const WHATSAPP_NUMBER = '+201055709709';
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER.replace(/\+/g, '')}`;
 export const FACEBOOK_URL = 'https://www.facebook.com/JOVEROOfficial/';
 export const LINKEDIN_URL = 'https://www.linkedin.com/company/jovero';
