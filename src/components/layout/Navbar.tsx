@@ -60,9 +60,9 @@ export function Navbar({ dict, lang, getStartedText }: { dict: any, lang: string
                 )}
             >
                 <div className="section-container !py-0">
-                    <div className="flex items-center justify-between h-28 md:h-36">
+                    <div className="flex items-center justify-between h-26 md:h-36">
                         {/* Logo */}
-                        <Link href={`/${lang}`} className="relative h-20 w-64 md:h-32 md:w-[416px] hover:opacity-80 transition-opacity">
+                        <Link href={`/${lang}`} className="relative h-16 w-44 md:h-24 md:w-[216px] hover:opacity-80 transition-opacity">
                             <Image
                                 src="/images/logo.png"
                                 alt="JOVERO"
