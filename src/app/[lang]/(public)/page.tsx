@@ -674,7 +674,7 @@ function InvoiceCtaSection() {
                                 variant="neon"
                                 size="lg"
                                 icon={<ArrowRight size={20} className="rtl:-scale-x-100" />}
-                                className="w-full md:w-auto px-8 h-14 rounded-xl border-brand-accent/30 hover:border-brand-accent text-brand-accent shadow-[0_0_20px_rgba(139,92,246,0.1)] hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] transition-all duration-500"
+                                className="w-full md:w-auto px-8 h-14 rounded-xl border-brand-accent/30 hover:border-brand-accent shadow-[0_0_20px_rgba(139,92,246,0.1)] hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] transition-all duration-500"
                             >
                                 {dict.home.invoices.cta}
                             </Button>
