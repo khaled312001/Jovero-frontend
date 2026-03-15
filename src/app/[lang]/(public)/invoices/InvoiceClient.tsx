@@ -13,6 +13,7 @@ export default function InvoicesPage({ dict, lang }: { dict: any, lang: string }
     const [loading, setLoading] = useState(false);
     const [invoice, setInvoice] = useState<any>(null);
     const [error, setError] = useState<string | null>(null);
+    const [downloading, setDownloading] = useState(false);
 
     const handleSearch = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -151,11 +152,20 @@ export default function InvoicesPage({ dict, lang }: { dict: any, lang: string }
                                             </h3>
                                         </div>
                                         <button
+                                            disabled={downloading}
                                             onClick={async () => {
                                                 try {
+                                                    setDownloading(true);
+                                                    await new Promise(resolve => setTimeout(resolve, 50));
                                                     if (invoice.pdfUrl.startsWith('data:')) {
-                                                        const response = await fetch(invoice.pdfUrl);
-                                                        const blob = await response.blob();
+                                                        const byteString = atob(invoice.pdfUrl.split(',')[1]);
+                                                        const mimeString = invoice.pdfUrl.split(',')[0].split(':')[1].split(';')[0];
+                                                        const ab = new ArrayBuffer(byteString.length);
+                                                        const ia = new Uint8Array(ab);
+                                                        for (let i = 0; i < byteString.length; i++) {
+                                                            ia[i] = byteString.charCodeAt(i);
+                                                        }
+                                                        const blob = new Blob([ab], { type: mimeString });
                                                         const blobUrl = URL.createObjectURL(blob);
                                                         const link = document.createElement('a');
                                                         link.href = blobUrl;
@@ -176,12 +186,14 @@ export default function InvoicesPage({ dict, lang }: { dict: any, lang: string }
                                                 } catch (error) {
                                                     console.error("Download failed:", error);
                                                     window.open(invoice.pdfUrl, '_blank');
+                                                } finally {
+                                                    setDownloading(false);
                                                 }
                                             }}
-                                            className="px-8 py-4 bg-brand-accent hover:bg-brand-accent/90 text-brand-dark rounded-2xl flex items-center gap-3 text-lg font-black transition-all hover:scale-105 active:scale-95 shadow-lg shadow-brand-accent/20"
+                                            className="px-8 py-4 bg-brand-accent hover:bg-brand-accent/90 text-brand-dark rounded-2xl flex items-center gap-3 text-lg font-black transition-all hover:scale-105 active:scale-95 shadow-lg shadow-brand-accent/20 disabled:opacity-50 disabled:cursor-wait"
                                         >
-                                            <Download size={24} />
-                                            {dict?.invoices?.download || 'Download PDF'}
+                                            {downloading ? <Loader2 size={24} className="animate-spin" /> : <Download size={24} />}
+                                            {downloading ? (dict?.common?.loading || 'Processing...') : (dict?.invoices?.download || 'Download PDF')}
                                         </button>
                                     </div>
                                 </div>

@@ -14,6 +14,7 @@ export default function AdminInvoicesPage() {
     const [loading, setLoading] = useState(true);
     const [isAdding, setIsAdding] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
+    const [downloadingId, setDownloadingId] = useState<string | null>(null);
 
     // Form state
     const [formData, setFormData] = useState({
@@ -232,11 +233,20 @@ export default function AdminInvoicesPage() {
                                     <td className="px-6 py-4 text-right">
                                         <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                                             <button
+                                                disabled={downloadingId === inv.id}
                                                 onClick={async () => {
                                                     try {
+                                                        setDownloadingId(inv.id);
+                                                        await new Promise(resolve => setTimeout(resolve, 50));
                                                         if (inv.pdfUrl.startsWith('data:')) {
-                                                            const response = await fetch(inv.pdfUrl);
-                                                            const blob = await response.blob();
+                                                            const byteString = atob(inv.pdfUrl.split(',')[1]);
+                                                            const mimeString = inv.pdfUrl.split(',')[0].split(':')[1].split(';')[0];
+                                                            const ab = new ArrayBuffer(byteString.length);
+                                                            const ia = new Uint8Array(ab);
+                                                            for (let i = 0; i < byteString.length; i++) {
+                                                                ia[i] = byteString.charCodeAt(i);
+                                                            }
+                                                            const blob = new Blob([ab], { type: mimeString });
                                                             const blobUrl = URL.createObjectURL(blob);
                                                             const link = document.createElement('a');
                                                             link.href = blobUrl;
@@ -257,12 +267,14 @@ export default function AdminInvoicesPage() {
                                                     } catch (error) {
                                                         console.error("Download failed:", error);
                                                         window.open(inv.pdfUrl, '_blank');
+                                                    } finally {
+                                                        setDownloadingId(null);
                                                     }
                                                 }}
-                                                className="p-2 rounded-lg bg-white/5 text-brand-accent hover:bg-brand-accent/10"
+                                                className={`p-2 rounded-lg bg-white/5 text-brand-accent hover:bg-brand-accent/10 transition-colors ${downloadingId === inv.id ? 'opacity-50 cursor-wait' : ''}`}
                                                 title="View/Download PDF"
                                             >
-                                                <Download size={16} />
+                                                {downloadingId === inv.id ? <Loader2 size={16} className="animate-spin" /> : <Download size={16} />}
                                             </button>
                                             <button
                                                 onClick={() => handleDelete(inv.id)}
