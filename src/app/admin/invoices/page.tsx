@@ -231,15 +231,39 @@ export default function AdminInvoicesPage() {
                                     </td>
                                     <td className="px-6 py-4 text-right">
                                         <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                            <a
-                                                href={inv.pdfUrl}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
+                                            <button
+                                                onClick={async () => {
+                                                    try {
+                                                        if (inv.pdfUrl.startsWith('data:')) {
+                                                            const response = await fetch(inv.pdfUrl);
+                                                            const blob = await response.blob();
+                                                            const blobUrl = URL.createObjectURL(blob);
+                                                            const link = document.createElement('a');
+                                                            link.href = blobUrl;
+                                                            link.download = `Invoice-${inv.invoiceNumber}.pdf`;
+                                                            document.body.appendChild(link);
+                                                            link.click();
+                                                            document.body.removeChild(link);
+                                                            setTimeout(() => URL.revokeObjectURL(blobUrl), 100);
+                                                        } else {
+                                                            const link = document.createElement('a');
+                                                            link.href = inv.pdfUrl;
+                                                            link.target = '_blank';
+                                                            link.download = `Invoice-${inv.invoiceNumber}.pdf`;
+                                                            document.body.appendChild(link);
+                                                            link.click();
+                                                            document.body.removeChild(link);
+                                                        }
+                                                    } catch (error) {
+                                                        console.error("Download failed:", error);
+                                                        window.open(inv.pdfUrl, '_blank');
+                                                    }
+                                                }}
                                                 className="p-2 rounded-lg bg-white/5 text-brand-accent hover:bg-brand-accent/10"
                                                 title="View/Download PDF"
                                             >
                                                 <Download size={16} />
-                                            </a>
+                                            </button>
                                             <button
                                                 onClick={() => handleDelete(inv.id)}
                                                 className="p-2 rounded-lg bg-white/5 text-red-500 hover:bg-red-500/10"

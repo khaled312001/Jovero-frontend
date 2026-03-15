@@ -150,15 +150,39 @@ export default function InvoicesPage({ dict, lang }: { dict: any, lang: string }
                                                 #{invoice.invoiceNumber}
                                             </h3>
                                         </div>
-                                        <a
-                                            href={invoice.pdfUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
+                                        <button
+                                            onClick={async () => {
+                                                try {
+                                                    if (invoice.pdfUrl.startsWith('data:')) {
+                                                        const response = await fetch(invoice.pdfUrl);
+                                                        const blob = await response.blob();
+                                                        const blobUrl = URL.createObjectURL(blob);
+                                                        const link = document.createElement('a');
+                                                        link.href = blobUrl;
+                                                        link.download = `Invoice-${invoice.invoiceNumber}.pdf`;
+                                                        document.body.appendChild(link);
+                                                        link.click();
+                                                        document.body.removeChild(link);
+                                                        setTimeout(() => URL.revokeObjectURL(blobUrl), 100);
+                                                    } else {
+                                                        const link = document.createElement('a');
+                                                        link.href = invoice.pdfUrl;
+                                                        link.target = '_blank';
+                                                        link.download = `Invoice-${invoice.invoiceNumber}.pdf`;
+                                                        document.body.appendChild(link);
+                                                        link.click();
+                                                        document.body.removeChild(link);
+                                                    }
+                                                } catch (error) {
+                                                    console.error("Download failed:", error);
+                                                    window.open(invoice.pdfUrl, '_blank');
+                                                }
+                                            }}
                                             className="px-8 py-4 bg-brand-accent hover:bg-brand-accent/90 text-brand-dark rounded-2xl flex items-center gap-3 text-lg font-black transition-all hover:scale-105 active:scale-95 shadow-lg shadow-brand-accent/20"
                                         >
                                             <Download size={24} />
                                             {dict?.invoices?.download || 'Download PDF'}
-                                        </a>
+                                        </button>
                                     </div>
                                 </div>
 
