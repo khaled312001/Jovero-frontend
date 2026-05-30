@@ -14,6 +14,7 @@
         "portfolio": "Portfolio",
         "blog": "Blog",
         "about": "About Us",
+        "pricing": "Pricing",
         "contact": "Contact",
         "getStarted": "Get Started",
         "admin": "Admin"
@@ -131,6 +132,7 @@
             "reliabilitySub": "Quality"
         },
         "contactBadge": "Initiation",
+        "testimonialsBadge": "Testimonials",
         "scrollExplore": "Explore",
         "invoices": {
             "title": "Invoice Retrieval",
@@ -242,6 +244,15 @@
             "badge": "Our Arsenal",
             "title": "The Tech That Powers Us",
             "description": "We utilize a high-performance technology stack designed for enterprise scalability and global performance."
+        },
+        "team": {
+            "badge": "The Minds Behind",
+            "title": "Meet Our Team"
+        },
+        "faq": {
+            "badge": "FAQ",
+            "title": "Answers to Your Questions",
+            "description": "Everything you need to know about our services and how we work, all in one place."
         }
     },
     "services": {
@@ -286,6 +297,29 @@
             "subtitle": "Every enterprise begins with a single line of strategic vision. Let's discuss your goals and build a solution that lasts.",
             "launchSolution": "Launch Solution",
             "whatsappIntel": "WhatsApp Intel"
+        },
+        "detail": {
+            "notFoundTitle": "Service Not Found",
+            "notFoundDesc": "We couldn't locate the requested service. Please return to the services page.",
+            "backToServices": "Back to Services",
+            "whatsappIntro": "I'm interested in",
+            "inquireNow": "Inquire Now",
+            "customRoadmap": "Custom Roadmap",
+            "architecture": "Architecture",
+            "capabilitiesBadge": "Capabilities",
+            "capabilitiesTitle1": "Strategic",
+            "capabilitiesTitleHighlight": "Implementation",
+            "capabilitiesDesc": "Our methodology ensures every layer of the system is engineered for maximum reliability and future-proof scalability.",
+            "featureCardDesc": "A system-critical component designed for robust integration and seamless performance across all endpoints.",
+            "techStackTitle1": "Integrated",
+            "techStackTitleHighlight": "Tech Stack",
+            "techStackDesc": "We use a high-performance ecosystem to build the core logic and interface layers of this service, ensuring compatibility with global standards.",
+            "techItems": ["Data Integrity", "Advanced Security", "Cloud-Native", "Ultra-Low Latency"],
+            "ctaTitle1": "Ready to Build This",
+            "ctaTitleHighlight": "Architecture?",
+            "ctaDesc": "Connect with our team to turn this service into a scalable reality for your business.",
+            "launchDiscussion": "Launch Discussion",
+            "whatsappProtocol": "Chat on WhatsApp"
         }
     },
     "portfolio": {
@@ -464,6 +498,7 @@
         "placeholder": "Enter invoice number...",
         "search": "Search Invoice",
         "notFound": "Invoice not found",
+        "notFoundDesc": "Please double-check the invoice number and try again.",
         "found": "Invoice found",
         "download": "Download PDF",
         "details": {
@@ -471,6 +506,73 @@
             "client": "Client Name",
             "amount": "Amount",
             "date": "Date"
+        }
+    },
+    "posPage": {
+        "hero": {
+            "badge": "Point of Sale System",
+            "titleLine1": "A Smart POS System",
+            "titleHighlight": "Built for Your Business",
+            "subtitle": "Manage sales, inventory, and customers from one powerful platform — fast, reliable, and ready to run on any device.",
+            "btnPrimary": "Request a Demo",
+            "btnOutline": "Explore Features"
+        },
+        "features": {
+            "badge": "Capabilities",
+            "titleLine1": "Everything You Need to",
+            "titleHighlight": "Run & Grow",
+            "list": [
+                { "title": "Inventory Management", "desc": "Track stock in real time with low-stock alerts and automated reordering across all your branches." },
+                { "title": "Sales & Revenue Analytics", "desc": "Live dashboards and detailed reports that turn every transaction into actionable insight." },
+                { "title": "Customer Management", "desc": "Build customer profiles, loyalty programs, and targeted offers that keep buyers coming back." },
+                { "title": "Fast Checkout", "desc": "A streamlined cart and lightning-fast checkout that cuts queues and boosts throughput." },
+                { "title": "Secure & Reliable", "desc": "Bank-grade security, role-based access, and full audit trails to protect your data and revenue." },
+                { "title": "Multi-Store Ready", "desc": "Manage multiple outlets and warehouses from one central dashboard, anywhere in the world." }
+            ]
+        },
+        "platforms": {
+            "badge": "Works Everywhere",
+            "titleLine1": "One System,",
+            "titleHighlight": "Every Device",
+            "subtitle": "Run your business from the counter, the floor, or on the go. Our POS stays perfectly in sync across desktop, tablet, and mobile.",
+            "desktopTitle": "Desktop App",
+            "desktopDesc": "A full-featured workstation experience for your main register and back office.",
+            "mobileTitle": "Mobile & Tablet",
+            "mobileDesc": "Take orders and process payments anywhere with native mobile and tablet apps.",
+            "webTitle": "Web Dashboard",
+            "webDesc": "Monitor performance and manage your store from any browser, in real time."
+        },
+        "cta": {
+            "titleLine1": "Ready to Modernize",
+            "titleHighlight": "Your Point of Sale?",
+            "subtitle": "Let's set up a POS system tailored to your business. Talk to our team today.",
+            "button": "Get Started"
+        }
+    },
+    "pricing": {
+        "hero": {
+            "badge": "Pricing Plans",
+            "titleLine1": "Transparent &",
+            "titleHighlight": "Flexible Pricing",
+            "subtitle": "Choose the plan that fits your goals. Browse our detailed pricing plans below, or reach out for a quote tailored to your project."
+        },
+        "highlights": [
+            { "title": "Clear Pricing", "desc": "No hidden fees — everything you pay is laid out with full transparency." },
+            { "title": "Flexible Plans", "desc": "Multiple tiers built to suit startups and large enterprises alike." },
+            { "title": "Guaranteed Value", "desc": "Professional quality and ongoing support included in every plan." }
+        ],
+        "doc": {
+            "title": "Detailed Pricing Plans",
+            "subtitle": "View the full document of our packages and pricing below.",
+            "download": "Download Pricing (PDF)",
+            "openNewTab": "Open in New Tab",
+            "loading": "Loading document...",
+            "fallback": "The document can't be displayed in your browser. You can download it or open it in a new tab."
+        },
+        "cta": {
+            "title": "Need a Custom Plan?",
+            "subtitle": "Get in touch with our team and we'll craft a pricing plan that matches your exact needs and budget.",
+            "button": "Contact Us"
         }
     }
 }

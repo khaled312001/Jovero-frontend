@@ -233,7 +233,7 @@ function ServicesSection() {
                 description: lang === 'en' && s.descriptionEn ? s.descriptionEn : s.description,
                 icon: <ServiceIcon name={s.icon || 'Code2'} size={32} />,
                 color: cat.id % 2 === 0 ? 'blue' : 'purple', // Alternate colors for variety
-                href: `/services/${s.slug}`,
+                href: `/${lang}/services/${s.slug}`,
                 slug: s.slug
             })))
                 // Temporal filter to hide old services until DB is seeded
@@ -294,6 +294,8 @@ function ServicesSection() {
 
 // ============ WHY CHOOSE US ============
 function WhyChooseSection({ data }: { data?: any }) {
+    const params = useParams();
+    const lang = params?.lang as string;
     const dict = useDictionary();
     // Always use dict values to ensure correct language translation
     const badge = dict.home.whyChoose.badge;
@@ -339,8 +341,8 @@ function WhyChooseSection({ data }: { data?: any }) {
                                 {description}
                             </p>
 
-                            <Link href="/about">
-                                <Button variant="primary" size="lg" icon={<ArrowRight size={20} />} className="px-10 h-16 rounded-xl font-bold">
+                            <Link href={`/${lang}/about`}>
+                                <Button variant="primary" size="lg" icon={<ArrowRight size={20} className="rtl:-scale-x-100" />} className="px-10 h-16 rounded-xl font-bold">
                                     {btnText}
                                 </Button>
                             </Link>

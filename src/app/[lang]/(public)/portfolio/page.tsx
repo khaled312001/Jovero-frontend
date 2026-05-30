@@ -313,7 +313,7 @@ export default function PortfolioPage({ params: { lang } }: { params: { lang: st
                                                         variant="outline"
                                                         size="lg"
                                                         className="w-full group-hover/card:bg-brand-accent group-hover/card:text-brand-primary group-hover/card:border-brand-accent transition-all duration-300 shadow-sm hover:shadow-neon-purple"
-                                                        icon={<ArrowUpRight size={20} className="rtl:rotate-270" />}
+                                                        icon={<ArrowUpRight size={20} className="rtl:rotate-180" />}
                                                     >
                                                         {dict.portfolio.grid.viewCaseStudy}
                                                     </Button>

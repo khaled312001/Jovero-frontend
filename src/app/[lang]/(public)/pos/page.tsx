@@ -8,11 +8,13 @@ import { SectionReveal } from '@/components/ui/SectionReveal';
 import { staggerContainer, staggerItem, heroTextReveal } from '@/lib/animations';
 import Link from 'next/link';
 import { MouseFollower } from '@/components/ui/MouseFollower';
+import { useParams } from 'next/navigation';
 import { useDictionary } from '@/lib/contexts/DictionaryContext';
 
 export default function PosPage() {
+    const params = useParams();
+    const lang = params?.lang as string;
     const dict = useDictionary();
-    const isRtl = true; // Wait, actually the global direction is set in layout, but for classes we might just use rtl: utilities. Let's just remove dir="rtl" to let parent language dictate, or keep it depending on design. Since it was hardcoded arabic, we should let global locale control dir-rtl and let text align accordingly.
     const posDict = dict.posPage;
 
     const featureIcons = [
@@ -56,7 +58,7 @@ export default function PosPage() {
                         </motion.p>
 
                         <motion.div variants={heroTextReveal} className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full max-w-xl">
-                            <Link href="/contact" className="w-full sm:w-1/2">
+                            <Link href={`/${lang}/contact`} className="w-full sm:w-1/2">
                                 <Button size="xl" variant="primary" icon={<ArrowRight size={22} className="rtl:rotate-180" />} className="w-full h-16 text-lg font-bold rounded-xl shadow-neon-purple transition-all duration-500 hover:scale-105 active:scale-95 flex-row-reverse rtl:flex-row gap-3 font-display">
                                     {posDict.hero.btnPrimary}
                                 </Button>
@@ -230,7 +232,7 @@ export default function PosPage() {
                         </p>
 
                         <div className="relative inline-block w-full max-w-xs sm:max-w-none sm:w-auto">
-                            <Link href="/contact" className="w-full sm:w-auto">
+                            <Link href={`/${lang}/contact`} className="w-full sm:w-auto">
                                 <Button size="xl" variant="neon" className="w-full sm:w-auto h-16 px-12 rounded-xl font-bold font-display text-lg shadow-[0_0_30px_rgba(0,212,255,0.4)] hover:shadow-[0_0_50px_rgba(0,212,255,0.6)] transition-all duration-500 hover:scale-105 active:scale-95 border-brand-accent/50 group overflow-hidden">
                                     <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-brand-accent/0 via-white/20 to-brand-accent/0 -translate-x-[100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                                     {posDict.cta.button}

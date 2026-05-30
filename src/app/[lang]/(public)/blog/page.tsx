@@ -194,7 +194,7 @@ export default function BlogPage() {
                                             >
                                                 {/* Featured Image */}
                                                 {post.image && (
-                                                    <Link href={`/blog/${post.slug}`} className="block">
+                                                    <Link href={`/${lang}/blog/${post.slug}`} className="block">
                                                         <div className="relative w-full h-56 md:h-64 overflow-hidden rounded-t-[2.5rem]">
                                                             <Image
                                                                 src={post.image}
@@ -230,7 +230,7 @@ export default function BlogPage() {
                                                         )}
                                                     </div>
 
-                                                    <Link href={`/blog/${post.slug}`} className="block group">
+                                                    <Link href={`/${lang}/blog/${post.slug}`} className="block group">
                                                         <h2 className="text-3xl md:text-4xl font-display font-black text-white mb-6 group-hover:text-brand-accent transition-all duration-500 relative z-10 leading-tight tracking-tight">
                                                             {post.title}
                                                         </h2>

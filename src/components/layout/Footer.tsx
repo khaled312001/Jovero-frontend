@@ -20,6 +20,7 @@ export function Footer({ dict, lang }: FooterProps) {
             { label: dict?.navbar?.about || 'About', href: `/${lang}/about` },
             { label: dict?.navbar?.services || 'Services', href: `/${lang}/services` },
             { label: dict?.navbar?.portfolio || 'Portfolio', href: `/${lang}/portfolio` },
+            { label: dict?.navbar?.pricing || 'Pricing', href: `/${lang}/pricing` },
             { label: dict?.navbar?.blog || 'Blog', href: `/${lang}/blog` },
             { label: dict?.nav?.invoices || 'Invoices', href: `/${lang}/invoices` },
             { label: dict?.navbar?.contact || 'Contact', href: `/${lang}/contact` },

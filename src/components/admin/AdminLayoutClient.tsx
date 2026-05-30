@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
     LayoutDashboard, FileText, Briefcase, MessageSquare, Users, HelpCircle,
     Settings, Image as ImageIcon, Search, LogOut, Menu, X, ChevronRight, BarChart3,
-    Megaphone, Globe, Mail, Layers, Receipt
+    Megaphone, Globe, Mail, Layers, Receipt, Tag
 } from 'lucide-react';
 import { useAuthStore } from '@/store';
 import { adminApi } from '@/lib/api';
@@ -19,6 +19,7 @@ const sidebarLinks = [
     { href: '/admin/pages', label: 'Pages', icon: Layers },
     { href: '/admin/services', label: 'Services', icon: Briefcase },
     { href: '/admin/portfolio', label: 'Portfolio', icon: ImageIcon },
+    { href: '/admin/pricing', label: 'Pricing', icon: Tag },
     { href: '/admin/blog', label: 'Blog', icon: FileText },
     { href: '/admin/testimonials', label: 'Testimonials', icon: MessageSquare },
     { href: '/admin/team', label: 'Team', icon: Users },

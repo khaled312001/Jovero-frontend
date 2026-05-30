@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { BarChart3, Users, FileText, Briefcase, MessageSquare, Mail, TrendingUp, ArrowUpRight, Zap, Globe, ShieldCheck } from 'lucide-react';
+import { BarChart3, Users, FileText, Briefcase, MessageSquare, Mail, TrendingUp, ArrowUpRight, Zap, Globe, ShieldCheck, Tag } from 'lucide-react';
 import { adminApi } from '@/lib/api';
 import { staggerContainer, staggerItem } from '@/lib/animations';
 import { useToast } from '@/components/ui/Toast';
@@ -93,7 +93,7 @@ export default function AdminDashboard() {
                     {[
                         { label: 'New Blog Post', href: '/admin/blog', icon: FileText },
                         { label: 'Manage Leads', href: '/admin/leads', icon: Mail },
-                        { label: 'Add Project', href: '/admin/portfolio', icon: Briefcase },
+                        { label: 'Pricing Plans', href: '/admin/pricing', icon: Tag },
                         { label: 'Site Settings', href: '/admin/settings', icon: TrendingUp },
                     ].map((action) => (
                         <a

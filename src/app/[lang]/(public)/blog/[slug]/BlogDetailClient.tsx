@@ -76,7 +76,7 @@ export default function BlogDetailClient({ post, lang }: BlogDetailClientProps) 
                         transition={{ duration: 0.5 }}
                         className="flex items-center gap-2 text-sm text-brand-muted/60 mb-8"
                     >
-                        <Link href="/${lang}/blog" className="hover:text-brand-accent transition-colors">Blog</Link>
+                        <Link href={`/${lang}/blog`} className="hover:text-brand-accent transition-colors">Blog</Link>
                         <ChevronRight size={14} className="rtl:rotate-180" />
                         {post.category && (
                             <>
@@ -220,7 +220,7 @@ export default function BlogDetailClient({ post, lang }: BlogDetailClientProps) 
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.7 }}
-                        className="mt-16 pt-10 border-t border-white /10"
+                        className="mt-16 pt-10 border-t border-white/10"
                     >
                         <h4 className="text-sm font-mono text-brand-muted/60 uppercase tracking-widest mb-5 flex items-center gap-2">
                             <Tag size={14} className="text-brand-accent/50" />
