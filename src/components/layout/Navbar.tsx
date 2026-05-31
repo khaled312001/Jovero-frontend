@@ -17,6 +17,7 @@ export function Navbar({ dict, lang, getStartedText }: { dict: any, lang: string
     const [scrolled, setScrolled] = useState(false);
     const pathname = usePathname();
     const { isMobileMenuOpen, toggleMobileMenu, setMobileMenu } = useUIStore();
+    const isRtl = lang === 'ar';
 
     const navLinks = [
         { href: `/${lang}`, label: dict?.navbar?.home || 'Home', icon: Home },
@@ -61,9 +62,15 @@ export function Navbar({ dict, lang, getStartedText }: { dict: any, lang: string
                 )}
             >
                 <div className="section-container !py-0">
-                    <div className="flex items-center justify-between h-26 md:h-36">
+                    <div className={cn(
+                        "flex items-center justify-between transition-all duration-300",
+                        scrolled ? "h-16 md:h-20" : "h-20 md:h-28"
+                    )}>
                         {/* Logo */}
-                        <Link href={`/${lang}`} className="relative h-16 w-44 md:h-24 md:w-[216px] hover:opacity-80 transition-opacity">
+                        <Link href={`/${lang}`} className={cn(
+                            "relative hover:opacity-80 transition-all duration-300",
+                            scrolled ? "h-11 w-36 md:h-14 md:w-48" : "h-14 w-44 md:h-20 md:w-56"
+                        )}>
                             <Image
                                 src="/images/logo.png"
                                 alt="JOVERO"
@@ -114,7 +121,7 @@ export function Navbar({ dict, lang, getStartedText }: { dict: any, lang: string
                         {/* Desktop CTA */}
                         <div className="hidden lg:flex items-center gap-3">
                             <Link href={WHATSAPP_URL} target="_blank">
-                                <Button variant="neon" size="sm" className="px-6">
+                                <Button variant="primary" size="md" icon={<MessageCircle size={16} />} className="px-6 rounded-xl">
                                     {getStartedText || dict?.nav?.getInTouch || 'Get in Touch'}
                                 </Button>
                             </Link>
@@ -146,11 +153,14 @@ export function Navbar({ dict, lang, getStartedText }: { dict: any, lang: string
 
                         {/* Sidebar Content */}
                         <motion.div
-                            initial={{ x: '100%' }}
+                            initial={{ x: isRtl ? '-100%' : '100%' }}
                             animate={{ x: 0 }}
-                            exit={{ x: '100%' }}
+                            exit={{ x: isRtl ? '-100%' : '100%' }}
                             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                            className="fixed top-0 right-0 bottom-0 w-[300px] z-[120] bg-brand-dark/95 backdrop-blur-2xl border-l border-brand-glass-border p-6 lg:hidden flex flex-col overflow-y-auto custom-scrollbar"
+                            className={cn(
+                                "fixed top-0 bottom-0 w-[300px] z-[120] bg-brand-dark/95 backdrop-blur-2xl border-brand-glass-border p-6 lg:hidden flex flex-col overflow-y-auto custom-scrollbar",
+                                isRtl ? "left-0 border-r" : "right-0 border-l"
+                            )}
                         >
                             <div className="flex items-center justify-between mb-12 shrink-0">
                                 <Link href={`/${lang}`} className="relative h-20 w-64" onClick={() => setMobileMenu(false)}>

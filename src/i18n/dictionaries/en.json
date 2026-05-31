@@ -266,7 +266,8 @@
             "explorationHub": "Exploration Hub",
             "expertConsult": "Expert Consult",
             "technicalCapabilities": "Technical Capabilities",
-            "verifiedArchitecture": "Verified Architecture"
+            "verifiedArchitecture": "Verified Architecture",
+            "whatsappMessage": "Hi, I'm interested in"
         },
         "roadmap": {
             "badge": "The Process",
@@ -574,5 +575,43 @@
             "subtitle": "Get in touch with our team and we'll craft a pricing plan that matches your exact needs and budget.",
             "button": "Contact Us"
         }
+    },
+    "privacy": {
+        "badge": "Infrastructure Security",
+        "titleLine1": "Privacy",
+        "titleHighlight": "Protocols",
+        "lastUpdatedLabel": "Last Updated",
+        "lastUpdated": "February 14, 2026",
+        "compliance": "Compliance: Global Standards",
+        "introTitle": "Introduction",
+        "introContent": "At JOVERO, we take your privacy seriously. This Policy outlines how we collect, use, and safeguard your data. By using our services, you agree to the terms described herein.",
+        "sections": [
+            { "title": "Data Collection", "content": "We collect only the information necessary to provide our services. This includes personal information you provide during account creation or via our contact forms, such as name, email address, and phone number." },
+            { "title": "Use of Information", "content": "Your information is used strictly for internal purposes: improving our services, communicating with you about your projects, and ensuring a personalized experience. We do not sell your data to third parties." },
+            { "title": "Data Security", "content": "We implement enterprise-grade security measures to protect your data from unauthorized access, alteration, or disclosure. We adhere to the highest international standards of data protection." },
+            { "title": "Your Rights", "content": "You have the right to access, rectify, or delete your personal data at any time. Simply contact us through our official channels to exercise these rights." }
+        ],
+        "contactTitle": "Contact Legal Department",
+        "contactContent": "If you have any questions regarding our Privacy Policy or data practices, please contact our legal department at:",
+        "contactEmail": "legal@jovero.net"
+    },
+    "terms": {
+        "badge": "Governance Framework",
+        "titleLine1": "Terms of",
+        "titleHighlight": "Service",
+        "lastUpdatedLabel": "Agreement Protocol",
+        "lastUpdated": "February 14, 2026",
+        "jurisdiction": "Legal Jurisdiction: Global",
+        "introTitle": "Agreement to Terms",
+        "introContent": "Welcome to JOVERO. By accessing our website or using our services, you agree to be bound by these Terms of Service. Please read them carefully.",
+        "items": [
+            { "title": "1. Service Agreement", "content": "By engaging with JOVERO, you agree to the terms of our project agreements, which outline scope, timelines, and deliverables. All projects are governed by international business laws." },
+            { "title": "2. Intellectual Property", "content": "Unless otherwise agreed in writing, JOVERO retains ownership of all underlying code and frameworks. Upon full payment, clients are granted a comprehensive license to use the final product for its intended purpose." },
+            { "title": "3. Payment Terms", "content": "Payments are typically structured in milestones. Work begins upon receipt of the initial deposit. Late payments may result in project suspension or delays." },
+            { "title": "4. Limitation of Liability", "content": "JOVERO provides services \"as is\" and shall not be liable for any indirect, incidental, or consequential damages resulting from the use of our software." }
+        ],
+        "governingTitle": "Governing Law",
+        "governingContent": "These terms are governed by and construed in accordance with international business laws. Any disputes arising from these terms or our services shall be subject to the exclusive jurisdiction of the competent courts.",
+        "footerNote": "JOVERO is a Premier International Software Agency"
     }
 }

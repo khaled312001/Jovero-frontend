@@ -165,13 +165,15 @@ export const pageTransition: Variants = {
 
 export const navbarVariants: Variants = {
     top: {
-        backgroundColor: 'rgba(6, 13, 27, 0.4)',
-        backdropFilter: 'blur(12px)',
-        borderBottom: '1px solid rgba(0, 212, 255, 0.05)',
+        backgroundColor: 'rgba(5, 1, 26, 0)',
+        backdropFilter: 'blur(0px)',
+        borderBottom: '1px solid rgba(187, 38, 255, 0)',
+        boxShadow: '0 0 0 0 rgba(0, 0, 0, 0)',
     },
     scrolled: {
-        backgroundColor: 'rgba(6, 13, 27, 0.9)',
+        backgroundColor: 'rgba(5, 1, 26, 0.85)',
         backdropFilter: 'blur(20px)',
-        borderBottom: '1px solid rgba(0, 212, 255, 0.1)',
+        borderBottom: '1px solid rgba(187, 38, 255, 0.15)',
+        boxShadow: '0 10px 40px -12px rgba(0, 0, 0, 0.6)',
     },
 };

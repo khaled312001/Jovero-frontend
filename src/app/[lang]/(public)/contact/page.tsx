@@ -31,7 +31,7 @@ export default function ContactPage() {
                     className="absolute inset-0 circuit-pattern pointer-events-none"
                 />
 
-                <div className="absolute top-1/4 -right-32 w-96 h-96 bg-brand-accent/10 rounded-full blur-[128px] animate-pulse" />
+                <div className="absolute top-1/4 -right-32 rtl:right-auto rtl:-left-32 w-96 h-96 bg-brand-accent/10 rounded-full blur-[128px] animate-pulse" />
 
                 <div className="section-container relative z-10">
                     <motion.div

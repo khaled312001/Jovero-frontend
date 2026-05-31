@@ -129,7 +129,7 @@ function ServiceSection({ service, index }: { service: ServiceDetail; index: num
                                         {dict.services.serviceSection.explorationHub}
                                     </Button>
                                 </Link>
-                                <Link href={`${WHATSAPP_URL}?text=Hi, I'm interested in ${service.title}`} target="_blank">
+                                <Link href={`${WHATSAPP_URL}?text=${encodeURIComponent(`${dict.services.serviceSection.whatsappMessage} ${service.title}`)}`} target="_blank">
                                     <Button variant="outline" size="lg" icon={<MessageCircle size={20} />} className="border-white/10 hover:border-brand-accent/30 flex-row-reverse rtl:flex-row">
                                         {dict.services.serviceSection.expertConsult}
                                     </Button>

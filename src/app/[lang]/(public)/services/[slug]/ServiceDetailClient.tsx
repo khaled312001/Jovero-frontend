@@ -215,15 +215,15 @@ export default function ServiceDetailClient({ service, lang }: ServiceDetailClie
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                         <SectionReveal direction="left">
                             <div className="max-w-xl">
-                                <h3 className="text-3xl md:text-4xl font-display font-bold text-white mb-8">Integrated <span className="text-brand-secondary">Tech Stack</span></h3>
-                                <p className="text-brand-muted text-lg mb-10">We utilize a high-performance ecosystem to build the core logic and interface layers of this service, ensuring compatibility with global standards.</p>
+                                <h3 className="text-3xl md:text-4xl font-display font-bold text-white mb-8">{d.techStackTitle1} <span className="text-brand-secondary">{d.techStackTitleHighlight}</span></h3>
+                                <p className="text-brand-muted text-lg mb-10">{d.techStackDesc}</p>
 
                                 <div className="grid grid-cols-2 gap-6">
                                     {[
-                                        { icon: <Database size={20} />, label: 'Data Integrity' },
-                                        { icon: <Shield size={20} />, label: 'Advanced Security' },
-                                        { icon: <Cloud size={20} />, label: 'Cloud-Native' },
-                                        { icon: <Zap size={20} />, label: 'Ultra-Low Latency' }
+                                        { icon: <Database size={20} />, label: d.techItems[0] },
+                                        { icon: <Shield size={20} />, label: d.techItems[1] },
+                                        { icon: <Cloud size={20} />, label: d.techItems[2] },
+                                        { icon: <Zap size={20} />, label: d.techItems[3] }
                                     ].map((item, i) => (
                                         <div key={i} className="flex items-center gap-3 text-brand-muted bg-white/5 p-4 rounded-xl border border-white/5">
                                             <span className="text-brand-accent">{item.icon}</span>
@@ -268,17 +268,17 @@ const initialize = () => {
                         <div className="glass-card p-12 md:p-20 text-center relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/5 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2" />
                             <div className="relative z-10">
-                                <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-8">Ready to Build This <span className="gradient-text">Architecture?</span></h2>
-                                <p className="text-brand-muted text-lg max-w-2xl mx-auto mb-12">Connect with our elite architects to transform this service module into a scalable reality for your enterprise.</p>
+                                <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-8">{d.ctaTitle1} <span className="gradient-text">{d.ctaTitleHighlight}</span></h2>
+                                <p className="text-brand-muted text-lg max-w-2xl mx-auto mb-12">{d.ctaDesc}</p>
                                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                                    <Link href="/contact">
-                                        <Button size="lg" variant="primary" icon={<ArrowRight size={24} />}>
-                                            Launch Discussion
+                                    <Link href={`/${lang}/contact`}>
+                                        <Button size="lg" variant="primary" icon={<ArrowRight size={24} className="rtl:-scale-x-100" />}>
+                                            {d.launchDiscussion}
                                         </Button>
                                     </Link>
                                     <Link href={WHATSAPP_URL} target="_blank">
                                         <Button size="lg" variant="outline" icon={<MessageCircle size={20} />}>
-                                            WhatsApp Protocol
+                                            {d.whatsappProtocol}
                                         </Button>
                                     </Link>
                                 </div>

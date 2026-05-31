@@ -9,9 +9,12 @@ import {
 import { systemApi } from '@/lib/api';
 import { Button } from '@/components/ui/Button';
 import { useToast } from '@/components/ui/Toast';
+import { useParams } from 'next/navigation';
 import Link from 'next/link';
 
 export default function PublicRepairPage() {
+    const params = useParams();
+    const lang = (params?.lang as string) || 'en';
     const [loading, setLoading] = useState(false);
     const [logs, setLogs] = useState<string[]>([]);
     const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -113,7 +116,7 @@ export default function PublicRepairPage() {
                     </Button>
 
                     <div className="flex flex-col sm:flex-row gap-4">
-                        <Link href="/" className="w-full">
+                        <Link href={`/${lang}`} className="w-full">
                             <Button variant="outline" fullWidth>
                                 <Home size={18} className="mr-2" /> Back to Home
                             </Button>

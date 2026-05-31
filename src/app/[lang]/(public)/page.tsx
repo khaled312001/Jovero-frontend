@@ -159,7 +159,7 @@ function HeroSection({ data }: { data?: any }) {
                             </Button>
                         </Link>
                         <Link href={`/${lang}/portfolio`} className="w-full sm:w-1/2">
-                            <Button size="xl" variant="neon" className="w-full h-16 text-lg font-bold rounded-xl border-white/20 hover:border-brand-secondary/50 transition-all duration-500 hover:scale-105 active:scale-95">
+                            <Button size="xl" variant="outline" className="w-full h-16 text-lg font-bold rounded-xl border-white/20 hover:border-brand-secondary/60 hover:bg-brand-secondary/5 transition-all duration-500 hover:scale-105 active:scale-95">
                                 {secondaryBtnText}
                             </Button>
                         </Link>

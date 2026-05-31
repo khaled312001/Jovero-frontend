@@ -156,6 +156,17 @@
     @apply py-16 md:py-24 lg:py-32;
   }
 
+  /* Subtle circuit / dot-matrix texture used behind hero sections */
+  .circuit-pattern {
+    background-image:
+      radial-gradient(circle, rgba(187, 38, 255, 0.18) 1px, transparent 1.5px),
+      radial-gradient(circle, rgba(0, 242, 255, 0.12) 1px, transparent 1.5px);
+    background-size: 44px 44px, 44px 44px;
+    background-position: 0 0, 22px 22px;
+    mask-image: radial-gradient(ellipse at 50% 40%, black 10%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 40%, black 10%, transparent 75%);
+  }
+
   /* Circuit Board Animation */
   .circuit-line {
     @apply absolute bg-brand-accent/20 h-[1px] w-full;
