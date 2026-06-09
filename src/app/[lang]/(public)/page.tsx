@@ -689,6 +689,54 @@ function InvoiceCtaSection() {
 }
 
 
+// ============ SUCCESS PARTNERS (image showcase) ============
+function SuccessPartnersSection() {
+    const dict = useDictionary();
+    const p = dict.home.partners;
+    const heading = `${p?.titleLine1 || ''} ${p?.titleHighlight || ''}`.trim();
+
+    return (
+        <section className="relative overflow-hidden py-20 md:py-28 bg-brand-primary border-t border-white/5">
+            <div className="absolute inset-0 tech-grid opacity-5" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-brand-accent/10 rounded-full blur-[140px] pointer-events-none" />
+
+            <div className="section-container relative z-10">
+                <SectionReveal>
+                    <div className="text-center mb-12">
+                        <span className="text-brand-accent font-mono text-xs tracking-[0.4em] uppercase mb-4 block">
+                            {p?.badge || 'PARTNERS'}
+                        </span>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-black text-white mb-6 text-glow tracking-tight">
+                            {p?.titleLine1} <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-white to-brand-secondary italic">{p?.titleHighlight}</span>
+                        </h2>
+                        <div className="w-24 h-1 bg-brand-accent mx-auto mb-8 rounded-full shadow-neon-purple" />
+                        <p className="text-brand-muted max-w-2xl mx-auto text-base md:text-lg font-light opacity-80">
+                            {p?.subtitle}
+                        </p>
+                    </div>
+                </SectionReveal>
+
+                <SectionReveal delay={0.1}>
+                    <div className="relative max-w-5xl mx-auto group">
+                        {/* Decorative gradient frame */}
+                        <div className="absolute -inset-1 bg-gradient-to-r from-brand-accent to-brand-secondary rounded-[2rem] blur opacity-20 group-hover:opacity-35 transition duration-700" />
+                        <div className="relative rounded-[1.75rem] overflow-hidden border border-white/10 bg-white shadow-2xl">
+                            <Image
+                                src="/success-partners.png"
+                                alt={heading || 'Success Partners'}
+                                width={2325}
+                                height={793}
+                                className="w-full h-auto"
+                                sizes="(max-width: 1024px) 100vw, 1024px"
+                            />
+                        </div>
+                    </div>
+                </SectionReveal>
+            </div>
+        </section>
+    );
+}
+
 // ============ HOME PAGE ============
 export default function HomePage() {
     const [data, setData] = React.useState<any>({});
@@ -708,12 +756,12 @@ export default function HomePage() {
     return (
         <>
             <HeroSection data={data.hero} />
+            <SuccessPartnersSection />
             <ServicesSection />
             <PortfolioGallery />
             <WhyChooseSection data={data.features} />
             <CountersSection data={data.stats} />
             <TestimonialsSection />
-            <PartnersSection />
             <ContactFormSection data={data.cta} />
             <InvoiceCtaSection />
         </>
