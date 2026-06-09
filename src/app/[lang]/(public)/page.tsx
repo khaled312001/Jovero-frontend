@@ -136,22 +136,17 @@ function HeroSection({ data }: { data?: any }) {
                     {/* SEO / accessibility heading (kept for screen readers & search engines) */}
                     <h1 className="sr-only">{titleLine1} {titleLine2}. {description}</h1>
 
-                    {/* Success Partners image — the hero centerpiece */}
+                    {/* Success Partners image — transparent PNG sitting directly on the hero background */}
                     <motion.div variants={heroTextReveal} className="w-full max-w-4xl mx-auto mb-12">
-                        <div className="relative group">
-                            <div className="absolute -inset-1 bg-gradient-to-r from-brand-accent to-brand-secondary rounded-[2rem] blur opacity-25 group-hover:opacity-40 transition duration-700" />
-                            <div className="relative rounded-[1.75rem] overflow-hidden border border-white/10 bg-white shadow-2xl">
-                                <Image
-                                    src="/success-partners.png"
-                                    alt={`${dict.home.partners?.titleLine1 || ''} ${dict.home.partners?.titleHighlight || ''}`.trim() || 'Success Partners'}
-                                    width={2325}
-                                    height={793}
-                                    priority
-                                    className="w-full h-auto"
-                                    sizes="(max-width: 1024px) 100vw, 896px"
-                                />
-                            </div>
-                        </div>
+                        <Image
+                            src="/success-partners.png"
+                            alt={`${dict.home.partners?.titleLine1 || ''} ${dict.home.partners?.titleHighlight || ''}`.trim() || 'Success Partners'}
+                            width={2325}
+                            height={793}
+                            priority
+                            className="w-full h-auto drop-shadow-[0_20px_60px_rgba(187,38,255,0.25)]"
+                            sizes="(max-width: 1024px) 100vw, 896px"
+                        />
                     </motion.div>
 
                     <motion.div variants={heroTextReveal} className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full max-w-xl px-4">
