@@ -133,24 +133,26 @@ function HeroSection({ data }: { data?: any }) {
                         </span>
                     </motion.div>
 
-                    {/* Main Headline */}
-                    <motion.h1
-                        variants={heroTextReveal}
-                        className="font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white mb-8 leading-[1.1] tracking-tight drop-shadow-2xl px-4"
-                    >
-                        <span className="block mb-4 sm:mb-2 opacity-90">{titleLine1}</span>
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-white to-brand-secondary filter drop-shadow-[0_0_40px_rgba(139,92,246,0.35)]">
-                            {titleLine2}
-                        </span>
-                    </motion.h1>
+                    {/* SEO / accessibility heading (kept for screen readers & search engines) */}
+                    <h1 className="sr-only">{titleLine1} {titleLine2}. {description}</h1>
 
-                    {/* Description */}
-                    <motion.p
-                        variants={heroTextReveal}
-                        className="text-lg md:text-xl lg:text-2xl text-brand-muted max-w-4xl mx-auto mb-12 leading-relaxed font-light opacity-90"
-                    >
-                        {description}
-                    </motion.p>
+                    {/* Success Partners image — the hero centerpiece */}
+                    <motion.div variants={heroTextReveal} className="w-full max-w-4xl mx-auto mb-12">
+                        <div className="relative group">
+                            <div className="absolute -inset-1 bg-gradient-to-r from-brand-accent to-brand-secondary rounded-[2rem] blur opacity-25 group-hover:opacity-40 transition duration-700" />
+                            <div className="relative rounded-[1.75rem] overflow-hidden border border-white/10 bg-white shadow-2xl">
+                                <Image
+                                    src="/success-partners.png"
+                                    alt={`${dict.home.partners?.titleLine1 || ''} ${dict.home.partners?.titleHighlight || ''}`.trim() || 'Success Partners'}
+                                    width={2325}
+                                    height={793}
+                                    priority
+                                    className="w-full h-auto"
+                                    sizes="(max-width: 1024px) 100vw, 896px"
+                                />
+                            </div>
+                        </div>
+                    </motion.div>
 
                     <motion.div variants={heroTextReveal} className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full max-w-xl px-4">
                         <Link href={`/${lang}/contact`} className="w-full sm:w-1/2">
@@ -689,54 +691,6 @@ function InvoiceCtaSection() {
 }
 
 
-// ============ SUCCESS PARTNERS (image showcase) ============
-function SuccessPartnersSection() {
-    const dict = useDictionary();
-    const p = dict.home.partners;
-    const heading = `${p?.titleLine1 || ''} ${p?.titleHighlight || ''}`.trim();
-
-    return (
-        <section className="relative overflow-hidden py-20 md:py-28 bg-brand-primary border-t border-white/5">
-            <div className="absolute inset-0 tech-grid opacity-5" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-brand-accent/10 rounded-full blur-[140px] pointer-events-none" />
-
-            <div className="section-container relative z-10">
-                <SectionReveal>
-                    <div className="text-center mb-12">
-                        <span className="text-brand-accent font-mono text-xs tracking-[0.4em] uppercase mb-4 block">
-                            {p?.badge || 'PARTNERS'}
-                        </span>
-                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-black text-white mb-6 text-glow tracking-tight">
-                            {p?.titleLine1} <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-white to-brand-secondary italic">{p?.titleHighlight}</span>
-                        </h2>
-                        <div className="w-24 h-1 bg-brand-accent mx-auto mb-8 rounded-full shadow-neon-purple" />
-                        <p className="text-brand-muted max-w-2xl mx-auto text-base md:text-lg font-light opacity-80">
-                            {p?.subtitle}
-                        </p>
-                    </div>
-                </SectionReveal>
-
-                <SectionReveal delay={0.1}>
-                    <div className="relative max-w-5xl mx-auto group">
-                        {/* Decorative gradient frame */}
-                        <div className="absolute -inset-1 bg-gradient-to-r from-brand-accent to-brand-secondary rounded-[2rem] blur opacity-20 group-hover:opacity-35 transition duration-700" />
-                        <div className="relative rounded-[1.75rem] overflow-hidden border border-white/10 bg-white shadow-2xl">
-                            <Image
-                                src="/success-partners.png"
-                                alt={heading || 'Success Partners'}
-                                width={2325}
-                                height={793}
-                                className="w-full h-auto"
-                                sizes="(max-width: 1024px) 100vw, 1024px"
-                            />
-                        </div>
-                    </div>
-                </SectionReveal>
-            </div>
-        </section>
-    );
-}
-
 // ============ HOME PAGE ============
 export default function HomePage() {
     const [data, setData] = React.useState<any>({});
@@ -756,7 +710,6 @@ export default function HomePage() {
     return (
         <>
             <HeroSection data={data.hero} />
-            <SuccessPartnersSection />
             <ServicesSection />
             <PortfolioGallery />
             <WhyChooseSection data={data.features} />

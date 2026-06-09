@@ -31,6 +31,7 @@ export const publicApi = {
     getPageSections: (page: string) => axios.get(`${API_URL}/pages/${page}`),
     getPartners: () => axios.get(`${API_URL}/partners`),
     getInvoice: (number: string) => axios.get(`${API_URL}/invoices/${number}`),
+    getPricingPdf: () => axios.get(`${API_URL}/pricing-pdf`),
 };
 
 // ============ AUTH API ============
@@ -167,6 +168,12 @@ export const adminApi = {
     createInvoice: (data: any) => authClient.post('/admin/invoices', data),
     updateInvoice: (id: string, data: any) => authClient.put(`/admin/invoices/${id}`, data),
     deleteInvoice: (id: string) => authClient.delete(`/admin/invoices/${id}`),
+
+    // Pricing PDF
+    getPricingPdf: () => axios.get(`${API_URL}/pricing-pdf`),
+    uploadPricingPdf: (formData: FormData) => authClient.post('/admin/pricing-pdf', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+    }),
 };
 
 export const systemApi = {

@@ -10,9 +10,22 @@ import { MouseFollower } from '@/components/ui/MouseFollower';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { useDictionary } from '@/lib/contexts/DictionaryContext';
-import { WHATSAPP_URL } from '@/lib/utils';
+import { WHATSAPP_URL, API_BASE_URL } from '@/lib/utils';
+import { publicApi } from '@/lib/api';
 
-const PDF_URL = '/pricing-plan.pdf';
+// Bundled fallback shown until/unless an admin uploads a custom PDF.
+const FALLBACK_PDF_URL = '/pricing-plan.pdf';
+
+// Resolve a stored pricing-PDF reference to a usable URL.
+function resolvePdfUrl(url?: string | null): string {
+    if (!url) return FALLBACK_PDF_URL;
+    if (url.startsWith('data:') || url.startsWith('http')) return url;
+    if (url.startsWith('/uploads')) {
+        const base = API_BASE_URL.replace(/\/api$/, '');
+        return `${base}${url}`;
+    }
+    return url; // already an absolute same-origin path (e.g. the bundled PDF)
+}
 
 // ============ HERO ============
 function PricingHero() {
@@ -116,6 +129,16 @@ function HighlightsSection() {
 function PdfViewerSection() {
     const dict = useDictionary();
     const doc = dict.pricing.doc;
+    const [pdfUrl, setPdfUrl] = React.useState<string>(FALLBACK_PDF_URL);
+
+    React.useEffect(() => {
+        publicApi.getPricingPdf()
+            .then(({ data }) => setPdfUrl(resolvePdfUrl(data?.url)))
+            .catch(() => setPdfUrl(FALLBACK_PDF_URL));
+    }, []);
+
+    const isData = pdfUrl.startsWith('data:');
+    const embedSrc = isData ? pdfUrl : `${pdfUrl}#view=FitH&toolbar=1`;
 
     return (
         <section className="section-padding relative overflow-hidden bg-brand-primary border-t border-white/5">
@@ -144,7 +167,7 @@ function PdfViewerSection() {
                                 </div>
                                 <div className="flex items-center gap-3 shrink-0">
                                     <a
-                                        href={PDF_URL}
+                                        href={pdfUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold text-brand-muted border border-white/10 hover:text-white hover:border-brand-secondary/50 hover:bg-white/5 transition-all duration-300"
@@ -153,7 +176,7 @@ function PdfViewerSection() {
                                         <span className="hidden sm:inline">{doc.openNewTab}</span>
                                     </a>
                                     <a
-                                        href={PDF_URL}
+                                        href={pdfUrl}
                                         download
                                         className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-brand-primary bg-brand-accent hover:bg-white shadow-neon-purple transition-all duration-300"
                                     >
@@ -165,9 +188,9 @@ function PdfViewerSection() {
 
                             {/* PDF embed — object with iframe fallback, then text fallback */}
                             <div className="relative w-full h-[70vh] min-h-[520px] lg:h-[880px] bg-[#1a1a24]">
-                                <object data={`${PDF_URL}#view=FitH&toolbar=1`} type="application/pdf" className="w-full h-full">
+                                <object key={embedSrc} data={embedSrc} type="application/pdf" className="w-full h-full">
                                     <iframe
-                                        src={`${PDF_URL}#view=FitH&toolbar=1`}
+                                        src={embedSrc}
                                         title={doc.title}
                                         className="w-full h-full border-0"
                                         loading="lazy"
@@ -179,10 +202,10 @@ function PdfViewerSection() {
                                         </div>
                                         <p className="text-brand-muted max-w-md font-light">{doc.fallback}</p>
                                         <div className="flex flex-col sm:flex-row gap-3">
-                                            <a href={PDF_URL} target="_blank" rel="noopener noreferrer">
+                                            <a href={pdfUrl} target="_blank" rel="noopener noreferrer">
                                                 <Button variant="neon" size="md" icon={<ExternalLink size={18} />}>{doc.openNewTab}</Button>
                                             </a>
-                                            <a href={PDF_URL} download>
+                                            <a href={pdfUrl} download>
                                                 <Button variant="primary" size="md" icon={<Download size={18} />}>{doc.download}</Button>
                                             </a>
                                         </div>
